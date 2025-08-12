@@ -9,6 +9,9 @@
   --accent: #3b82f6;
   --owned: #2e7d32;
   --unowned: #9b2c2c;
+
+  /* fixed width for the pill column */
+  --pill-col-width: 120px;
 }
 
 *{ box-sizing: border-box; }
@@ -90,7 +93,7 @@ body{
 .card{
   position: relative;
   display: grid;
-  grid-template-columns: 60px 1fr max-content; /* avatar, text, pill (no wrap) */
+  grid-template-columns: 60px 1fr var(--pill-col-width); /* avatar, text, fixed pill column */
   gap: 12px;
   align-items: center;
   padding: 12px;
@@ -122,7 +125,11 @@ body{
 
 /* Owned pill */
 .owned-pill{
-  justify-self: end;
+  justify-self: end;             /* keep the pill at the right of its column */
+  width: 100%;                   /* fill the fixed pill column */
+  justify-content: flex-start;   /* LEFT-ALIGN the text inside the pill */
+  text-align: left;
+
   padding: 4px 10px; border-radius: 999px;
   border: 1px solid currentColor; font-size: .8rem;
 
@@ -154,8 +161,8 @@ body{
   .banner-title{ font-size: 1.1rem; }
   .region-banner{ height: 100px; }
 
-  /* keep 3 columns even on mobile so the pill has its own column */
-  .card{ grid-template-columns: 52px 1fr max-content; }
+  /* keep 3 columns on mobile so the pill has its own column */
+  .card{ grid-template-columns: 52px 1fr var(--pill-col-width); }
 
   /* keep pill at the far right, single line */
   .owned-pill{ grid-column: 3; justify-self: end; margin-top: 0; }
