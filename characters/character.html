@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Character — Granado Espada</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+<header class="site-header">
+    <a class="back" href="../index.html" aria-label="Back to list">← Back</a>
+    <h1 id="charName">Character</h1>
+    <div class="header-actions">
+        <label class="owned-toggle">
+            <input type="checkbox" id="ownedCheckbox" />
+            <span>Owned</span>
+        </label>
+    </div>
+</header>
+
+<main class="container">
+    <section class="char-hero">
+        <img id="charPortrait" class="portrait-lg" alt="">
+        <div class="char-meta">
+            <div class="meta-line"><strong>Region:</strong> <span id="charRegion"></span></div>
+            <div class="meta-line"><strong>Stances:</strong> <span id="charStances"></span></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Recruitment Quests</h2>
+        <ul id="questList" class="quest-list"></ul>
+        <button id="resetQuestsBtn" class="btn-secondary">Reset quest progress</button>
+    </section>
+
+    <section>
+        <h2>Stats</h2>
+        <div id="statsGrid" class="stats-grid"></div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <small>Progress is stored in your browser (localStorage).</small>
+</footer>
+
+<!-- Use ES modules: character-page.js imports its dependencies -->
+<script type="module" src="../js/character-page.js"></script>
+</body>
+</html>

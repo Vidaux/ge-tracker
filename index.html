@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Granado Espada — Character Tracker</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<header class="site-header">
+    <h1>Granado Espada — Character Tracker</h1>
+    <div class="toolbar">
+        <input id="searchInput" type="search" placeholder="Search characters…" aria-label="Search" />
+        <select id="regionFilter" aria-label="Filter by region">
+            <option value="">All regions</option>
+        </select>
+        <select id="ownedFilter" aria-label="Filter by ownership">
+            <option value="">All</option>
+            <option value="owned">Owned</option>
+            <option value="unowned">Unowned</option>
+        </select>
+    </div>
+</header>
+
+<main class="container">
+    <div id="cards" class="card-grid" aria-live="polite"></div>
+</main>
+
+<footer class="site-footer">
+    <small>Made with ♥ for GE. Data saved locally in your browser.</small>
+</footer>
+
+<!-- Use ES modules: main.js imports utils, storage, characters -->
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
