@@ -97,14 +97,18 @@ function filteredList() {
   const ownedFilter = ownedEl.value || "";
 
   return CHARACTERS.filter(c => {
-    // text search across name, region, stance names (supports string[] and object[] stances)
+    // stance text (still searchable even though we don't display it)
     const stanceText = Array.isArray(c.stances)
       ? c.stances.map(s => (typeof s === "string" ? s : (s.name || ""))).join(" ")
       : "";
 
+    // starting level text for search convenience
+    const startLvl = c.stats?.core?.["Starting Level"];
+    const startText = startLvl != null ? String(startLvl) : "";
+
     const matchesText =
       !term ||
-      [c.name, c.region, stanceText].join(" ").toLowerCase().includes(term);
+      [c.name, c.region, stanceText, startText].join(" ").toLowerCase().includes(term);
 
     const matchesRegion = !regionFilter || c.region === regionFilter;
 
@@ -196,19 +200,16 @@ function cardNode(c) {
   name.className = "name";
   name.textContent = c.name;
 
-  // Meta: original region + (optional) stance names
+  // Meta: Region + Starting Level (no stances shown on main page)
   const meta = document.createElement("div");
   meta.className = "meta";
-  const stanceText = Array.isArray(c.stances)
-    ? c.stances
-        .map(s => (typeof s === "string" ? s : (s.name || "")))
-        .filter(Boolean)
-        .slice(0, 2)
-        .join(", ")
-    : "";
+
+  const startLvl = c.stats?.core?.["Starting Level"];
+  const startLine = startLvl != null ? `<span>Starting Level: ${startLvl}</span>` : "";
+
   meta.innerHTML = `
     <span>Region: ${c.region}</span>
-    ${stanceText ? `<span>Stances: ${stanceText}</span>` : ""}
+    ${startLine}
   `;
 
   // Owned pill with quick toggle

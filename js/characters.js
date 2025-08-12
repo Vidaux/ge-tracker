@@ -200,8 +200,6 @@ export const CHARACTERS = [
     name: "Andre Janzur",
     region: "Reboldeaux",
     portrait: "images/characters/andre.png",
-
-    // Structured stances
     stances: [
       { name: "Bare Knuckle",       weapon: "None",                    acquisition: "Default", level: "-"     },
       { name: "Epee Garde",         weapon: "Rapier",                  acquisition: "Default", level: "Lv 48"  },
@@ -209,7 +207,6 @@ export const CHARACTERS = [
       { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche",    acquisition: "Default", level: "Lv 60"  }
       // { name: "Rapiere", weapon: "Rapier + Rapier", acquisition: "Emilia quest; Symbol of Taurus + 6 Great Stone", level: "Expert" }
     ],
-
     stats: {
       core: {
         "Starting Level": 56,
@@ -222,14 +219,13 @@ export const CHARACTERS = [
         "Total Stat Points": 330
       },
       personal: {
-        "Personal Skill": "Clothing Design - Allows you to manufacture coats and robes. Use it then drag cloth recipe to Andre in Reboldeaux to start manufacturing. (Cast: 0s, Cooldown: 1s, Duration: 1.1s, SP: None, Level 10)",
+        "Personal Skill": "Clothing Design - Allows you to manufacture coats and robes. Use it then drag cloth recipe to Andre in Reboldeaux to start manufacturing. Cast: 0s, Cooldown: 1s, Duration: 1.1s, SP: None",
         "image": "/images/skills/job_craftarmor.png"
       },
       equipment: {
         "Armor": "Coat; Robe; Leather"
       }
     },
-
     quests: [
       { id: "q1", name: "Shattered Dreams and Fantazzies - Speak to Andre (D-8), go to Stone Pit, kill 5 Mandradora, return" },
       { id: "q2", name: "The Secret Behind the Holy Water - (Requires 'Source of the Taint') Talk to Panfilo, return to Andre" },
@@ -311,9 +307,28 @@ export const CHARACTERS = [
     name: "Angie",
     region: "Rebouldeaux Queen's Gate",
     portrait: "images/characters/angie.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Install Trap",        weapon: "Tool", acquisition: "-", level: "-" },
+      { name: "Construction",        weapon: "Tool", acquisition: "-", level: "-" },
+      { name: "Defensive Construction", weapon: "Tool", acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 20,
+        "STR": 40, "AGI": 60, "HP": 50, "DEX": 60, "INT": 50, "SEN": 40,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "Remove Construction - Removes constructions; some summons (e.g., Amber) will be released. (Self-buff) Cast: 0s, Cooldown: 60s, Duration: 1.5s, SP: None",
+        "image": "/images/skills/job_cancelsummon.png"
+      },
+      equipment: {
+        "Armor": "Leather"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Angie Card (Req Lv 16) — Talk to Angie at Queen's Gate (F-9), collect 30 Skeleton Bones (Skullic Footmen, King's Garden), instance: defend until cannon turrets finish, break stones, turn in 20 Ionium/Quartz/Aidanium, collect 10 Lazim Lam's Red Wings, speak to Gertrude (Auch) and watch scenes, receive card." }
+    ]
   },
   {
     id: "ramiro",
@@ -346,18 +361,68 @@ export const CHARACTERS = [
     name: "Adelina Esperanza",
     region: "The Port of Coimbra",
     portrait: "images/characters/adelina.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",       weapon: "None",             acquisition: "-", level: "-" },
+      { name: "Middle-Guard",       weapon: "Sabre",            acquisition: "-", level: "-" },
+      { name: "Back-Guard",         weapon: "Sabre",            acquisition: "-", level: "-" },
+      { name: "Low-Guard",          weapon: "Sabre",            acquisition: "-", level: "-" },
+      { name: "Twin Blades",        weapon: "Sabre + Sabre",    acquisition: "-", level: "-" },
+      { name: "Heaven or Hell",     weapon: "Sabre + Pistol",   acquisition: "-", level: "-" },
+      { name: "Freestyle Shot",     weapon: "Pistol",           acquisition: "-", level: "-" },
+      { name: "Double-Gun Shot",    weapon: "Pistol + Pistol",  acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 36,
+        "STR": 60, "AGI": 80, "HP": 60, "DEX": 60, "INT": 30, "SEN": 40,
+        "Total Stat Points": 330
+      },
+      personal: {
+        "Personal Skill": "Sword Crafting - Manufacture swords, daggers, rapiers, sabres and main-gauches. Use with weapon recipes at Adelina in Coimbra. Cast: 0s, Cooldown: 1s, Duration: 1.1s, SP: None",
+        "image": "/images/skills/job_craftweapon.png"
+      },
+      equipment: {
+        "Armor": "Leather"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Adelina's Grim Task (Req Lv 36) — Porto Bello: click skeletons at Deck J-7, Cabin K-8, Hold G-9; return to Adelina for card and rewards." },
+      { id: "q2", name: "Adelina's Journey of Revenge — Start from barrel behind Adelina. Visit Coimbra Nimraldi Bridge (tombstone K-6), then sequence with Captain Ricardo and instances: defeat Bardi, Benito, 3 pirates & Guillarmo; return to tombstone for reward. (Leader must be Adelina.)" }
+    ]
   },
   {
     id: "alejandro",
     name: "Alejandro",
     region: "The Port of Coimbra",
     portrait: "images/characters/alejandro.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",    weapon: "None",         acquisition: "-", level: "-" },
+      { name: "Plow-Guard",      weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Tail-Guard",      weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Blandir Cruz",    weapon: "Polearm",      acquisition: "-", level: "-" },
+      { name: "Penetrar Cruz",   weapon: "Polearm",      acquisition: "-", level: "-" },
+      { name: "Mighty Cruz",     weapon: "Polearm",      acquisition: "-", level: "-" },
+      { name: "Stave Guard",     weapon: "Javelin",      acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 44,
+        "STR": 90, "AGI": 40, "HP": 70, "DEX": 40, "INT": 30, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "— (none specified). Cast: 0s, Cooldown: 0s, Duration: 0s, SP: None",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: {
+        "Armor": "Leather"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Escudo Pecher's Attack (Req Lv 24) — Instance: defeat Escudo Pecher in marked area; return for rewards." },
+      { id: "q2", name: "Escudo Pecher Hunt (Req Lv 40) — Porto Bello: The Deck. Defeat Escudo Pecher (rare) or farm Trinity 2 Mission Lobby for 10 Arms; return to Alejandro." },
+      { id: "q3", name: "The Daemon of the Sea - Doby Rick (Req Lv 46) — Instance with Alejandro assisting; defeat Doby Rick; return for character card." }
+    ]
   },
   {
     id: "coimbra-trooper",
@@ -382,9 +447,38 @@ export const CHARACTERS = [
     name: "Grace Bernelli",
     region: "The Port of Coimbra",
     portrait: "images/characters/grace.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",      weapon: "None",            acquisition: "-", level: "-" },
+      { name: "Aiming Shot",       weapon: "Pistol",          acquisition: "-", level: "-" },
+      { name: "Freestyle Shot",    weapon: "Pistol",          acquisition: "-", level: "-" },
+      { name: "Double-Gun Shot",   weapon: "Pistol + Pistol", acquisition: "-", level: "-" },
+      { name: "Standing Shot",     weapon: "Rifle / Bayonet", acquisition: "-", level: "-" },
+      { name: "Kneeling Shot",     weapon: "Rifle / Bayonet", acquisition: "-", level: "-" },
+      { name: "Encounter Shot",    weapon: "Bayonet",         acquisition: "-", level: "-" },
+      { name: "Shotgun Blaster",   weapon: "Shotgun",         acquisition: "-", level: "-" },
+      { name: "Gigantic Blaster",  weapon: "Shotgun",         acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 32,
+        "STR": 40, "AGI": 70, "HP": 40, "DEX": 90, "INT": 30, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "Gun Manufacture - Manufacture rifles, pistols and bayonets. Use with weapon recipes at Bernelli in Coimbra. Cast: 0s, Cooldown: 1s, Duration: 1.1s, SP: None",
+        "image": "/images/skills/job_gunmanufacture.png"
+      },
+      equipment: {
+        "Armor": "Coat; Leather"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Bernelli's Challenge (Req Lv 32) — Instance: duel and defeat Grace; return to her." },
+      { id: "q2", name: "The Suspicion of the Tetra Ruins — Tetra Catacombs > door to Tetra Golden Road; defeat Treasure Golem; return to Grace." },
+      { id: "q3", name: "The Sorceress Cherlyn — Tetra Golden Road: defeat Treasure Golem and Cherlyn (Grace helps); return for Grace Bernelli Character Card." },
+      { id: "q4", name: "Prison de Joaquin's Secret (Rec Lv 80) — Multi-map hunt for items (Mohrgus, Rion Prairie, Desolate Cliff, El Ruina/Canon, etc.), then instance waves and rotating blades; defeat Garcia; return to Grace." },
+      { id: "q5", name: "Prison de Joaquin's Secret_1 — Theuringenwald tombstone (instance), defeat Undead/Garcia, Mohrgus secret door (instance), story with Dr. Fran; return to Grace." }
+    ]
   },
   {
     id: "gracielo",
@@ -617,8 +711,28 @@ export const CHARACTERS = [
     name: "Battle Cook Panfilo",
     region: "Promo",
     portrait: "images/characters/icp.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
+    stances: [
+      { name: "Bare Knuckle",     weapon: "None",                 acquisition: "-", level: "-" },
+      { name: "Back-Guard",       weapon: "Sword",                acquisition: "-", level: "-" },
+      { name: "Hack and Slash",   weapon: "Sword + Sword",        acquisition: "-", level: "-" },
+      { name: "Flame-Guard",      weapon: "Sword + Fire Bracelet / Sabre + Fire Bracelet", acquisition: "-", level: "-" },
+      { name: "Middle-Guard",     weapon: "Sabre",                acquisition: "-", level: "-" },
+      { name: "Low-Guard",        weapon: "Sabre",                acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 80, "AGI": 50, "HP": 70, "DEX": 40, "INT": 60, "SEN": 50,
+        "Total Stat Points": 350
+      },
+      personal: {
+        "Personal Skill": "— (none specified). Cast: 0s, Cooldown: 0s, Duration: 0s, SP: None",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: {
+        "Armor": "Leather; Metal"
+      }
+    },
     quests: []
   },
   {
@@ -626,8 +740,34 @@ export const CHARACTERS = [
     name: "Battle Smith Idge",
     region: "Promo",
     portrait: "images/characters/bsi.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
+    stances: [
+      { name: "Bare Knuckle",   weapon: "None",         acquisition: "-", level: "-" },
+      { name: "Plow-Guard",     weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Tail-Guard",     weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Roof-Guard",     weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Sidewinder",     weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Blandir Cruz",   weapon: "Polearm",      acquisition: "-", level: "-" },
+      { name: "Penetrar Cruz",  weapon: "Polearm",      acquisition: "-", level: "-" },
+      { name: "Mighty Cruz",    weapon: "Polearm",      acquisition: "-", level: "-" },
+      { name: "Back-Guard",     weapon: "Sword",        acquisition: "-", level: "-" },
+      { name: "Back-Guard",     weapon: "Sword + Shield", acquisition: "-", level: "-" },
+      { name: "High-Guard",     weapon: "Sword + Shield", acquisition: "-", level: "-" },
+      { name: "Hack and Slash", weapon: "Sword + Sword", acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 70, "AGI": 80, "HP": 60, "DEX": 60, "INT": 50, "SEN": 50,
+        "Total Stat Points": 370
+      },
+      personal: {
+        "Personal Skill": "— (none specified). Cast: 0s, Cooldown: 0s, Duration: 0s, SP: None",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: {
+        "Armor": "Leather; Metal"
+      }
+    },
     quests: []
   },
   {
