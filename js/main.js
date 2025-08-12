@@ -66,7 +66,7 @@ function cardNode(c) {
   meta.className = "meta";
   meta.innerHTML = `
     <span>Region: ${c.region}</span>
-    <span>Stances: ${(c.stances||[]).join(", ") || "—"}</span>
+    <span>Stances: ${(c.stances||[]).join(", ") || "-"}</span>
   `;
 
   const pill = document.createElement("span");
