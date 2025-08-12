@@ -125,19 +125,21 @@ body{
 
 /* Owned pill */
 .owned-pill{
-  justify-self: end;             /* keep the pill at the right of its column */
-  width: 100%;                   /* fill the fixed pill column */
-  justify-content: flex-start;   /* LEFT-ALIGN the text inside the pill */
-  text-align: left;
-
-  padding: 4px 10px; border-radius: 999px;
-  border: 1px solid currentColor; font-size: .8rem;
-
-  /* prevent wrapping & keep shape */
-  white-space: nowrap;
+  grid-column: 1;
+  grid-row: 3;
+  justify-self: start;           /* left edge of column 3 */
+  align-self: end;               /* bottom of row 2 */
+  width: auto;                   /* auto-size to text */
+  white-space: nowrap;           /* keep on one line */
   display: inline-flex;
   align-items: center;
   line-height: 1;
+
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  font-size: .8rem;
+  text-align: left;
 }
 .owned-pill.owned{ color: #7fff99; background: rgba(46,125,50,.18); }
 .owned-pill.unowned{ color: #ffb3a8; background: rgba(155,44,44,.18); }
