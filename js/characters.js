@@ -45,7 +45,8 @@ export const CHARACTERS = [
         "Lv10": "Duration 15s; Enemy DEF -20; Enemy ATK +10%",
         "Lv11": "Duration 15s; Enemy DEF -21; Enemy ATK +10%",
         "Lv12": "Duration 15s; Enemy DEF -22; Enemy ATK +10%",
-        "Lv13": "Duration 15s; Enemy DEF -23; Enemy ATK +10%"
+        "Lv13": "Duration 15s; Enemy DEF -23; Enemy ATK +10%",
+        "image": "/images/skills/job_provoke.png"
       },
       equipment: {
         "Armor": "Leather; Metal"
@@ -81,7 +82,8 @@ export const CHARACTERS = [
         "Lv10": "Duration 570s; Monster Blow +10%; Accuracy +30; Crit +15%",
         "Lv11": "Duration 600s; Monster Blow +11%; Accuracy +32; Crit +16%; A.R. +1",
         "Lv12": "Duration 630s; Monster Blow +12%; Accuracy +34; Crit +18%; A.R. +1",
-        "Lv13": "Duration 660s; Monster Blow +13%; Accuracy +36; Crit +19%; A.R. +1"
+        "Lv13": "Duration 660s; Monster Blow +13%; Accuracy +36; Crit +19%; A.R. +1",
+        "image": "/images/skills/job_concentrate.png"
       },
       equipment: {
         "Armor": "Coat"
@@ -108,7 +110,8 @@ export const CHARACTERS = [
         "Total Stat Points": 300
       },
       personal: {
-        "Personal Skill": "Healing - Restores HP of one appointed character. (Self-buff) Cast: 0s, Cooldown: 0s, Duration: 1.5s, SP: 25"
+        "Personal Skill": "Healing - Restores HP of one appointed character. (Self-buff) Cast: 0s, Cooldown: 0s, Duration: 1.5s, SP: 25",
+        "image": "/images/skills/job_healing.png"
       },
       equipment: {
         "Armor": "Leather"
@@ -145,7 +148,8 @@ export const CHARACTERS = [
         "Lv10": "Duration 300s; Casting Time -5%; Ignores 10 RES",
         "Lv11": "Duration 330s; Casting Time -5.5%; Ignores 11 RES; A.R. +1",
         "Lv12": "Duration 360s; Casting Time -6%; Ignores 12 RES; A.R. +1",
-        "Lv13": "Duration 390s; Casting Time -6.5%; Ignores 13 RES; A.R. +1"
+        "Lv13": "Duration 390s; Casting Time -6.5%; Ignores 13 RES; A.R. +1",
+        "image": "/images/skills/job_manaactivation.png"
       },
       equipment: {
         "Armor": "Robe"
@@ -178,7 +182,8 @@ export const CHARACTERS = [
         "Lv10": "Duration 60s; Absorb 30% ATK with 10.0% SP",
         "Lv11": "Duration 64s; Absorb 32% ATK with 9.5% SP; D.R. +1",
         "Lv12": "Duration 68s; Absorb 34% ATK with 9.0% SP; D.R. +1",
-        "Lv13": "Duration 64s; Absorb 32% ATK with 9.5% SP; D.R. +1"
+        "Lv13": "Duration 64s; Absorb 32% ATK with 9.5% SP; D.R. +1",
+        "image": "/images/skills/job_reflection.png"
       },
       equipment: {
         "Armor": "Coat"

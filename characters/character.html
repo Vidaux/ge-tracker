@@ -33,9 +33,25 @@
         <button id="resetQuestsBtn" class="btn-secondary">Reset quest progress</button>
     </section>
 
-    <section>
+    <section id="statsSection" class="section">
         <h2>Stats</h2>
-        <div id="statsGrid" class="stats-grid"></div>
+
+        <div class="stats-block">
+            <div id="startLevel" class="start-level-badge"></div>
+
+            <div id="coreStatsGrid" class="core-grid-2x3"></div>
+
+            <div id="totalStatPoints" class="total-points"></div>
+        </div>
+
+        <h3>Personal Skill</h3>
+        <div class="personal-wrap">
+            <img id="personalSkillImage" alt="" style="display:none" />
+            <div id="personalStatsGrid" class="kv-grid"></div>
+        </div>
+
+        <h3>Equipment</h3>
+        <div id="equipmentStatsGrid" class="kv-grid"></div>
     </section>
 </main>
 

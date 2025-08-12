@@ -153,3 +153,66 @@ body{
   .meta{ grid-column: 1 / -1; }
   .card-grid{ grid-template-columns: 1fr; }
 }
+
+/* ===== Character stats layout ===== */
+.stats-block{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.start-level-badge{
+  font-weight: 800;
+  margin-bottom: 12px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(59,130,246,.15);
+  border: 1px solid #35507a;
+}
+
+.core-grid-2x3{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns */
+  gap: 10px 14px;                                   /* rows x cols gap */
+  margin-bottom: 10px;
+}
+
+/* stat chips/cards */
+.stat-card{
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+.stat-name{ font-weight: 700; margin-bottom: 4px; }
+.stat-value{ color: var(--muted); }
+
+.total-points{
+  margin-top: 6px;
+  font-weight: 700;
+  opacity: .9;
+}
+
+/* Key-value grids (Personal / Equipment) */
+.kv-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.personal-wrap{
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+.personal-wrap img{
+  width: 100px; height: 100px; object-fit: contain;
+  border-radius: 10px; border: 1px solid var(--border);
+  background: #0a0f16;
+}
+
+@media (max-width: 700px){
+  .personal-wrap{ grid-template-columns: 1fr; }
+}

@@ -19,23 +19,24 @@ const stancesEl = document.getElementById("charStances");
 const portraitEl = document.getElementById("charPortrait");
 const ownedEl = document.getElementById("ownedCheckbox");
 
-// Quests UI
+// Recruitment UI
 const questListEl = document.getElementById("questList");
 const resetBtn = document.getElementById("resetQuestsBtn");
-
-// Try to find a wrapper section to hide when there are no quests
-// Prefer an explicit #recruitmentSection if present; otherwise climb up to common containers.
 const recruitmentWrap =
   document.getElementById("recruitmentSection") ||
   (questListEl && questListEl.closest(".section, .card, section, .panel, .block")) ||
   (resetBtn && resetBtn.closest(".section, .card, section, .panel, .block"));
 
-// Stats UI (support new split layout if present, else fallback to old #statsGrid)
-const statsGridEl = document.getElementById("statsGrid"); // legacy single grid (fallback)
+// Stats UI (split layout)
+const startLevelEl = document.getElementById("startLevel");
 const coreGridEl = document.getElementById("coreStatsGrid");
+const totalPointsEl = document.getElementById("totalStatPoints");
 const personalGridEl = document.getElementById("personalStatsGrid");
 const equipmentGridEl = document.getElementById("equipmentStatsGrid");
-const personalImgEl = document.getElementById("personalSkillImage"); // optional <img> if you use one
+const personalImgEl = document.getElementById("personalSkillImage");
+
+// Fallback legacy grid (if split not present)
+const statsGridEl = document.getElementById("statsGrid");
 
 if (!character) {
   document.title = "Not Found — Granado Espada";
@@ -45,7 +46,7 @@ if (!character) {
   if (nameEl) nameEl.textContent = character.name;
   if (regionEl) regionEl.textContent = character.region || "—";
 
-  // Support object stances (with {name}) or string stances
+  // Stances: support string or object form
   if (stancesEl) {
     const names = (character.stances || [])
       .map(s => (typeof s === "string" ? s : s?.name))
@@ -58,32 +59,26 @@ if (!character) {
     portraitEl.alt = `${character.name} portrait`;
   }
 
-  // Owned checkbox manual toggle (still allowed)
+  // Owned checkbox toggle
   if (ownedEl) {
     ownedEl.checked = isOwned(character.id);
     ownedEl.addEventListener("change", () => setOwned(character.id, ownedEl.checked));
   }
 
-  // Render Quests (and auto-hide section if none)
+  // Render Recruitment & Stats
   renderQuests();
-
-  // Render Stats
   renderStats();
 }
 
 function renderQuests() {
   const quests = character.quests || [];
 
-  // If there are no quests, hide the recruitment UI cleanly and bail.
   if (!quests.length) {
     hideRecruitmentUI();
     return;
   }
-
-  // Ensure recruitment UI is visible if it was hidden previously
   showRecruitmentUI();
 
-  // Render list with saved progress + auto-sync ownership
   const progress = getQuestProgress(character.id);
   if (questListEl) questListEl.innerHTML = "";
 
@@ -98,7 +93,7 @@ function renderQuests() {
       const latest = getQuestProgress(character.id);
       latest[q.id] = cb.checked;
       setQuestProgress(character.id, latest);
-      syncOwnershipBasedOnQuests(); // auto-sync on each change
+      syncOwnershipBasedOnQuests();
     });
 
     const label = document.createElement("label");
@@ -109,13 +104,10 @@ function renderQuests() {
     questListEl && questListEl.appendChild(li);
   }
 
-  // Initial sync in case all were already completed
   syncOwnershipBasedOnQuests();
 
-  // Reset handler
   if (resetBtn) {
-    resetBtn.style.display = ""; // ensure visible when quests exist
-    // Avoid accumulating multiple listeners
+    resetBtn.style.display = "";
     resetBtn.onclick = () => {
       resetQuestProgress(character.id);
       document
@@ -127,14 +119,10 @@ function renderQuests() {
   }
 }
 
-/**
- * If all recruitment quests are completed, mark as Owned.
- * If any quest is not completed, mark as Not Owned.
- * (No quests: do nothing — manual ownership remains.)
- */
+/** Auto-ownership sync: all quests done -> owned */
 function syncOwnershipBasedOnQuests() {
   const quests = character.quests || [];
-  if (!quests.length) return; // nothing to auto-sync
+  if (!quests.length) return;
 
   const progress = getQuestProgress(character.id);
   const allDone = quests.every(q => !!progress[q.id]);
@@ -144,9 +132,7 @@ function syncOwnershipBasedOnQuests() {
 }
 
 function hideRecruitmentUI() {
-  // Hide wrapper if we found one
   if (recruitmentWrap) recruitmentWrap.style.display = "none";
-  // Fallbacks: hide just the list and reset button
   if (questListEl) questListEl.style.display = "none";
   if (resetBtn) resetBtn.style.display = "none";
 }
@@ -163,44 +149,67 @@ function renderStats() {
   const personal = stats.personal || {};
   const equipment = stats.equipment || {};
 
-  // If you have split grids present, fill them
-  const usingSplit =
-    (coreGridEl || personalGridEl || equipmentGridEl) ? true : false;
+  const usingSplit = !!(coreGridEl || personalGridEl || equipmentGridEl || startLevelEl || totalPointsEl);
 
   if (usingSplit) {
-    if (coreGridEl) {
-      coreGridEl.innerHTML = "";
-      for (const [k, v] of Object.entries(core)) {
-        coreGridEl.appendChild(statCard(k, v));
-      }
+    // Starting Level (solo)
+    if (startLevelEl) {
+      const sl = core["Starting Level"];
+      startLevelEl.textContent = sl != null ? `Starting Level: ${sl}` : "Starting Level: —";
     }
 
+    // 2×3 grid for core stats (fixed order)
+    const coreOrder = ["STR", "AGI", "HP", "DEX", "INT", "SEN"];
+    if (coreGridEl) {
+      coreGridEl.innerHTML = "";
+      coreOrder.forEach(key => {
+        if (key in core) coreGridEl.appendChild(statCard(key, core[key]));
+      });
+    }
+
+    // Total Stat Points underneath
+    if (totalPointsEl) {
+      const tsp = core["Total Stat Points"];
+      totalPointsEl.textContent = tsp != null ? `Total Stat Points: ${tsp}` : "";
+    }
+
+    // Personal Skill (ordered: desc -> Lv1 -> Lv10 -> Lv11 -> Lv12 -> Lv13)
     if (personalGridEl) {
       personalGridEl.innerHTML = "";
-      // "Personal Skill" is a description; Lv1/10/11/12/13 are level lines; "image" optional
-      for (const [k, v] of Object.entries(personal)) {
-        if (k === "image") continue; // image handled separately
+      const order = ["Personal Skill", "Lv1", "Lv10", "Lv11", "Lv12", "Lv13"];
+      order.forEach(k => {
+        if (k in personal) personalGridEl.appendChild(statCard(k, personal[k]));
+      });
+      // Render any other keys that might exist (but weren’t in the preferred order)
+      Object.entries(personal).forEach(([k, v]) => {
+        if (k === "image" || order.includes(k)) return;
         personalGridEl.appendChild(statCard(k, v));
-      }
-      if (personalImgEl && personal.image) {
+      });
+    }
+
+    // Personal skill image (optional)
+    if (personalImgEl) {
+      if (personal.image) {
         personalImgEl.src = `../${personal.image}`;
         personalImgEl.alt = `${character.name} personal skill`;
         personalImgEl.style.display = "";
-      } else if (personalImgEl) {
+      } else {
         personalImgEl.style.display = "none";
       }
     }
 
+    // Equipment
     if (equipmentGridEl) {
       equipmentGridEl.innerHTML = "";
       for (const [k, v] of Object.entries(equipment)) {
         equipmentGridEl.appendChild(statCard(k, v));
       }
     }
+
     return;
   }
 
-  // Fallback: legacy single grid (flattens sections)
+  // Fallback: legacy single grid
   if (statsGridEl) {
     statsGridEl.innerHTML = "";
     const flat = { ...core, ...personal, ...equipment };
