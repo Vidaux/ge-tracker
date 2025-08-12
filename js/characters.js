@@ -11,7 +11,7 @@ export const CHARACTERS = [
     name: "Fighter",
     region: "Stock Characters",
     portrait: "images/characters/fighter.jpg",
-    stances: [],
+    stances: [], // use [{ name, weapon, acquisition, level }]
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
   },
@@ -61,11 +61,14 @@ export const CHARACTERS = [
     region: "Reboldeaux",
     portrait: "images/characters/andre.jpg",
 
+    // Structured stances
     stances: [
-      "Bare Knuckle - Default",
-      "Epee Garde (Rapier) - Default",
-      "Sabre Garde (Rapier) - Default",
-      "Main Gauche Garde (Rapier + Main Gauche) - Default"
+      { name: "Bare Knuckle",       weapon: "None",                    acquisition: "Default", level: "—"     },
+      { name: "Epee Garde",         weapon: "Rapier",                  acquisition: "Default", level: "Lv 48"  },
+      { name: "Sabre Garde",        weapon: "Rapier",                  acquisition: "Default", level: "Lv 48"  },
+      { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche",    acquisition: "Default", level: "Lv 60"  }
+      // If you add later:
+      // { name: "Rapiere", weapon: "Rapier + Rapier", acquisition: "Emilia quest; Symbol of Taurus + 6 Great Stone", level: "Expert" }
     ],
 
     stats: {

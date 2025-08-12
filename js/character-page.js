@@ -21,13 +21,12 @@ const statsGridEl = document.getElementById("statsGrid");
 const resetBtn = document.getElementById("resetQuestsBtn");
 
 if (!character) {
-  document.title = "Not Found - Granado Espada";
+  document.title = "Not Found — Granado Espada";
   nameEl.textContent = "Character not found";
 } else {
-  document.title = `${character.name} - Granado Espada`;
+  document.title = `${character.name} — Granado Espada`;
   nameEl.textContent = character.name;
-  regionEl.textContent = character.region || "-";
-  stancesEl.textContent = (character.stances || []).join(", ") || "-";
+  regionEl.textContent = character.region || "—";
   portraitEl.src = `../${character.portrait}`;
   portraitEl.alt = `${character.name} portrait`;
 
@@ -35,11 +34,99 @@ if (!character) {
   ownedEl.checked = isOwned(character.id);
   ownedEl.addEventListener("change", () => setOwned(character.id, ownedEl.checked));
 
+  // Stances (new table + legacy fallback)
+  renderStances();
+
   // Quests
   renderQuests();
 
   // Stats (grouped: core / personal / equipment, with fallbacks)
   renderStats();
+}
+
+function renderStances() {
+  const st = character.stances || [];
+
+  // If stances are objects -> render a table section
+  const looksStructured =
+    Array.isArray(st) &&
+    st.length &&
+    typeof st[0] === "object" &&
+    ("name" in st[0] || "weapon" in st[0] || "acquisition" in st[0] || "level" in st[0]);
+
+  if (looksStructured) {
+    // Show a compact comma-separated list in the header meta
+    stancesEl.textContent = st.map(s => s.name).filter(Boolean).join(", ");
+
+    // Insert a full Stances section before the Quests section
+    const questsSection = questListEl.closest("section");
+    const stancesSection = document.createElement("section");
+
+    const h2 = document.createElement("h2");
+    h2.textContent = "Stances";
+    stancesSection.appendChild(h2);
+
+    // Card wrapper for the table, to match styling
+    const tableCard = document.createElement("div");
+    tableCard.className = "stat-card";
+    tableCard.style.overflowX = "auto";
+    tableCard.style.padding = "0";
+
+    const table = document.createElement("table");
+    table.style.width = "100%";
+    table.style.borderCollapse = "collapse";
+    table.style.fontSize = "14px";
+
+    // Build columns dynamically based on available keys
+    const columns = ["name", "weapon", "acquisition", "level"]
+      .filter(k => st.some(row => row[k]));
+
+    const thead = document.createElement("thead");
+    const trh = document.createElement("tr");
+    for (const col of columns) {
+      const th = document.createElement("th");
+      th.textContent = headerLabel(col);
+      th.style.textAlign = "left";
+      th.style.padding = "10px 12px";
+      th.style.borderBottom = "1px solid #263041";
+      trh.appendChild(th);
+    }
+    thead.appendChild(trh);
+    table.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+    for (const row of st) {
+      const tr = document.createElement("tr");
+      for (const col of columns) {
+        const td = document.createElement("td");
+        td.textContent = row[col] || "—";
+        td.style.padding = "10px 12px";
+        td.style.borderBottom = "1px solid rgba(38,48,65,0.5)";
+        tr.appendChild(td);
+      }
+      tbody.appendChild(tr);
+    }
+    table.appendChild(tbody);
+
+    tableCard.appendChild(table);
+    stancesSection.appendChild(tableCard);
+
+    questsSection.parentNode.insertBefore(stancesSection, questsSection);
+
+  } else {
+    // Legacy fallback: stances as strings
+    stancesEl.textContent = st.join(", ") || "—";
+  }
+}
+
+function headerLabel(key) {
+  switch (key) {
+    case "name": return "Name";
+    case "weapon": return "Weapon";
+    case "acquisition": return "Acquisition";
+    case "level": return "Level";
+    default: return key;
+  }
 }
 
 function renderQuests() {
@@ -86,7 +173,7 @@ function renderStats() {
     h.textContent = text;
     h.style.margin = "14px 0 6px";
     h.style.color = "#eaeef5";
-    h.style.gridColumn = "1 / -1"; // span full width of the grid
+    h.style.gridColumn = "1 / -1";
     statsGridEl.appendChild(h);
   };
 
@@ -127,7 +214,6 @@ function renderStats() {
     // 2) Personal Buffs (and optional image)
     if (personal && Object.keys(personal).length) {
       addSectionTitle("Personal Buffs");
-      // Optional image
       if (personal.image) {
         const imgCard = document.createElement("div");
         imgCard.className = "stat-card";
@@ -143,15 +229,13 @@ function renderStats() {
         imgCard.appendChild(img);
         statsGridEl.appendChild(imgCard);
       }
-      // Render everything in personal EXCEPT "image" and (if present) "Armor"
-      const ignore = ["image"];
-      if (extractedArmor) ignore.push("Armor");
+      const ignore = ["image", "Armor"]; // Armor will appear under Equipment
       addStatCardsFromObject(personal, { ignore });
     }
 
     // 3) Equipment (preferred: stats.equipment; fallback: extracted "Armor")
     const equipSource = (equipment && Object.keys(equipment).length) ? equipment
-                        : (extractedArmor ? extractedArmor : null);
+                      : (extractedArmor ? extractedArmor : null);
 
     if (equipSource) {
       addSectionTitle("Equipment");
@@ -190,7 +274,7 @@ function renderStats() {
 /**
  * If all recruitment quests are completed, mark as Owned.
  * If any quest is not completed, mark as Not Owned.
- * (No quests: do nothing - manual ownership remains.)
+ * (No quests: do nothing — manual ownership remains.)
  */
 function syncOwnershipBasedOnQuests() {
   const quests = character.quests || [];
