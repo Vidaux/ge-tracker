@@ -200,13 +200,16 @@ export const CHARACTERS = [
     name: "Andre Janzur",
     region: "Reboldeaux",
     portrait: "images/characters/andre.png",
+
+    // Structured stances
     stances: [
-      { name: "Bare Knuckle",       weapon: "None",                    acquisition: "Default", level: "-"     },
-      { name: "Epee Garde",         weapon: "Rapier",                  acquisition: "Default", level: "Lv 48"  },
-      { name: "Sabre Garde",        weapon: "Rapier",                  acquisition: "Default", level: "Lv 48"  },
-      { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche",    acquisition: "Default", level: "Lv 60"  }
+      { name: "Bare Knuckle",       weapon: "None",                 acquisition: "Default", level: "-"     },
+      { name: "Epee Garde",         weapon: "Rapier",               acquisition: "Default", level: "Lv 48"  },
+      { name: "Sabre Garde",        weapon: "Rapier",               acquisition: "Default", level: "Lv 48"  },
+      { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche", acquisition: "Default", level: "Lv 60"  }
       // { name: "Rapiere", weapon: "Rapier + Rapier", acquisition: "Emilia quest; Symbol of Taurus + 6 Great Stone", level: "Expert" }
     ],
+
     stats: {
       core: {
         "Starting Level": 56,
@@ -218,21 +221,24 @@ export const CHARACTERS = [
         "SEN": 30,
         "Total Stat Points": 330
       },
+
       personal: {
         "Personal Skill": "Clothing Design - Allows you to manufacture coats and robes. Use it then drag cloth recipe to Andre in Reboldeaux to start manufacturing. Cast: 0s, Cooldown: 1s, Duration: 1.1s, SP: None",
         "image": "/images/skills/job_craftarmor.png"
       },
+
       equipment: {
         "Armor": "Coat; Robe; Leather"
       }
     },
+
     quests: [
-      { id: "q1", name: "Shattered Dreams and Fantazzies - Speak to Andre (D-8), go to Stone Pit, kill 5 Mandradora, return" },
-      { id: "q2", name: "The Secret Behind the Holy Water - (Requires 'Source of the Taint') Talk to Panfilo, return to Andre" },
-      { id: "q3", name: "Andre Janzur's Gone Crazy - Enter instance, duel and defeat Andre, return" },
-      { id: "q4", name: "Sympathy for Dilos Latemn - Go to Al Quelt Moreza Arcade, use altar at G4, destroy 3 portals, return" },
-      { id: "q5", name: "Andre In Despair - Talk to Panfilo, complete 'Pure White Food', return (Reward: Irolina Hat)" },
-      { id: "q6", name: "Birds of a Feather Flock Together (Req Lv 72) - Bonavista River, farm Cockatrice drops (rare), return for Character Card" }
+      { id: "q1", name: "Shattered Dreams and Fantazzies — Speak to Andre (D-8), go to Stone Pit, kill 5 Mandradora, return." },
+      { id: "q2", name: "The Secret Behind the Holy Water — (Requires 'Source of the Taint') Talk to Panfilo, return to Andre." },
+      { id: "q3", name: "Andre Janzur's Gone Crazy — Enter instance, duel and defeat Andre, return." },
+      { id: "q4", name: "Sympathy for Dilos Latemn — Al Quelt Moreza Arcade: use altar at G-4, destroy 3 portals, return." },
+      { id: "q5", name: "Andre In Despair — Talk to Panfilo, complete 'Pure White Food', return. (Reward: Irolina Hat)" },
+      { id: "q6", name: "Birds of a Feather Flock Together (Req Lv 72) — Bonavista River: farm Cockatrice drops (rare), return for Character Card." }
     ]
   },
   {
@@ -240,9 +246,32 @@ export const CHARACTERS = [
     name: "Brunie",
     region: "Reboldeaux",
     portrait: "images/characters/brunie.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",    weapon: "None",             acquisition: "-", level: "-" },
+      { name: "Aiming Shot",     weapon: "Pistol",           acquisition: "-", level: "-" },
+      { name: "Freestyle Shot",  weapon: "Pistol",           acquisition: "-", level: "-" },
+      { name: "Sight Shot",      weapon: "Pistol",           acquisition: "-", level: "-" },
+      { name: "Double-Gun Shot", weapon: "Pistol + Pistol",  acquisition: "-", level: "-" },
+      { name: "Outrage Shot",    weapon: "Pistol + Pistol",  acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 40,
+        "STR": 40, "AGI": 90, "HP": 40, "DEX": 70, "INT": 30, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "—",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: {
+        "Armor": "Coat"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Brunie Etienne's Errand (Req Lv 32) — Tetra Catacombs: break 8 Wooden Casks; return to Brunie." },
+      { id: "q2", name: "Horn of the Gold Horned Gargoyle (Req Lv 36) — Tetra Golden Road > Door to Avernus; defeat Gold Horned Gargoyle; return to Brunie for Character Card." }
+    ]
   },
   {
     id: "claude",
@@ -308,8 +337,8 @@ export const CHARACTERS = [
     region: "Rebouldeaux Queen's Gate",
     portrait: "images/characters/angie.png",
     stances: [
-      { name: "Install Trap",        weapon: "Tool", acquisition: "-", level: "-" },
-      { name: "Construction",        weapon: "Tool", acquisition: "-", level: "-" },
+      { name: "Install Trap",           weapon: "Tool", acquisition: "-", level: "-" },
+      { name: "Construction",           weapon: "Tool", acquisition: "-", level: "-" },
       { name: "Defensive Construction", weapon: "Tool", acquisition: "-", level: "-" }
     ],
     stats: {
@@ -327,7 +356,7 @@ export const CHARACTERS = [
       }
     },
     quests: [
-      { id: "q1", name: "Angie Card (Req Lv 16) — Talk to Angie at Queen's Gate (F-9), collect 30 Skeleton Bones (Skullic Footmen, King's Garden), instance: defend until cannon turrets finish, break stones, turn in 20 Ionium/Quartz/Aidanium, collect 10 Lazim Lam's Red Wings, speak to Gertrude (Auch) and watch scenes, receive card." }
+      { id: "q1", name: "Angie Card (Req Lv 16) — Queen's Gate (F-9): talk to Angie, collect 30 Skeleton Bones (King's Garden), defend instance, break stones, hand over 20 Ionium/Quartz/Aidanium, collect 10 Lazim Lam's Red Wings, speak to Gertrude (Auch), watch scenes, receive card." }
     ]
   },
   {
@@ -362,14 +391,14 @@ export const CHARACTERS = [
     region: "The Port of Coimbra",
     portrait: "images/characters/adelina.png",
     stances: [
-      { name: "Bare Knuckle",       weapon: "None",             acquisition: "-", level: "-" },
-      { name: "Middle-Guard",       weapon: "Sabre",            acquisition: "-", level: "-" },
-      { name: "Back-Guard",         weapon: "Sabre",            acquisition: "-", level: "-" },
-      { name: "Low-Guard",          weapon: "Sabre",            acquisition: "-", level: "-" },
-      { name: "Twin Blades",        weapon: "Sabre + Sabre",    acquisition: "-", level: "-" },
-      { name: "Heaven or Hell",     weapon: "Sabre + Pistol",   acquisition: "-", level: "-" },
-      { name: "Freestyle Shot",     weapon: "Pistol",           acquisition: "-", level: "-" },
-      { name: "Double-Gun Shot",    weapon: "Pistol + Pistol",  acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",    weapon: "None",             acquisition: "-", level: "-" },
+      { name: "Middle-Guard",    weapon: "Sabre",            acquisition: "-", level: "-" },
+      { name: "Back-Guard",      weapon: "Sabre",            acquisition: "-", level: "-" },
+      { name: "Low-Guard",       weapon: "Sabre",            acquisition: "-", level: "-" },
+      { name: "Twin Blades",     weapon: "Sabre + Sabre",    acquisition: "-", level: "-" },
+      { name: "Heaven or Hell",  weapon: "Sabre + Pistol",   acquisition: "-", level: "-" },
+      { name: "Freestyle Shot",  weapon: "Pistol",           acquisition: "-", level: "-" },
+      { name: "Double-Gun Shot", weapon: "Pistol + Pistol",  acquisition: "-", level: "-" }
     ],
     stats: {
       core: {
@@ -379,6 +408,7 @@ export const CHARACTERS = [
       },
       personal: {
         "Personal Skill": "Sword Crafting - Manufacture swords, daggers, rapiers, sabres and main-gauches. Use with weapon recipes at Adelina in Coimbra. Cast: 0s, Cooldown: 1s, Duration: 1.1s, SP: None",
+        "Lv10": "—",
         "image": "/images/skills/job_craftweapon.png"
       },
       equipment: {
@@ -386,8 +416,8 @@ export const CHARACTERS = [
       }
     },
     quests: [
-      { id: "q1", name: "Adelina's Grim Task (Req Lv 36) — Porto Bello: click skeletons at Deck J-7, Cabin K-8, Hold G-9; return to Adelina for card and rewards." },
-      { id: "q2", name: "Adelina's Journey of Revenge — Start from barrel behind Adelina. Visit Coimbra Nimraldi Bridge (tombstone K-6), then sequence with Captain Ricardo and instances: defeat Bardi, Benito, 3 pirates & Guillarmo; return to tombstone for reward. (Leader must be Adelina.)" }
+      { id: "q1", name: "Adelina's Grim Task (Req Lv 36) — Porto Bello: click skeletons at Deck J-7, Cabin K-8, Hold G-9; return to Adelina for card." },
+      { id: "q2", name: "Adelina's Journey of Revenge — From barrel behind Adelina: visit Coimbra Nimraldi Bridge (tombstone K-6), talk to Ricardo (J-9), complete instances (Bardi, Benito, 3 pirates & Guillarmo), return to tombstone for reward. (Leader must be Adelina.)" }
     ]
   },
   {
@@ -396,13 +426,13 @@ export const CHARACTERS = [
     region: "The Port of Coimbra",
     portrait: "images/characters/alejandro.png",
     stances: [
-      { name: "Bare Knuckle",    weapon: "None",         acquisition: "-", level: "-" },
-      { name: "Plow-Guard",      weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Tail-Guard",      weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Blandir Cruz",    weapon: "Polearm",      acquisition: "-", level: "-" },
-      { name: "Penetrar Cruz",   weapon: "Polearm",      acquisition: "-", level: "-" },
-      { name: "Mighty Cruz",     weapon: "Polearm",      acquisition: "-", level: "-" },
-      { name: "Stave Guard",     weapon: "Javelin",      acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",  weapon: "None",         acquisition: "-", level: "-" },
+      { name: "Plow-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Tail-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Blandir Cruz",  weapon: "Polearm",      acquisition: "-", level: "-" },
+      { name: "Penetrar Cruz", weapon: "Polearm",      acquisition: "-", level: "-" },
+      { name: "Mighty Cruz",   weapon: "Polearm",      acquisition: "-", level: "-" },
+      { name: "Stave Guard",   weapon: "Javelin",      acquisition: "-", level: "-" }
     ],
     stats: {
       core: {
@@ -411,7 +441,7 @@ export const CHARACTERS = [
         "Total Stat Points": 300
       },
       personal: {
-        "Personal Skill": "— (none specified). Cast: 0s, Cooldown: 0s, Duration: 0s, SP: None",
+        "Personal Skill": "—",
         "image": "/images/skills/job_none.png"
       },
       equipment: {
@@ -420,8 +450,8 @@ export const CHARACTERS = [
     },
     quests: [
       { id: "q1", name: "Escudo Pecher's Attack (Req Lv 24) — Instance: defeat Escudo Pecher in marked area; return for rewards." },
-      { id: "q2", name: "Escudo Pecher Hunt (Req Lv 40) — Porto Bello: The Deck. Defeat Escudo Pecher (rare) or farm Trinity 2 Mission Lobby for 10 Arms; return to Alejandro." },
-      { id: "q3", name: "The Daemon of the Sea - Doby Rick (Req Lv 46) — Instance with Alejandro assisting; defeat Doby Rick; return for character card." }
+      { id: "q2", name: "Escudo Pecher Hunt (Req Lv 40) — Porto Bello (Deck): defeat Escudo Pecher (rare) or farm Trinity 2 Lobby for 10 Arms; return to Alejandro." },
+      { id: "q3", name: "The Daemon of the Sea - Doby Rick (Req Lv 46) — Instance with Alejandro assisting; defeat Doby Rick; return for Character Card." }
     ]
   },
   {
@@ -448,15 +478,15 @@ export const CHARACTERS = [
     region: "The Port of Coimbra",
     portrait: "images/characters/grace.png",
     stances: [
-      { name: "Bare Knuckle",      weapon: "None",            acquisition: "-", level: "-" },
-      { name: "Aiming Shot",       weapon: "Pistol",          acquisition: "-", level: "-" },
-      { name: "Freestyle Shot",    weapon: "Pistol",          acquisition: "-", level: "-" },
-      { name: "Double-Gun Shot",   weapon: "Pistol + Pistol", acquisition: "-", level: "-" },
-      { name: "Standing Shot",     weapon: "Rifle / Bayonet", acquisition: "-", level: "-" },
-      { name: "Kneeling Shot",     weapon: "Rifle / Bayonet", acquisition: "-", level: "-" },
-      { name: "Encounter Shot",    weapon: "Bayonet",         acquisition: "-", level: "-" },
-      { name: "Shotgun Blaster",   weapon: "Shotgun",         acquisition: "-", level: "-" },
-      { name: "Gigantic Blaster",  weapon: "Shotgun",         acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",    weapon: "None",            acquisition: "-", level: "-" },
+      { name: "Aiming Shot",     weapon: "Pistol",          acquisition: "-", level: "-" },
+      { name: "Freestyle Shot",  weapon: "Pistol",          acquisition: "-", level: "-" },
+      { name: "Double-Gun Shot", weapon: "Pistol + Pistol", acquisition: "-", level: "-" },
+      { name: "Standing Shot",   weapon: "Rifle / Bayonet", acquisition: "-", level: "-" },
+      { name: "Kneeling Shot",   weapon: "Rifle / Bayonet", acquisition: "-", level: "-" },
+      { name: "Encounter Shot",  weapon: "Bayonet",         acquisition: "-", level: "-" },
+      { name: "Shotgun Blaster", weapon: "Shotgun",         acquisition: "-", level: "-" },
+      { name: "Gigantic Blaster",weapon: "Shotgun",         acquisition: "-", level: "-" }
     ],
     stats: {
       core: {
@@ -473,11 +503,11 @@ export const CHARACTERS = [
       }
     },
     quests: [
-      { id: "q1", name: "Bernelli's Challenge (Req Lv 32) — Instance: duel and defeat Grace; return to her." },
-      { id: "q2", name: "The Suspicion of the Tetra Ruins — Tetra Catacombs > door to Tetra Golden Road; defeat Treasure Golem; return to Grace." },
-      { id: "q3", name: "The Sorceress Cherlyn — Tetra Golden Road: defeat Treasure Golem and Cherlyn (Grace helps); return for Grace Bernelli Character Card." },
-      { id: "q4", name: "Prison de Joaquin's Secret (Rec Lv 80) — Multi-map hunt for items (Mohrgus, Rion Prairie, Desolate Cliff, El Ruina/Canon, etc.), then instance waves and rotating blades; defeat Garcia; return to Grace." },
-      { id: "q5", name: "Prison de Joaquin's Secret_1 — Theuringenwald tombstone (instance), defeat Undead/Garcia, Mohrgus secret door (instance), story with Dr. Fran; return to Grace." }
+      { id: "q1", name: "Bernelli's Challenge (Req Lv 32) — Instance: duel and defeat Grace; return." },
+      { id: "q2", name: "The Suspicion of the Tetra Ruins — Tetra Catacombs > door to Tetra Golden Road; defeat Treasure Golem; return." },
+      { id: "q3", name: "The Sorceress Cherlyn — Tetra Golden Road: defeat Treasure Golem & Cherlyn (Grace assists); return for Character Card." },
+      { id: "q4", name: "Prison de Joaquin's Secret (Rec Lv 80) — Multi-map hunt for items, instance waves & rotating blades, defeat Garcia; turn in to Grace." },
+      { id: "q5", name: "Prison de Joaquin's Secret_1 — Theuringenwald tombstone instance, Mohrgus secret door instance, story with Dr. Fran; return to Grace." }
     ]
   },
   {
@@ -618,36 +648,257 @@ export const CHARACTERS = [
     name: "Catherine",
     region: "Dr Torsche's Mansion",
     portrait: "images/characters/catherine.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Marionette", weapon: "Controller", acquisition: "-", level: "-" },
+      { name: "Marionette", weapon: "None",       acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 50, "AGI": 50, "HP": 50, "DEX": 50, "INT": 50, "SEN": 80,
+        "Total Stat Points": 330
+      },
+      personal: {
+        "Personal Skill": "Release Summons - All summons released. (Self-buff) Cast: 0s, Cooldown: 60s, Duration: 1.5s, SP: None",
+        "image": "/images/skills/job_cancelsummon.png"
+      },
+      equipment: {
+        "Armor": "Coat; Robe; Leather"
+      }
+    },
+    quests: [
+      { id: "q1",  name: "Intruder Alert (Req Lv 57) — Reception Hall (E-3): instance, defeat Victor; talk to Cayenne." },
+      { id: "q2",  name: "Help Cayenne Cleanup the Place — Reception Hall: polish 5 armors (B-7, D-8, H-10, J-7, H-6); return to Cayenne." },
+      { id: "q3",  name: "Otite Key — Kill Sasha/Lloyd/Walter for items; return to Roseanne for shop access & Grand Library." },
+      { id: "q4",  name: "Humans Need Food Robots Need Otite — Open Grand Library (J-8), enter Butler's Quarters (G-6), talk to Kamen; complete 'A Power Storage Device for Kamen'." },
+      { id: "q5",  name: "A Power Storage Device for Kamen — Grand Library: hunt Helena/Haunted Books/Desks; return to Roseanne." },
+      { id: "q6",  name: "A Mysterious Crimson Ribbon — Reception Hall (I-10): examine painting, get ribbon; show to Kamen." },
+      { id: "q7",  name: "The Alchemist Torsche — Grand Library door (F-4) instance; survive waves 5 min; show ribbon to Dr. Torsche." },
+      { id: "q8",  name: "Catherine's Spine — Get spine from Kamen; talk to Dr. Torsche." },
+      { id: "q9",  name: "Open Your Eyes Catherine — Story instance continues; speak to Dr. Torsche; return." },
+      { id: "q10", name: "It Is Best To Prepare For A Rainy Day — Butler's Quarters: talk to Kamen; return Catherine's Head to Dr. Torsche." },
+      { id: "q11", name: "A Plan to Revive Catherine — Farm robot parts (Reception Hall / Grand Library): Walter, Lloyd, Sasha, Helena, Victor. Return to Dr. Torsche." },
+      { id: "q12", name: "A Heart for Catherine — Instance & dialogue; obtain Catherine Character Card." }
+    ]
   },
   {
     id: "catherine-dex",
     name: "Catherine (DEX)",
     region: "Dr Torsche's Mansion",
     portrait: "images/characters/catherine.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",       weapon: "None",                 acquisition: "-", level: "-" },
+      { name: "Back-Guard",         weapon: "Sword",                acquisition: "-", level: "-" },
+      { name: "Hack and Slash",     weapon: "Sword + Sword",        acquisition: "-", level: "-" },
+      { name: "Back-Guard",         weapon: "Sword + Shield",       acquisition: "-", level: "-" },
+      { name: "High-Guard",         weapon: "Sword + Shield",       acquisition: "-", level: "-" },
+      { name: "Heaven or Hell",     weapon: "Sword + Pistol",       acquisition: "-", level: "-" },
+      { name: "Epee Garde",         weapon: "Rapier",               acquisition: "-", level: "-" },
+      { name: "Sabre Garde",        weapon: "Rapier",               acquisition: "-", level: "-" },
+      { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche", acquisition: "-", level: "-" },
+      { name: "Middle-Guard",       weapon: "Sabre",                acquisition: "-", level: "-" },
+      { name: "Twin Blades",        weapon: "Sabre + Sabre",        acquisition: "-", level: "-" },
+      { name: "Plow-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
+      { name: "Tail-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
+      { name: "Roof-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
+      { name: "Blandir Cruz",       weapon: "Polearm",              acquisition: "-", level: "-" },
+      { name: "Penetrar Cruz",      weapon: "Polearm",              acquisition: "-", level: "-" },
+      { name: "Escrima",            weapon: "Dagger",               acquisition: "-", level: "-" },
+      { name: "Dobalada Corte",     weapon: "Dagger + Dagger",      acquisition: "-", level: "-" },
+      { name: "Back-Guard",         weapon: "Blunt",                acquisition: "-", level: "-" },
+      { name: "Back-Guard",         weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
+      { name: "High-Guard",         weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
+      { name: "Aiming Shot",        weapon: "Pistol",               acquisition: "-", level: "-" },
+      { name: "Freestyle Shot",     weapon: "Pistol",               acquisition: "-", level: "-" },
+      { name: "Double-Gun Shot",    weapon: "Pistol + Pistol",      acquisition: "-", level: "-" },
+      { name: "Standing Shot",      weapon: "Rifle",                acquisition: "-", level: "-" },
+      { name: "Kneeling Shot",      weapon: "Rifle",                acquisition: "-", level: "-" },
+      { name: "Shotgun Blaster",    weapon: "Shotgun",              acquisition: "-", level: "-" },
+      { name: "Standing Shot",      weapon: "Bayonet",              acquisition: "-", level: "-" },
+      { name: "Kneeling Shot",      weapon: "Bayonet",              acquisition: "-", level: "-" },
+      { name: "Possession Fire",    weapon: "Fire Bracelet",        acquisition: "-", level: "-" },
+      { name: "Possession Fire",    weapon: "Fire Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Fire",     weapon: "Fire Bracelet + Fire Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Fire",     weapon: "Fire Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Possession Ice",     weapon: "Ice Bracelet",         acquisition: "-", level: "-" },
+      { name: "Possession Ice",     weapon: "Ice Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Ice",      weapon: "Ice Bracelet + Ice Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Ice",      weapon: "Ice Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet", acquisition: "-", level: "-" },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Lightning Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Elemental Lord",     weapon: "Special Bracelet",     acquisition: "-", level: "-" },
+      { name: "Possession Fire",    weapon: "Special Bracelet",     acquisition: "-", level: "-" },
+      { name: "Possession Ice",     weapon: "Special Bracelet",     acquisition: "-", level: "-" },
+      { name: "Possession Lightning", weapon: "Special Bracelet",   acquisition: "-", level: "-" },
+      { name: "Psychokinesis",      weapon: "Rod",                  acquisition: "-", level: "-" },
+      { name: "ESP",                weapon: "Rod",                  acquisition: "-", level: "-" },
+      { name: "Illusionist",        weapon: "Staff",                acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 50, "AGI": 50, "HP": 50, "DEX": 80, "INT": 50, "SEN": 50,
+        "Total Stat Points": 330
+      },
+      personal: {
+        "Personal Skill": "—",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: {
+        "Armor": "Coat"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Follow the 'Catherine' quest line in Dr. Torsche's Mansion; final step 'A Heart for Catherine' yields Character Card (DEX heart)." }
+    ]
   },
   {
     id: "catherine-int",
     name: "Catherine (INT)",
     region: "Dr Torsche's Mansion",
     portrait: "images/characters/catherine.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",       weapon: "None",                 acquisition: "-", level: "-" },
+      { name: "Back-Guard",         weapon: "Sword",                acquisition: "-", level: "-" },
+      { name: "Hack and Slash",     weapon: "Sword + Sword",        acquisition: "-", level: "-" },
+      { name: "Back-Guard",         weapon: "Sword + Shield",       acquisition: "-", level: "-" },
+      { name: "High-Guard",         weapon: "Sword + Shield",       acquisition: "-", level: "-" },
+      { name: "Heaven or Hell",     weapon: "Sword + Pistol",       acquisition: "-", level: "-" },
+      { name: "Epee Garde",         weapon: "Rapier",               acquisition: "-", level: "-" },
+      { name: "Sabre Garde",        weapon: "Rapier",               acquisition: "-", level: "-" },
+      { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche", acquisition: "-", level: "-" },
+      { name: "Middle-Guard",       weapon: "Sabre",                acquisition: "-", level: "-" },
+      { name: "Twin Blades",        weapon: "Sabre + Sabre",        acquisition: "-", level: "-" },
+      { name: "Plow-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
+      { name: "Tail-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
+      { name: "Roof-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
+      { name: "Blandir Cruz",       weapon: "Polearm",              acquisition: "-", level: "-" },
+      { name: "Penetrar Cruz",      weapon: "Polearm",              acquisition: "-", level: "-" },
+      { name: "Escrima",            weapon: "Dagger",               acquisition: "-", level: "-" },
+      { name: "Dobalada Corte",     weapon: "Dagger + Dagger",      acquisition: "-", level: "-" },
+      { name: "Back-Guard",         weapon: "Blunt",                acquisition: "-", level: "-" },
+      { name: "Back-Guard",         weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
+      { name: "High-Guard",         weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
+      { name: "Aiming Shot",        weapon: "Pistol",               acquisition: "-", level: "-" },
+      { name: "Freestyle Shot",     weapon: "Pistol",               acquisition: "-", level: "-" },
+      { name: "Double-Gun Shot",    weapon: "Pistol + Pistol",      acquisition: "-", level: "-" },
+      { name: "Standing Shot",      weapon: "Rifle",                acquisition: "-", level: "-" },
+      { name: "Kneeling Shot",      weapon: "Rifle",                acquisition: "-", level: "-" },
+      { name: "Shotgun Blaster",    weapon: "Shotgun",              acquisition: "-", level: "-" },
+      { name: "Standing Shot",      weapon: "Bayonet",              acquisition: "-", level: "-" },
+      { name: "Kneeling Shot",      weapon: "Bayonet",              acquisition: "-", level: "-" },
+      { name: "Possession Fire",    weapon: "Fire Bracelet",        acquisition: "-", level: "-" },
+      { name: "Possession Fire",    weapon: "Fire Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Fire",     weapon: "Fire Bracelet + Fire Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Fire",     weapon: "Fire Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Possession Ice",     weapon: "Ice Bracelet",         acquisition: "-", level: "-" },
+      { name: "Possession Ice",     weapon: "Ice Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Ice",      weapon: "Ice Bracelet + Ice Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Ice",      weapon: "Ice Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet", acquisition: "-", level: "-" },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Lightning Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Elemental Lord",     weapon: "Special Bracelet",     acquisition: "-", level: "-" },
+      { name: "Possession Fire",    weapon: "Special Bracelet",     acquisition: "-", level: "-" },
+      { name: "Possession Ice",     weapon: "Special Bracelet",     acquisition: "-", level: "-" },
+      { name: "Possession Lightning", weapon: "Special Bracelet",   acquisition: "-", level: "-" },
+      { name: "Psychokinesis",      weapon: "Rod",                  acquisition: "-", level: "-" },
+      { name: "ESP",                weapon: "Rod",                  acquisition: "-", level: "-" },
+      { name: "Illusionist",        weapon: "Staff",                acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 50, "AGI": 50, "HP": 50, "DEX": 50, "INT": 80, "SEN": 50,
+        "Total Stat Points": 330
+      },
+      personal: {
+        "Personal Skill": "—",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: {
+        "Armor": "Robe"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Follow the 'Catherine' quest line in Dr. Torsche's Mansion; final step 'A Heart for Catherine' yields Character Card (INT heart)." }
+    ]
   },
   {
     id: "catherine-str",
     name: "Catherine (STR)",
     region: "Dr Torsche's Mansion",
     portrait: "images/characters/catherine.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",       weapon: "None",                 acquisition: "-", level: "-" },
+      { name: "Back-Guard",         weapon: "Sword",                acquisition: "-", level: "-" },
+      { name: "Hack and Slash",     weapon: "Sword + Sword",        acquisition: "-", level: "-" },
+      { name: "Back-Guard",         weapon: "Sword + Shield",       acquisition: "-", level: "-" },
+      { name: "High-Guard",         weapon: "Sword + Shield",       acquisition: "-", level: "-" },
+      { name: "Heaven or Hell",     weapon: "Sword + Pistol",       acquisition: "-", level: "-" },
+      { name: "Epee Garde",         weapon: "Rapier",               acquisition: "-", level: "-" },
+      { name: "Sabre Garde",        weapon: "Rapier",               acquisition: "-", level: "-" },
+      { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche", acquisition: "-", level: "-" },
+      { name: "Middle-Guard",       weapon: "Sabre",                acquisition: "-", level: "-" },
+      { name: "Twin Blades",        weapon: "Sabre + Sabre",        acquisition: "-", level: "-" },
+      { name: "Plow-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
+      { name: "Tail-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
+      { name: "Roof-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
+      { name: "Blandir Cruz",       weapon: "Polearm",              acquisition: "-", level: "-" },
+      { name: "Penetrar Cruz",      weapon: "Polearm",              acquisition: "-", level: "-" },
+      { name: "Escrima",            weapon: "Dagger",               acquisition: "-", level: "-" },
+      { name: "Dobalada Corte",     weapon: "Dagger + Dagger",      acquisition: "-", level: "-" },
+      { name: "Back-Guard",         weapon: "Blunt",                acquisition: "-", level: "-" },
+      { name: "Back-Guard",         weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
+      { name: "High-Guard",         weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
+      { name: "Aiming Shot",        weapon: "Pistol",               acquisition: "-", level: "-" },
+      { name: "Freestyle Shot",     weapon: "Pistol",               acquisition: "-", level: "-" },
+      { name: "Double-Gun Shot",    weapon: "Pistol + Pistol",      acquisition: "-", level: "-" },
+      { name: "Standing Shot",      weapon: "Rifle",                acquisition: "-", level: "-" },
+      { name: "Kneeling Shot",      weapon: "Rifle",                acquisition: "-", level: "-" },
+      { name: "Shotgun Blaster",    weapon: "Shotgun",              acquisition: "-", level: "-" },
+      { name: "Standing Shot",      weapon: "Bayonet",              acquisition: "-", level: "-" },
+      { name: "Kneeling Shot",      weapon: "Bayonet",              acquisition: "-", level: "-" },
+      { name: "Possession Fire",    weapon: "Fire Bracelet",        acquisition: "-", level: "-" },
+      { name: "Possession Fire",    weapon: "Fire Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Fire",     weapon: "Fire Bracelet + Fire Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Fire",     weapon: "Fire Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Possession Ice",     weapon: "Ice Bracelet",         acquisition: "-", level: "-" },
+      { name: "Possession Ice",     weapon: "Ice Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Ice",      weapon: "Ice Bracelet + Ice Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Ice",      weapon: "Ice Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet", acquisition: "-", level: "-" },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Lightning Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
+      { name: "Elemental Lord",     weapon: "Special Bracelet",     acquisition: "-", level: "-" },
+      { name: "Possession Fire",    weapon: "Special Bracelet",     acquisition: "-", level: "-" },
+      { name: "Possession Ice",     weapon: "Special Bracelet",     acquisition: "-", level: "-" },
+      { name: "Possession Lightning", weapon: "Special Bracelet",   acquisition: "-", level: "-" },
+      { name: "Psychokinesis",      weapon: "Rod",                  acquisition: "-", level: "-" },
+      { name: "ESP",                weapon: "Rod",                  acquisition: "-", level: "-" },
+      { name: "Illusionist",        weapon: "Staff",                acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 80, "AGI": 50, "HP": 50, "DEX": 50, "INT": 50, "SEN": 50,
+        "Total Stat Points": 330
+      },
+      personal: {
+        "Personal Skill": "—",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: {
+        "Armor": "Leather"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Follow the 'Catherine' quest line in Dr. Torsche's Mansion; final step 'A Heart for Catherine' yields Character Card (STR heart)." }
+    ]
   },
 
   // =========================
@@ -712,12 +963,13 @@ export const CHARACTERS = [
     region: "Promo",
     portrait: "images/characters/icp.png",
     stances: [
-      { name: "Bare Knuckle",     weapon: "None",                 acquisition: "-", level: "-" },
-      { name: "Back-Guard",       weapon: "Sword",                acquisition: "-", level: "-" },
-      { name: "Hack and Slash",   weapon: "Sword + Sword",        acquisition: "-", level: "-" },
-      { name: "Flame-Guard",      weapon: "Sword + Fire Bracelet / Sabre + Fire Bracelet", acquisition: "-", level: "-" },
-      { name: "Middle-Guard",     weapon: "Sabre",                acquisition: "-", level: "-" },
-      { name: "Low-Guard",        weapon: "Sabre",                acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",   weapon: "None",                                   acquisition: "-", level: "-" },
+      { name: "Back-Guard",     weapon: "Sword",                                  acquisition: "-", level: "-" },
+      { name: "Hack and Slash", weapon: "Sword + Sword",                          acquisition: "-", level: "-" },
+      { name: "Flame-Guard",    weapon: "Sword + Fire Bracelet",                  acquisition: "-", level: "-" },
+      { name: "Flame-Guard",    weapon: "Sabre + Fire Bracelet",                  acquisition: "-", level: "-" },
+      { name: "Middle-Guard",   weapon: "Sabre",                                  acquisition: "-", level: "-" },
+      { name: "Low-Guard",      weapon: "Sabre",                                  acquisition: "-", level: "-" }
     ],
     stats: {
       core: {
@@ -726,7 +978,7 @@ export const CHARACTERS = [
         "Total Stat Points": 350
       },
       personal: {
-        "Personal Skill": "— (none specified). Cast: 0s, Cooldown: 0s, Duration: 0s, SP: None",
+        "Personal Skill": "—",
         "image": "/images/skills/job_none.png"
       },
       equipment: {
@@ -761,7 +1013,7 @@ export const CHARACTERS = [
         "Total Stat Points": 370
       },
       personal: {
-        "Personal Skill": "— (none specified). Cast: 0s, Cooldown: 0s, Duration: 0s, SP: None",
+        "Personal Skill": "— (none specified).",
         "image": "/images/skills/job_none.png"
       },
       equipment: {
@@ -796,30 +1048,10 @@ export const CHARACTERS = [
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
-  },
+  }
 
   // =========================
-  // Viron:
-  // (no entries yet)
-  // =========================
-
-  // =========================
-  // El Dorado:
-  // (no entries yet)
-  // =========================
-
-  // =========================
-  // Castilla:
-  // (no entries yet)
-  // =========================
-
-  // =========================
-  // Bahamar:
-  // (no entries yet)
-  // =========================
-
-  // =========================
-  // Kielce:
+  // Viron / El Dorado / Castilla / Bahamar / Kielce:
   // (no entries yet)
   // =========================
 ];
