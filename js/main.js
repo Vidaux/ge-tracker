@@ -23,8 +23,17 @@ const META_REGION_MAP = {
   ]
 };
 
+// Optional explicit image map (use if your filenames differ)
+const BANNER_IMAGES = {
+  "Reboldeaux": "images/regions/reboldeaux.png",
+  "City of Auch": "images/regions/auch.png",
+  "The Port of Coimbra": "images/regions/coimbra.png",
+  "Ustiur Base Camp": "images/regions/ustiur.png",
+  "Promo": "images/regions/promo.png"
+};
+
 // Order banners: your 3 meta groups first, then any others A→Z
-const META_ORDER = ["Stock Characters", "Reboldeaux", "City of Auch", "The Port of Coimbra", "Ustiur Base Camp"];
+const META_ORDER = ["Stock Characters", "Reboldeaux", "The Port of Coimbra", "City of Auch", "Ustiur Base Camp"];
 
 /* -----------------------------
    UI refs
@@ -71,6 +80,15 @@ function getMetaRegion(region) {
 function bannerOrderKey(name) {
   const idx = META_ORDER.indexOf(name);
   return idx === -1 ? `zz_${name.toLowerCase()}` : `aa_${String(idx).padStart(2, "0")}`;
+}
+
+function slugify(s) {
+  return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+function getBannerImage(metaRegion) {
+  // Prefer explicit mapping, else fallback to images/regions/<slug>.png
+  return BANNER_IMAGES[metaRegion] || `images/regions/${slugify(metaRegion)}.png`;
 }
 
 function filteredList() {
@@ -129,16 +147,32 @@ function render() {
   for (const groupName of sortedGroupNames) {
     const groupChars = groups.get(groupName).sort((a, b) => a.name.localeCompare(b.name));
 
-    // --- Banner header (horizontal, full width) ---
+    // Wrap each group so banner sits on top of its grid
+    const section = document.createElement("section");
+    section.className = "region-section";
+    cardsEl.appendChild(section);
+
+    // --- Banner with background image and title overlay ---
     const banner = document.createElement("div");
     banner.className = "region-banner";
-    banner.textContent = groupName;
-    cardsEl.appendChild(banner);
+    banner.setAttribute("aria-label", `${groupName} section`);
+
+    const bg = document.createElement("div");
+    bg.className = "banner-bg";
+    bg.style.backgroundImage = `url('${getBannerImage(groupName)}')`;
+
+    const title = document.createElement("div");
+    title.className = "banner-title";
+    title.textContent = groupName;
+
+    banner.appendChild(bg);
+    banner.appendChild(title);
+    section.appendChild(banner);
 
     // --- Grid for this group, directly under banner ---
     const grid = document.createElement("div");
     grid.className = "card-grid";
-    cardsEl.appendChild(grid);
+    section.appendChild(grid);
 
     for (const c of groupChars) {
       grid.appendChild(cardNode(c));

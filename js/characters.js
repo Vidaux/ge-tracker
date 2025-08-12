@@ -1,6 +1,6 @@
 // js/characters.js
 // Regions are grouped (in your order) and characters are alphabetical within each region.
-// Portraits should live at: /images/characters/<id>.jpg
+// Portraits should live at: /images/characters/<id>.png
 
 export const CHARACTERS = [
   // =========================
@@ -10,7 +10,7 @@ export const CHARACTERS = [
     id: "fighter",
     name: "Fighter",
     region: "Stock Characters",
-    portrait: "images/characters/fighter.jpg",
+    portrait: "images/characters/fighter.png",
     stances: [], // use [{ name, weapon, acquisition, level }]
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -19,7 +19,7 @@ export const CHARACTERS = [
     id: "musketeer",
     name: "Musketeer",
     region: "Stock Characters",
-    portrait: "images/characters/musketeer.jpg",
+    portrait: "images/characters/musketeer.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -28,7 +28,7 @@ export const CHARACTERS = [
     id: "scout",
     name: "Scout",
     region: "Stock Characters",
-    portrait: "images/characters/scout.jpg",
+    portrait: "images/characters/scout.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -37,7 +37,7 @@ export const CHARACTERS = [
     id: "warlock",
     name: "Warlock",
     region: "Stock Characters",
-    portrait: "images/characters/warlock.jpg",
+    portrait: "images/characters/warlock.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -46,7 +46,7 @@ export const CHARACTERS = [
     id: "wizard",
     name: "Wizard",
     region: "Stock Characters",
-    portrait: "images/characters/wizard.jpg",
+    portrait: "images/characters/wizard.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -59,11 +59,11 @@ export const CHARACTERS = [
     id: "andre",
     name: "Andre Janzur",
     region: "Reboldeaux",
-    portrait: "images/characters/andre.jpg",
+    portrait: "images/characters/andre.png",
 
     // Structured stances
     stances: [
-      { name: "Bare Knuckle",       weapon: "None",                    acquisition: "Default", level: "—"     },
+      { name: "Bare Knuckle",       weapon: "None",                    acquisition: "Default", level: "-"     },
       { name: "Epee Garde",         weapon: "Rapier",                  acquisition: "Default", level: "Lv 48"  },
       { name: "Sabre Garde",        weapon: "Rapier",                  acquisition: "Default", level: "Lv 48"  },
       { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche",    acquisition: "Default", level: "Lv 60"  }
@@ -110,7 +110,7 @@ export const CHARACTERS = [
     id: "brunie",
     name: "Brunie",
     region: "Reboldeaux",
-    portrait: "images/characters/brunie.jpg",
+    portrait: "images/characters/brunie.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -119,7 +119,7 @@ export const CHARACTERS = [
     id: "claude",
     name: "Claude",
     region: "Reboldeaux",
-    portrait: "images/characters/claude.jpg",
+    portrait: "images/characters/claude.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -128,7 +128,7 @@ export const CHARACTERS = [
     id: "diego",
     name: "Diego",
     region: "Reboldeaux",
-    portrait: "images/characters/diego.jpg",
+    portrait: "images/characters/diego.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -137,7 +137,7 @@ export const CHARACTERS = [
     id: "idge-imbrulia",
     name: "Idge Imbrulia",
     region: "Reboldeaux",
-    portrait: "images/characters/idge-imbrulia.jpg",
+    portrait: "images/characters/idge.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -146,7 +146,7 @@ export const CHARACTERS = [
     id: "najib-sharif",
     name: "Najib Sharif",
     region: "Reboldeaux",
-    portrait: "images/characters/najib-sharif.jpg",
+    portrait: "images/characters/najib.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -155,7 +155,7 @@ export const CHARACTERS = [
     id: "panfilo-de-narvaez",
     name: "Panfilo de Narvaez",
     region: "Reboldeaux",
-    portrait: "images/characters/panfilo-de-narvaez.jpg",
+    portrait: "images/characters/panfilo.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -164,7 +164,7 @@ export const CHARACTERS = [
     id: "soldier-of-reboldoeux",
     name: "Soldier of Reboldoeux",
     region: "Reboldeaux",
-    portrait: "images/characters/soldier-of-reboldoeux.jpg",
+    portrait: "images/characters/soldier.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -177,7 +177,7 @@ export const CHARACTERS = [
     id: "angie",
     name: "Angie",
     region: "Rebouldeaux Queen's Gate",
-    portrait: "images/characters/angie.jpg",
+    portrait: "images/characters/angie.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -186,7 +186,7 @@ export const CHARACTERS = [
     id: "ramiro",
     name: "Ramiro",
     region: "Rebouldeaux Queen's Gate",
-    portrait: "images/characters/ramiro.jpg",
+    portrait: "images/characters/ramiro.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -199,7 +199,7 @@ export const CHARACTERS = [
     id: "jack",
     name: "Jack",
     region: "Rebouldeaux Stone Pit",
-    portrait: "images/characters/jack.jpg",
+    portrait: "images/characters/jack.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -212,7 +212,7 @@ export const CHARACTERS = [
     id: "adelina-esperanza",
     name: "Adelina Esperanza",
     region: "The Port of Coimbra",
-    portrait: "images/characters/adelina-esperanza.jpg",
+    portrait: "images/characters/adelina.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -221,7 +221,7 @@ export const CHARACTERS = [
     id: "alejandro",
     name: "Alejandro",
     region: "The Port of Coimbra",
-    portrait: "images/characters/alejandro.jpg",
+    portrait: "images/characters/alejandro.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -230,7 +230,7 @@ export const CHARACTERS = [
     id: "coimbra-trooper",
     name: "Coimbra Trooper",
     region: "The Port of Coimbra",
-    portrait: "images/characters/coimbra-trooper.jpg",
+    portrait: "images/characters/trooper.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -239,7 +239,7 @@ export const CHARACTERS = [
     id: "emilia-guliano",
     name: "Emilia Guliano",
     region: "The Port of Coimbra",
-    portrait: "images/characters/emilia-guliano.jpg",
+    portrait: "images/characters/emilia.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -248,7 +248,7 @@ export const CHARACTERS = [
     id: "grace-bernelli",
     name: "Grace Bernelli",
     region: "The Port of Coimbra",
-    portrait: "images/characters/grace-bernelli.jpg",
+    portrait: "images/characters/grace.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -257,7 +257,7 @@ export const CHARACTERS = [
     id: "gracielo",
     name: "Gracielo",
     region: "The Port of Coimbra",
-    portrait: "images/characters/gracielo.jpg",
+    portrait: "images/characters/gracielo.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -266,7 +266,7 @@ export const CHARACTERS = [
     id: "irawan",
     name: "Irawan",
     region: "The Port of Coimbra",
-    portrait: "images/characters/irawan.jpg",
+    portrait: "images/characters/irawan.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -275,7 +275,7 @@ export const CHARACTERS = [
     id: "jose-corthasar",
     name: "Jose Corthasar",
     region: "The Port of Coimbra",
-    portrait: "images/characters/jose-corthasar.jpg",
+    portrait: "images/characters/jose.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -284,7 +284,7 @@ export const CHARACTERS = [
     id: "lisa-lynway",
     name: "Lisa Lynway",
     region: "The Port of Coimbra",
-    portrait: "images/characters/lisa-lynway.jpg",
+    portrait: "images/characters/lisa.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -293,7 +293,7 @@ export const CHARACTERS = [
     id: "mboma",
     name: "MBoma",
     region: "The Port of Coimbra",
-    portrait: "images/characters/mboma.jpg",
+    portrait: "images/characters/mboma.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -302,7 +302,7 @@ export const CHARACTERS = [
     id: "soho",
     name: "Soho",
     region: "The Port of Coimbra",
-    portrait: "images/characters/soho.jpg",
+    portrait: "images/characters/soho.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -315,7 +315,7 @@ export const CHARACTERS = [
     id: "feng-ling",
     name: "Feng Ling",
     region: "Gigante Dock",
-    portrait: "images/characters/feng-ling.jpg",
+    portrait: "images/characters/soso.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -328,7 +328,7 @@ export const CHARACTERS = [
     id: "city-of-auch-infantry",
     name: "City of Auch Infantry",
     region: "City of Auch",
-    portrait: "images/characters/city-of-auch-infantry.jpg",
+    portrait: "images/characters/infantry.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -337,7 +337,7 @@ export const CHARACTERS = [
     id: "grutrude",
     name: "Grutrude",
     region: "City of Auch",
-    portrait: "images/characters/grutrude.jpg",
+    portrait: "images/characters/grutrude.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -346,7 +346,7 @@ export const CHARACTERS = [
     id: "karjalainen",
     name: "Karjalainen",
     region: "City of Auch",
-    portrait: "images/characters/karjalainen.jpg",
+    portrait: "images/characters/karjalainen.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -355,7 +355,7 @@ export const CHARACTERS = [
     id: "lorch",
     name: "Lorch",
     region: "City of Auch",
-    portrait: "images/characters/lorch.jpg",
+    portrait: "images/characters/lorch.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -364,7 +364,7 @@ export const CHARACTERS = [
     id: "tiburon",
     name: "Tiburon",
     region: "City of Auch",
-    portrait: "images/characters/tiburon.jpg",
+    portrait: "images/characters/tiburon.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -377,7 +377,7 @@ export const CHARACTERS = [
     id: "viki",
     name: "Viki",
     region: "Mysterious Hut El Tejado Verde",
-    portrait: "images/characters/viki.jpg",
+    portrait: "images/characters/viki.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -390,7 +390,7 @@ export const CHARACTERS = [
     id: "catherine",
     name: "Catherine",
     region: "Dr Torsche's Mansion",
-    portrait: "images/characters/catherine.jpg",
+    portrait: "images/characters/catherine.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -399,7 +399,7 @@ export const CHARACTERS = [
     id: "catherine-dex",
     name: "Catherine (DEX)",
     region: "Dr Torsche's Mansion",
-    portrait: "images/characters/catherine-dex.jpg",
+    portrait: "images/characters/catherine.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -408,7 +408,7 @@ export const CHARACTERS = [
     id: "catherine-int",
     name: "Catherine (INT)",
     region: "Dr Torsche's Mansion",
-    portrait: "images/characters/catherine-int.jpg",
+    portrait: "images/characters/catherine.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -417,7 +417,7 @@ export const CHARACTERS = [
     id: "catherine-str",
     name: "Catherine (STR)",
     region: "Dr Torsche's Mansion",
-    portrait: "images/characters/catherine-str.jpg",
+    portrait: "images/characters/catherine.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -430,7 +430,7 @@ export const CHARACTERS = [
     id: "edward",
     name: "Edward",
     region: "Los Toldos",
-    portrait: "images/characters/edward.jpg",
+    portrait: "images/characters/edward.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -439,7 +439,7 @@ export const CHARACTERS = [
     id: "kurt",
     name: "Kurt",
     region: "Los Toldos",
-    portrait: "images/characters/kurt.jpg",
+    portrait: "images/characters/kurt.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -452,7 +452,7 @@ export const CHARACTERS = [
     id: "grandma",
     name: "Grandma",
     region: "Ustiur Base Camp",
-    portrait: "images/characters/grandma.jpg",
+    portrait: "images/characters/grandma.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -461,7 +461,7 @@ export const CHARACTERS = [
     id: "rescue-knight",
     name: "Rescue Knight",
     region: "Ustiur Base Camp",
-    portrait: "images/characters/rescue-knight.jpg",
+    portrait: "images/characters/rescue.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -470,7 +470,7 @@ export const CHARACTERS = [
     id: "romina",
     name: "Romina",
     region: "Ustiur Base Camp",
-    portrait: "images/characters/romina.jpg",
+    portrait: "images/characters/romina.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -483,7 +483,7 @@ export const CHARACTERS = [
     id: "battle-cook-panfilo",
     name: "Battle Cook Panfilo",
     region: "Promo",
-    portrait: "images/characters/battle-cook-panfilo.jpg",
+    portrait: "images/characters/icp.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -492,7 +492,7 @@ export const CHARACTERS = [
     id: "battle-smith-idge",
     name: "Battle Smith Idge",
     region: "Promo",
-    portrait: "images/characters/battle-smith-idge.jpg",
+    portrait: "images/characters/bsi.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -501,7 +501,7 @@ export const CHARACTERS = [
     id: "pirate-adelina",
     name: "Pirate Adelina",
     region: "Promo",
-    portrait: "images/characters/pirate-adelina.jpg",
+    portrait: "images/characters/atp.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -510,7 +510,7 @@ export const CHARACTERS = [
     id: "sage-emilia",
     name: "Sage Emilia",
     region: "Promo",
-    portrait: "images/characters/sage-emilia.jpg",
+    portrait: "images/characters/ets.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []
@@ -519,7 +519,7 @@ export const CHARACTERS = [
     id: "soho-the-wind",
     name: "Soho The Wind",
     region: "Promo",
-    portrait: "images/characters/soho-the-wind.jpg",
+    portrait: "images/characters/stw.png",
     stances: [],
     stats: { core: {}, personal: {}, equipment: {} },
     quests: []

@@ -21,12 +21,12 @@ const statsGridEl = document.getElementById("statsGrid");
 const resetBtn = document.getElementById("resetQuestsBtn");
 
 if (!character) {
-  document.title = "Not Found — Granado Espada";
+  document.title = "Not Found - Granado Espada";
   nameEl.textContent = "Character not found";
 } else {
-  document.title = `${character.name} — Granado Espada`;
+  document.title = `${character.name} - Granado Espada`;
   nameEl.textContent = character.name;
-  regionEl.textContent = character.region || "—";
+  regionEl.textContent = character.region || "-";
   portraitEl.src = `../${character.portrait}`;
   portraitEl.alt = `${character.name} portrait`;
 
@@ -99,7 +99,7 @@ function renderStances() {
       const tr = document.createElement("tr");
       for (const col of columns) {
         const td = document.createElement("td");
-        td.textContent = row[col] || "—";
+        td.textContent = row[col] || "-";
         td.style.padding = "10px 12px";
         td.style.borderBottom = "1px solid rgba(38,48,65,0.5)";
         tr.appendChild(td);
@@ -115,7 +115,7 @@ function renderStances() {
 
   } else {
     // Legacy fallback: stances as strings
-    stancesEl.textContent = st.join(", ") || "—";
+    stancesEl.textContent = st.join(", ") || "-";
   }
 }
 
@@ -274,7 +274,7 @@ function renderStats() {
 /**
  * If all recruitment quests are completed, mark as Owned.
  * If any quest is not completed, mark as Not Owned.
- * (No quests: do nothing — manual ownership remains.)
+ * (No quests: do nothing - manual ownership remains.)
  */
 function syncOwnershipBasedOnQuests() {
   const quests = character.quests || [];
