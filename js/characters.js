@@ -12,26 +12,26 @@ export const CHARACTERS = [
     region: "Stock Characters",
     portrait: "images/characters/fighter.png",
     stances: [
-      { name: "Bare Knuckle", weapon: "None", acquisition: "—", level: "—" },
-      { name: "Back-Guard", weapon: "Sword / Blunt / Sword+Shield / Blunt+Shield", acquisition: "—", level: "—" },
-      { name: "High-Guard", weapon: "Sword + Shield", acquisition: "—", level: "—" },
-      { name: "Hack and Slash", weapon: "Sword + Sword", acquisition: "—", level: "—" },
-      { name: "Heaven or Hell", weapon: "Sword + Pistol", acquisition: "—", level: "—" },
-      { name: "Epee Garde", weapon: "Rapier", acquisition: "—", level: "—" },
-      { name: "Sabre Garde", weapon: "Rapier", acquisition: "—", level: "—" },
-      { name: "Middle-Guard", weapon: "Sabre", acquisition: "—", level: "—" },
-      { name: "Low-Guard", weapon: "Sabre", acquisition: "—", level: "—" },
-      { name: "Plow-Guard", weapon: "Great Sword", acquisition: "—", level: "—" },
-      { name: "Roof-Guard", weapon: "Great Sword", acquisition: "—", level: "—" },
-      { name: "Sidewinder", weapon: "Great Sword", acquisition: "—", level: "—" },
-      { name: "Blandir Cruz", weapon: "Polearm", acquisition: "—", level: "—" },
-      { name: "Mighty Cruz", weapon: "Polearm", acquisition: "—", level: "—" },
-      { name: "Escrima", weapon: "Dagger", acquisition: "—", level: "—" },
-      { name: "Freestyle Shot", weapon: "Pistol", acquisition: "—", level: "—" },
-      { name: "Double-Gun Shot", weapon: "Pistol + Pistol", acquisition: "—", level: "—" },
-      { name: "Advance Garde", weapon: "Rapier + Pistol", acquisition: "—", level: "—" },
-      { name: "Defender", weapon: "Blunt + Shield", acquisition: "—", level: "—" },
-      { name: "Stave Guard", weapon: "Javelin / Javelin + Shield", acquisition: "—", level: "—" }
+      { name: "Bare Knuckle", weapon: "None", acquisition: "-", level: "-" },
+      { name: "Back-Guard", weapon: "Sword / Blunt / Sword+Shield / Blunt+Shield", acquisition: "-", level: "-" },
+      { name: "High-Guard", weapon: "Sword + Shield", acquisition: "-", level: "-" },
+      { name: "Hack and Slash", weapon: "Sword + Sword", acquisition: "-", level: "-" },
+      { name: "Heaven or Hell", weapon: "Sword + Pistol", acquisition: "-", level: "-" },
+      { name: "Epee Garde", weapon: "Rapier", acquisition: "-", level: "-" },
+      { name: "Sabre Garde", weapon: "Rapier", acquisition: "-", level: "-" },
+      { name: "Middle-Guard", weapon: "Sabre", acquisition: "-", level: "-" },
+      { name: "Low-Guard", weapon: "Sabre", acquisition: "-", level: "-" },
+      { name: "Plow-Guard", weapon: "Great Sword", acquisition: "-", level: "-" },
+      { name: "Roof-Guard", weapon: "Great Sword", acquisition: "-", level: "-" },
+      { name: "Sidewinder", weapon: "Great Sword", acquisition: "-", level: "-" },
+      { name: "Blandir Cruz", weapon: "Polearm", acquisition: "-", level: "-" },
+      { name: "Mighty Cruz", weapon: "Polearm", acquisition: "-", level: "-" },
+      { name: "Escrima", weapon: "Dagger", acquisition: "-", level: "-" },
+      { name: "Freestyle Shot", weapon: "Pistol", acquisition: "-", level: "-" },
+      { name: "Double-Gun Shot", weapon: "Pistol + Pistol", acquisition: "-", level: "-" },
+      { name: "Advance Garde", weapon: "Rapier + Pistol", acquisition: "-", level: "-" },
+      { name: "Defender", weapon: "Blunt + Shield", acquisition: "-", level: "-" },
+      { name: "Stave Guard", weapon: "Javelin / Javelin + Shield", acquisition: "-", level: "-" }
     ],
     stats: {
       core: {
@@ -40,8 +40,12 @@ export const CHARACTERS = [
         "Total Stat Points": 300
       },
       personal: {
-        "Personal Skill": "Provoke — Taunts up to 8 enemies within 8m. Cast: 0s, Cooldown: 0s, Duration: 1.2s, SP: 100; Lv1: 15s, Enemy DEF -11, Enemy ATK +10%; Lv10: 15s, Enemy DEF -20, Enemy ATK +10%; Lv11: 15s, Enemy DEF -21, Enemy ATK +10%; Lv12: 15s, Enemy DEF -22, Enemy ATK +10%; Lv13: 15s, Enemy DEF -23, Enemy ATK +10%",
-        "Starting Equipment": "Leather Tunic from Queen, Queen’s Sword, Queen’s Armguard"
+        "Personal Skill": "Provoke - Taunts up to 8 enemies within 8m. (Self-buff) Cast: 0s, Cooldown: 0s, Duration: 1.2s, SP: 100",
+        "Lv1":  "Duration 15s; Enemy DEF -11; Enemy ATK +10%",
+        "Lv10": "Duration 15s; Enemy DEF -20; Enemy ATK +10%",
+        "Lv11": "Duration 15s; Enemy DEF -21; Enemy ATK +10%",
+        "Lv12": "Duration 15s; Enemy DEF -22; Enemy ATK +10%",
+        "Lv13": "Duration 15s; Enemy DEF -23; Enemy ATK +10%"
       },
       equipment: {
         "Armor": "Leather; Metal"
@@ -55,15 +59,15 @@ export const CHARACTERS = [
     region: "Stock Characters",
     portrait: "images/characters/musketeer.png",
     stances: [
-      { name: "Bare Knuckle", weapon: "None", acquisition: "—", level: "—" },
-      { name: "Aiming Shot", weapon: "Pistol", acquisition: "—", level: "—" },
-      { name: "Freestyle Shot", weapon: "Pistol", acquisition: "—", level: "—" },
-      { name: "Sight Shot", weapon: "Pistol", acquisition: "—", level: "—" },
-      { name: "Double-Gun Shot", weapon: "Pistol + Pistol", acquisition: "—", level: "—" },
-      { name: "Outrage Shot", weapon: "Pistol + Pistol", acquisition: "—", level: "—" },
-      { name: "Standing Shot", weapon: "Rifle / Bayonet", acquisition: "—", level: "—" },
-      { name: "Kneeling Shot", weapon: "Rifle / Bayonet", acquisition: "—", level: "—" },
-      { name: "Encounter Shot", weapon: "Bayonet", acquisition: "—", level: "—" }
+      { name: "Bare Knuckle", weapon: "None", acquisition: "-", level: "-" },
+      { name: "Aiming Shot", weapon: "Pistol", acquisition: "-", level: "-" },
+      { name: "Freestyle Shot", weapon: "Pistol", acquisition: "-", level: "-" },
+      { name: "Sight Shot", weapon: "Pistol", acquisition: "-", level: "-" },
+      { name: "Double-Gun Shot", weapon: "Pistol + Pistol", acquisition: "-", level: "-" },
+      { name: "Outrage Shot", weapon: "Pistol + Pistol", acquisition: "-", level: "-" },
+      { name: "Standing Shot", weapon: "Rifle / Bayonet", acquisition: "-", level: "-" },
+      { name: "Kneeling Shot", weapon: "Rifle / Bayonet", acquisition: "-", level: "-" },
+      { name: "Encounter Shot", weapon: "Bayonet", acquisition: "-", level: "-" }
     ],
     stats: {
       core: {
@@ -72,7 +76,12 @@ export const CHARACTERS = [
         "Total Stat Points": 300
       },
       personal: {
-        "Personal Skill": "Concentration — Improves shooting accuracy (Self-buff). Cast: 0s, Cooldown: 0s, Duration: 1.87s, SP: 100 + Mithridart ×5; Lv1: 300s, Monster Blow +1%, Accuracy +12 / Crit +1%; Lv10: 570s, Monster Blow +10%, Accuracy +30 / Crit +15%; Lv11: 600s, Monster Blow +11%, Accuracy +32 / Crit +16%, A.R. +1; Lv12: 630s, Monster Blow +12%, Accuracy +34 / Crit +18%, A.R. +1; Lv13: 660s, Monster Blow +13%, Accuracy +36 / Crit +19%, A.R. +1"
+        "Personal Skill": "Concentration - Improves shooting accuracy. (Self-buff) Cast: 0s, Cooldown: 0s, Duration: 1.87s, SP: 100 + Mithridart ×5",
+        "Lv1":  "Duration 300s; Monster Blow +1%; Accuracy +12; Crit +1%",
+        "Lv10": "Duration 570s; Monster Blow +10%; Accuracy +30; Crit +15%",
+        "Lv11": "Duration 600s; Monster Blow +11%; Accuracy +32; Crit +16%; A.R. +1",
+        "Lv12": "Duration 630s; Monster Blow +12%; Accuracy +34; Crit +18%; A.R. +1",
+        "Lv13": "Duration 660s; Monster Blow +13%; Accuracy +36; Crit +19%; A.R. +1"
       },
       equipment: {
         "Armor": "Coat"
@@ -86,11 +95,11 @@ export const CHARACTERS = [
     region: "Stock Characters",
     portrait: "images/characters/scout.png",
     stances: [
-      { name: "First Aid", weapon: "None / Rosario", acquisition: "—", level: "—" },
-      { name: "Fortitudo", weapon: "None / Rosario", acquisition: "—", level: "—" },
-      { name: "Install Trap", weapon: "None", acquisition: "—", level: "—" },
-      { name: "Escrima", weapon: "Dagger", acquisition: "—", level: "—" },
-      { name: "Dobalada Corte", weapon: "Dagger + Dagger", acquisition: "—", level: "—" }
+      { name: "First Aid", weapon: "None / Rosario", acquisition: "-", level: "-" },
+      { name: "Fortitudo", weapon: "None / Rosario", acquisition: "-", level: "-" },
+      { name: "Install Trap", weapon: "None", acquisition: "-", level: "-" },
+      { name: "Escrima", weapon: "Dagger", acquisition: "-", level: "-" },
+      { name: "Dobalada Corte", weapon: "Dagger + Dagger", acquisition: "-", level: "-" }
     ],
     stats: {
       core: {
@@ -99,7 +108,7 @@ export const CHARACTERS = [
         "Total Stat Points": 300
       },
       personal: {
-        "Personal Skill": "Healing — Restores HP of one appointed character. Cast: 0s, Cooldown: 0s, Duration: 1.5s, SP: 25"
+        "Personal Skill": "Healing - Restores HP of one appointed character. (Self-buff) Cast: 0s, Cooldown: 0s, Duration: 1.5s, SP: 25"
       },
       equipment: {
         "Armor": "Leather"
@@ -113,16 +122,16 @@ export const CHARACTERS = [
     region: "Stock Characters",
     portrait: "images/characters/warlock.png",
     stances: [
-      { name: "Elemental Lord", weapon: "Special Bracelet", acquisition: "—", level: "—" },
-      { name: "Possession Fire", weapon: "Fire Bracelet / Bone Bracelet / Special Bracelet", acquisition: "—", level: "—" },
-      { name: "Evocation Fire", weapon: "Fire Bracelet / Bone Bracelet / Special Bracelet", acquisition: "—", level: "—" },
-      { name: "Domination Fire", weapon: "Fire Bracelet / Bone Bracelet / Special Bracelet", acquisition: "—", level: "—" },
-      { name: "Possession Ice", weapon: "Ice Bracelet / Bone Bracelet / Special Bracelet", acquisition: "—", level: "—" },
-      { name: "Evocation Ice", weapon: "Ice Bracelet / Bone Bracelet / Special Bracelet", acquisition: "—", level: "—" },
-      { name: "Domination Ice", weapon: "Ice Bracelet / Bone Bracelet / Special Bracelet", acquisition: "—", level: "—" },
-      { name: "Possession Lightning", weapon: "Lightning Bracelet / Bone Bracelet / Special Bracelet", acquisition: "—", level: "—" },
-      { name: "Evocation Lightning", weapon: "Lightning Bracelet / Bone Bracelet / Special Bracelet", acquisition: "—", level: "—" },
-      { name: "Domination Lightning", weapon: "Lightning Bracelet / Bone Bracelet / Special Bracelet", acquisition: "—", level: "—" }
+      { name: "Elemental Lord", weapon: "Special Bracelet", acquisition: "-", level: "-" },
+      { name: "Possession Fire", weapon: "Fire Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Fire", weapon: "Fire Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
+      { name: "Domination Fire", weapon: "Fire Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
+      { name: "Possession Ice", weapon: "Ice Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Ice", weapon: "Ice Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
+      { name: "Domination Ice", weapon: "Ice Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Lightning", weapon: "Lightning Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
+      { name: "Domination Lightning", weapon: "Lightning Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" }
     ],
     stats: {
       core: {
@@ -131,8 +140,12 @@ export const CHARACTERS = [
         "Total Stat Points": 300
       },
       personal: {
-        "Personal Skill": "Elemental Penetration — Grants elemental power that reduces enemy RES. (Self-buff) Cast: 1.133s, Cooldown: 5s, Duration: 1.63s, SP: 100 + Elemental Orb ×20; Lv1: 30s, Cast -0.5%, Ignores 1 RES; Lv10: 300s, Cast -5%, Ignores 10 RES; Lv11: 330s, Cast -5.5%, Ignores 11 RES, A.R. +1; Lv12: 360s, Cast -6%, Ignores 12 RES, A.R. +1; Lv13: 390s, Cast -6.5%, Ignores 13 RES, A.R. +1",
-        "Starting Equipment": "Robe, Queen’s Fire Brace"
+        "Personal Skill": "Elemental Penetration - Reduces enemy RES with elemental power. (Self-buff) Cast: 1.133s, Cooldown: 5s, Duration: 1.63s, SP: 100 + Elemental Orb ×20",
+        "Lv1":  "Duration 30s; Casting Time -0.5%; Ignores 1 RES",
+        "Lv10": "Duration 300s; Casting Time -5%; Ignores 10 RES",
+        "Lv11": "Duration 330s; Casting Time -5.5%; Ignores 11 RES; A.R. +1",
+        "Lv12": "Duration 360s; Casting Time -6%; Ignores 12 RES; A.R. +1",
+        "Lv13": "Duration 390s; Casting Time -6.5%; Ignores 13 RES; A.R. +1"
       },
       equipment: {
         "Armor": "Robe"
@@ -146,12 +159,12 @@ export const CHARACTERS = [
     region: "Stock Characters",
     portrait: "images/characters/wizard.png",
     stances: [
-      { name: "Psychokinesis", weapon: "None / Staff / Rod", acquisition: "—", level: "—" },
-      { name: "Illusionist", weapon: "Staff", acquisition: "—", level: "—" },
-      { name: "Levitation", weapon: "Staff / Rod", acquisition: "—", level: "—" },
-      { name: "Anathema", weapon: "Staff", acquisition: "—", level: "—" },
-      { name: "ESP", weapon: "Rod", acquisition: "—", level: "—" },
-      { name: "Incantation", weapon: "Rod", acquisition: "—", level: "—" }
+      { name: "Psychokinesis", weapon: "None / Staff / Rod", acquisition: "-", level: "-" },
+      { name: "Illusionist", weapon: "Staff", acquisition: "-", level: "-" },
+      { name: "Levitation", weapon: "Staff / Rod", acquisition: "-", level: "-" },
+      { name: "Anathema", weapon: "Staff", acquisition: "-", level: "-" },
+      { name: "ESP", weapon: "Rod", acquisition: "-", level: "-" },
+      { name: "Incantation", weapon: "Rod", acquisition: "-", level: "-" }
     ],
     stats: {
       core: {
@@ -160,8 +173,12 @@ export const CHARACTERS = [
         "Total Stat Points": 300
       },
       personal: {
-        "Personal Skill": "Energy Shield — Absorbs damage at a fixed SP rate (Self-buff). Cast: 1s, Cooldown: 30s, Duration: 1.1s, SP: 60 + Magical Orb ×1; Lv1: 24s, Absorb 12% ATK with 14.5% SP; Lv10: 60s, Absorb 30% ATK with 10.0% SP; Lv11: 64s, Absorb 32% ATK with 9.5% SP, D.R. +1; Lv12: 68s, Absorb 34% ATK with 9.0% SP, D.R. +1; Lv13: 64s, Absorb 32% ATK with 9.5% SP, D.R. +1",
-        "Starting Equipment": "Coat of the Queen, Queen’s Rod"
+        "Personal Skill": "Energy Shield - Absorbs damage at a fixed SP rate. (Self-buff) Cast: 1s, Cooldown: 30s, Duration: 1.1s, SP: 60 + Magical Orb ×1",
+        "Lv1":  "Duration 24s; Absorb 12% ATK with 14.5% SP",
+        "Lv10": "Duration 60s; Absorb 30% ATK with 10.0% SP",
+        "Lv11": "Duration 64s; Absorb 32% ATK with 9.5% SP; D.R. +1",
+        "Lv12": "Duration 68s; Absorb 34% ATK with 9.0% SP; D.R. +1",
+        "Lv13": "Duration 64s; Absorb 32% ATK with 9.5% SP; D.R. +1"
       },
       equipment: {
         "Armor": "Coat"
@@ -185,12 +202,10 @@ export const CHARACTERS = [
       { name: "Epee Garde",         weapon: "Rapier",                  acquisition: "Default", level: "Lv 48"  },
       { name: "Sabre Garde",        weapon: "Rapier",                  acquisition: "Default", level: "Lv 48"  },
       { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche",    acquisition: "Default", level: "Lv 60"  }
-      // If you add later:
       // { name: "Rapiere", weapon: "Rapier + Rapier", acquisition: "Emilia quest; Symbol of Taurus + 6 Great Stone", level: "Expert" }
     ],
 
     stats: {
-      // --- Core stat section ---
       core: {
         "Starting Level": 56,
         "STR": 70,
@@ -201,14 +216,10 @@ export const CHARACTERS = [
         "SEN": 30,
         "Total Stat Points": 330
       },
-
-      // --- Personal buff section ---
       personal: {
         "Personal Skill": "Clothing Design - Allows you to manufacture coats and robes. Use it then drag cloth recipe to Andre in Reboldeaux to start manufacturing. (Cast: 0s, Cooldown: 1s, Duration: 1.1s, SP: None, Level 10)",
-        "image": "/images/skills/job_craftarmor.png" // optional
+        "image": "/images/skills/job_craftarmor.png"
       },
-
-      // --- Equipment section ---
       equipment: {
         "Armor": "Coat; Robe; Leather"
       }
