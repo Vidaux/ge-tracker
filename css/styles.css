@@ -90,7 +90,7 @@ body{
 .card{
   position: relative;
   display: grid;
-  grid-template-columns: 60px 1fr auto; /* avatar, text, pill */
+  grid-template-columns: 60px 1fr max-content; /* avatar, text, pill (no wrap) */
   gap: 12px;
   align-items: center;
   padding: 12px;
@@ -125,6 +125,12 @@ body{
   justify-self: end;
   padding: 4px 10px; border-radius: 999px;
   border: 1px solid currentColor; font-size: .8rem;
+
+  /* prevent wrapping & keep shape */
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
 }
 .owned-pill.owned{ color: #7fff99; background: rgba(46,125,50,.18); }
 .owned-pill.unowned{ color: #ffb3a8; background: rgba(155,44,44,.18); }
@@ -148,9 +154,15 @@ body{
   .banner-title{ font-size: 1.1rem; }
   .region-banner{ height: 100px; }
 
-  .card{ grid-template-columns: 52px 1fr; }
-  .owned-pill{ grid-column: 2; justify-self: start; margin-top: 6px; }
-  .meta{ grid-column: 1 / -1; }
+  /* keep 3 columns even on mobile so the pill has its own column */
+  .card{ grid-template-columns: 52px 1fr max-content; }
+
+  /* keep pill at the far right, single line */
+  .owned-pill{ grid-column: 3; justify-self: end; margin-top: 0; }
+
+  /* let meta span name->pill area below */
+  .meta{ grid-column: 2 / 4; min-width: 0; }
+
   .card-grid{ grid-template-columns: 1fr; }
 }
 
