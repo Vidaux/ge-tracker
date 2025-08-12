@@ -1,6 +1,12 @@
 import { getParam } from "./utils.js";
 import { CHARACTERS } from "./characters.js";
-import { isOwned, setOwned, getQuestProgress, setQuestProgress, resetQuestProgress } from "./storage.js";
+import {
+  isOwned,
+  setOwned,
+  getQuestProgress,
+  setQuestProgress,
+  resetQuestProgress
+} from "./storage.js";
 
 const id = getParam("id");
 const character = CHARACTERS.find(c => c.id === id);
@@ -25,16 +31,25 @@ if (!character) {
   portraitEl.src = `../${character.portrait}`;
   portraitEl.alt = `${character.name} portrait`;
 
-  // Owned
+  // Owned checkbox manual toggle (still allowed)
   ownedEl.checked = isOwned(character.id);
   ownedEl.addEventListener("change", () => setOwned(character.id, ownedEl.checked));
 
   // Quests
+  renderQuests();
+
+  // Stats
+  renderStats();
+}
+
+function renderQuests() {
   const progress = getQuestProgress(character.id);
   questListEl.innerHTML = "";
+
   for (const q of (character.quests || [])) {
     const li = document.createElement("li");
     li.className = "quest-item";
+
     const cb = document.createElement("input");
     cb.type = "checkbox";
     cb.checked = !!progress[q.id];
@@ -42,6 +57,7 @@ if (!character) {
       const latest = getQuestProgress(character.id);
       latest[q.id] = cb.checked;
       setQuestProgress(character.id, latest);
+      syncOwnershipBasedOnQuests(); // <-- auto-sync ownership on each quest change
     });
 
     const label = document.createElement("label");
@@ -52,12 +68,11 @@ if (!character) {
     questListEl.appendChild(li);
   }
 
-  resetBtn.addEventListener("click", () => {
-    resetQuestProgress(character.id);
-    document.querySelectorAll("#questList input[type=checkbox]").forEach(cb => cb.checked = false);
-  });
+  // Initial sync in case all were already completed
+  syncOwnershipBasedOnQuests();
+}
 
-  // Stats
+function renderStats() {
   statsGridEl.innerHTML = "";
   for (const [k, v] of Object.entries(character.stats || {})) {
     const card = document.createElement("div");
@@ -73,3 +88,29 @@ if (!character) {
     statsGridEl.appendChild(card);
   }
 }
+
+/**
+ * If all recruitment quests are completed, mark as Owned.
+ * If any quest is not completed, mark as Not Owned.
+ * (No quests: do nothing — manual ownership remains.)
+ */
+function syncOwnershipBasedOnQuests() {
+  const quests = character.quests || [];
+  if (!quests.length) return;
+
+  const progress = getQuestProgress(character.id);
+  const allDone = quests.every(q => !!progress[q.id]);
+
+  setOwned(character.id, allDone);
+  ownedEl.checked = allDone;
+}
+
+// Reset quests also unsets ownership
+resetBtn.addEventListener("click", () => {
+  resetQuestProgress(character.id);
+  document
+    .querySelectorAll("#questList input[type=checkbox]")
+    .forEach(cb => (cb.checked = false));
+  setOwned(character.id, false);
+  ownedEl.checked = false;
+});
