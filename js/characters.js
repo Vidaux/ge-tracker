@@ -278,18 +278,80 @@ export const CHARACTERS = [
     name: "Claude",
     region: "Reboldeaux",
     portrait: "images/characters/claude.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",   weapon: "None",              acquisition: "-", level: "-" },
+      { name: "Back-Guard",     weapon: "Sword",             acquisition: "-", level: "-" },
+      { name: "Hack and Slash", weapon: "Sword + Sword",     acquisition: "-", level: "-" },
+      { name: "Middle-Guard",   weapon: "Sabre",             acquisition: "-", level: "-" },
+      { name: "Back-Guard",     weapon: "Sabre",             acquisition: "-", level: "-" },
+      { name: "Twin Blades",    weapon: "Sabre + Sabre",     acquisition: "-", level: "-" },
+      { name: "Plow-Guard",     weapon: "Great Sword",       acquisition: "-", level: "-" },
+      { name: "Tail-Guard",     weapon: "Great Sword",       acquisition: "-", level: "-" },
+      { name: "Blandir Cruz",   weapon: "Polearm",           acquisition: "-", level: "-" },
+      { name: "Penetrar Cruz",  weapon: "Polearm",           acquisition: "-", level: "-" },
+      { name: "Mighty Cruz",    weapon: "Polearm",           acquisition: "-", level: "-" },
+      { name: "Back-Guard",     weapon: "Blunt",             acquisition: "-", level: "-" },
+      { name: "Stave Guard",    weapon: "Javelin",           acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 56,
+        "STR": 80, "AGI": 50, "HP": 80, "DEX": 50, "INT": 30, "SEN": 40,
+        "Total Stat Points": 330
+      },
+      personal: {
+        "Personal Skill": "Blunt Weapon Crafting - Manufacture blunts, polearms, javelins, leg-guards, knuckles and greatswords. Use it then drag weapon recipe to Claude in Reboldeaux to start manufacturing. Cast: 0s, Cooldown: 1s, Duration: 1.1s, SP: None",
+        "image": "/images/skills/job_craftweapon.png"
+      },
+      equipment: {
+        "Armor": "Leather; Metal"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Gathering Weapon Materials (Req Lv 4) — Al Quelt Moreza: get 20 Sulfur from Striped Spiders; return. (EXP Card (3), Polish Initiate (3))" },
+      { id: "q2", name: "Guardian Deity of Reboldeaux (Req Lv 10) — Instance: defend Queen's Gate for 5 minutes; reward Stance Book High Guard, Polish Initiate (3)." },
+      { id: "q3", name: "Training — Requires 'Source of the Taint'; duel and defeat Claude; return. (EXP Card (3), Polish Disciple (3))" },
+      { id: "q4", name: "The Renowned Sword! Silver Baron — Porto Bello: The Hold (J-5) chest; then Deck: kill Gavi di Gavi; return for Silver Baron & Polish Disciple (3)." },
+      { id: "q5", name: "Learning By Close Application! Claude Baudez (Req Lv 60) — Deserted Quay: Bomber Turtles; Thueringenwald/El Lago: Corlien Dynamiters & Dandelion Gorillas; reward Durandal, Trooper's Saber, EXP Card (1)." },
+      { id: "q6", name: "Learning By Close Application! Claude Baudez 2 — Dr. Torsche’s Mansion: Savage Garden mobs; return for Claude Baudez Character Card, Slayer, Brandistock, Polish Explorer (3)." }
+    ]
   },
   {
     id: "diego",
     name: "Diego",
     region: "Reboldeaux",
     portrait: "images/characters/diego.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Install Trap",           weapon: "None", acquisition: "-", level: "-" },
+      { name: "Defensive Construction", weapon: "None", acquisition: "-", level: "-" },
+      { name: "Back-Guard",             weapon: "Sword", acquisition: "-", level: "-" },
+      { name: "Hack and Slash",         weapon: "Sword + Sword", acquisition: "-", level: "-" },
+      { name: "Install Trap",           weapon: "Tool", acquisition: "-", level: "-" },
+      { name: "Defensive Construction", weapon: "Tool", acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 24,
+        "STR": 60, "AGI": 50, "HP": 50, "DEX": 70, "INT": 40, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "Remove Construction - Removes constructions; some summons (e.g., Amber) will be released. (Self-buff) Cast: 0s, Cooldown: 60s, Duration: 1.5s, SP: None",
+        "image": "/images/skills/job_cancelsummon.png"
+      },
+      equipment: {
+        "Armor": "Leather"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Advertising for Diego the Carpenter (Req Lv 17) — Post on Reboldeaux (G-7) & Coimbra (H-5) boards (200 vis via warp); return. (EXP Card (3), Polish Initiate (3))" },
+      { id: "q2", name: "Revenge on Diego (Req Lv 20) — Talk to Diego in Reboldeaux; choose to fight and defeat him; return to Andrew (Coimbra J-8). (Diego's Sword, EXP Card (6), Polish Novice (3))" },
+      { id: "q3", name: "Construction Equipment (25) (Req Lv 25) — Stone Pit: speak to Jack; return. (EXP Card (3), Polish Novice (3))" },
+      { id: "q4", name: "Securing Areas For the Construction — Tetra Hill: kill 25 Phobitan Imp, 20 Little Plaque Rogue, 20 Little Plaque Noir; return. (EXP Card (3), Healing Potion, Polish Novice (3))" },
+      { id: "q5", name: "Rubber and Steel (Req Lv 28) — Tetra Ruins: gather items from Phobitan Warriors/Rogues; return. (EXP Card (3), Healing Potion (10), New Construction Equipment, Polish Novice (3))" },
+      { id: "q6", name: "Construction Certificate — Reboldeaux: speak to Domingo; Coimbra: speak to Nunez; complete 'Nunez's Mistake'; return for Diego Character Card. (EXP Card (3), Polish Novice (3))" },
+      { id: "q7", name: "Nunez's Mistake — Tetra Ruins: kill Little Plaque Rogue Etons; return to Nunez for Coimbra License, Polish Initiate (3)." }
+    ]
   },
   {
     id: "idge-imbrulia",
@@ -459,18 +521,70 @@ export const CHARACTERS = [
     name: "Coimbra Trooper",
     region: "The Port of Coimbra",
     portrait: "images/characters/trooper.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",   weapon: "None",                 acquisition: "-", level: "-" },
+      { name: "Back-Guard",     weapon: "Sword",                acquisition: "-", level: "-" },
+      { name: "Back-Guard",     weapon: "Sword + Shield",       acquisition: "-", level: "-" },
+      { name: "High-Guard",     weapon: "Sword + Shield",       acquisition: "-", level: "-" },
+      { name: "Hack and Slash", weapon: "Sword + Sword",        acquisition: "-", level: "-" },
+      { name: "Blandir Cruz",   weapon: "Polearm",              acquisition: "-", level: "-" },
+      { name: "Penetrar Cruz",  weapon: "Polearm",              acquisition: "-", level: "-" },
+      { name: "Mighty Cruz",    weapon: "Polearm",              acquisition: "-", level: "-" },
+      { name: "Back-Guard",     weapon: "Blunt",                acquisition: "-", level: "-" },
+      { name: "Defender",       weapon: "Blunt + Shield",       acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 16,
+        "STR": 50, "AGI": 50, "HP": 70, "DEX": 50, "INT": 30, "SEN": 30,
+        "Total Stat Points": 280
+      },
+      personal: {
+        "Personal Skill": "Provoke - Taunts up to 8 enemies within 8m. (Self-buff) Cast: 0s, Cooldown: 0s, Duration: 1.2s, SP: 100",
+        "Lv1":  "Duration 15s; Enemy DEF -11; Enemy ATK +10%",
+        "Lv10": "Duration 15s; Enemy DEF -20; Enemy ATK +10%",
+        "Lv11": "Duration 15s; Enemy DEF -21; Enemy ATK +10%",
+        "Lv12": "Duration 15s; Enemy DEF -22; Enemy ATK +10%",
+        "Lv13": "Duration 15s; Enemy DEF -23; Enemy ATK +10%",
+        "image": "/images/skills/job_provoke.png"
+      },
+      equipment: {
+        "Armor": "Leather; Metal"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Angel Fruit (Req Lv 20) — Port of Coimbra (Lisa Lynway G-9): pick avocado at King's Garden (K-6); return for Avocado Sandwich, Coimbra Trooper Character Card, Polish Novice (3)." }
+    ]
   },
   {
     id: "emilia-guliano",
     name: "Emilia Guliano",
     region: "The Port of Coimbra",
     portrait: "images/characters/emilia.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "First Aid",   weapon: "None / Rosario", acquisition: "-", level: "-" },
+      { name: "Fortitudo",   weapon: "None / Rosario", acquisition: "-", level: "-" },
+      { name: "ESP",         weapon: "None / Rod",     acquisition: "-", level: "-" },
+      { name: "Incantation", weapon: "Rod",            acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 24,
+        "STR": 40, "AGI": 50, "HP": 40, "DEX": 50, "INT": 60, "SEN": 60,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "Healing - Restores HP of one appointed character. (Self-buff) Cast: 0s, Cooldown: 0s, Duration: 1.5s, SP: 25",
+        "image": "/images/skills/job_healing.png"
+      },
+      equipment: {
+        "Armor": "Coat; Leather"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Dr. Lorenzo Giannino and His Diary (Req Lv 25) — Tetra Grand Corridor (J-10) strange cask; return. (EXP Card (3), Polish Novice (3))" },
+      { id: "q2", name: "It Lives Inside the Hand — Reboldeaux: speak to Eunho (E9-10); return to Emilia for Emilia Guliano Character Card, EXP Card (3), Polish Novice (3)." }
+    ]
   },
   {
     id: "grace-bernelli",
@@ -573,9 +687,30 @@ export const CHARACTERS = [
     name: "Feng Ling",
     region: "Gigante Dock",
     portrait: "images/characters/soso.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",                      weapon: "None",     acquisition: "-", level: "-" },
+      { name: "Martial Arts Book — Chap. of Ice",  weapon: "Knuckle",  acquisition: "-", level: "-" },
+      { name: "Martial Arts Book — Chap. of Earth",weapon: "Knuckle",  acquisition: "-", level: "-" },
+      { name: "Martial Arts Book — Chap. of Ice",  weapon: "Legguard", acquisition: "-", level: "-" },
+      { name: "Martial Arts Book — Chap. of Wind", weapon: "Legguard", acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 60, "AGI": 80, "HP": 50, "DEX": 50, "INT": 30, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "—",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: {
+        "Armor": "Leather"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Gigante Island — Buy 'Ticket to Gigante Island' from the Ustiur teleporter in Coimbra; travel to Gigante; duel Soso (Feng Ling) and either give 50 Mysterious Powders OR defeat Jack-o'-Lantern (Fire Isle) to receive Feng Ling Card." }
+    ]
   },
 
   // =========================
@@ -586,9 +721,33 @@ export const CHARACTERS = [
     name: "City of Auch Infantry",
     region: "City of Auch",
     portrait: "images/characters/infantry.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",  weapon: "None",                 acquisition: "-", level: "-" },
+      { name: "Standing Shot", weapon: "Rifle / Bayonet",      acquisition: "-", level: "-" },
+      { name: "Kneeling Shot", weapon: "Rifle / Bayonet",      acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 16,
+        "STR": 40, "AGI": 50, "HP": 50, "DEX": 80, "INT": 30, "SEN": 30,
+        "Total Stat Points": 280
+      },
+      personal: {
+        "Personal Skill": "Concentration - Improves shooting accuracy. (Self-buff) Cast: 0s, Cooldown: 0s, Duration: 1.87s, SP: 100 + Mithridart ×5",
+        "Lv1":  "Duration 300s; Monster Blow +1%; Accuracy +12; Crit +1%",
+        "Lv10": "Duration 570s; Monster Blow +10%; Accuracy +30; Crit +15%",
+        "Lv11": "Duration 600s; Monster Blow +11%; Accuracy +32; Crit +16%; A.R. +1",
+        "Lv12": "Duration 630s; Monster Blow +12%; Accuracy +34; Crit +18%; A.R. +1",
+        "Lv13": "Duration 660s; Monster Blow +13%; Accuracy +36; Crit +19%; A.R. +1",
+        "image": "/images/skills/job_concentrate.png"
+      },
+      equipment: {
+        "Armor": "Coat; Leather"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Battle With City of Auch Soldier (Suggested Lv ~16) — City of Auch (H-11) Location Storage Soldier: instance; defeat 50 Auch soldiers in 3 minutes; return for Auch Infantry Character Card & Polish Novice (3)." }
+    ]
   },
   {
     id: "grutrude",
@@ -909,9 +1068,41 @@ export const CHARACTERS = [
     name: "Edward",
     region: "Los Toldos",
     portrait: "images/characters/edward.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",              weapon: "None",                 acquisition: "-", level: "-" },
+      { name: "Advance Garde of Grim",     weapon: "Rapier + Pistol",      acquisition: "-", level: "-" },
+      { name: "Main-Gauche Garde of Grim", weapon: "Rapier + Main Gauche", acquisition: "-", level: "-" },
+      { name: "Grim Guard",                weapon: "Sabre",                acquisition: "-", level: "-" },
+      { name: "Heaven or Hell of Grim",    weapon: "Sabre + Pistol",       acquisition: "-", level: "-" },
+      { name: "Epee Garde of Grim",        weapon: "Rapier",               acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 60,
+        "STR": 70, "AGI": 70, "HP": 60, "DEX": 50, "INT": 30, "SEN": 50,
+        "Total Stat Points": 330
+      },
+      personal: {
+        "Personal Skill": "Soul Reaper - Summons Soul Reaper (requires [Soul of Grim] buff). (Self-buff) Cast: 0s, Cooldown: 120s, Duration: 1.5s, SP: 300 + Magical Orb ×10",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: {
+        "Armor": "Leather"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Wheel of Faith — Los Toldos (Broken Boat): talk to Sad Old Man to enter Land of the Dead; kill Cursed Undead; return to Kurt. (Polish Veteran (3), EXP Card (3))" },
+      { id: "q2", name: "Power of the One with no Name — Kurt fights you (scripted loss); speak to Kurt." },
+      { id: "q3", name: "The Best Baron — Land of the Dead: Old Stone (E-3); instance with Eduardo vs Muertos; speak to Eduardo." },
+      { id: "q4", name: "Eduardo's Letter — Advance story via Kurt. (Polish Veteran (3), EXP Card (3))" },
+      { id: "q5", name: "Defeat Muertos Chief — Land of the Dead: find & kill Muertos Chief (G-9/10); return to Kurt. (Polish Veteran (3), EXP Card (3))" },
+      { id: "q6", name: "Land of Death Investigation — Collect Burnt Memo (G-6), Torn Memo (G-7), Old Letter (F-7); return." },
+      { id: "q7", name: "Owner of Muertos — Village B-6: stealth/invisibility, instance vs Muertos & Montoro; return. (Polish Veteran (3), EXP Card (3), Invisible Potion (5))" },
+      { id: "q8", name: "Counterattack — Repeat stealth entry; instance vs Montoro with Kurt & Eduardo; return. (Polish Veteran (3), EXP Card (3), Invisible Potion (5))" },
+      { id: "q9", name: "Collect Pure Otites — Repeatable 'Cursed Undead Hunt' to craft 10 Pure Otite; return to Kurt for Letter for Eduardo." },
+      { id: "q10", name: "Nameless Ones' Secret Letter — Old Stone (E-3): speak to Eduardo; bring his letter back to Kurt." },
+      { id: "q11", name: "Lyndon's Stab — Place Otite bag at broken Colony Altar (G-7) to trigger branch: choose Kurt or Eduardo for final card reward path." }
+    ]
   },
   {
     id: "kurt",
