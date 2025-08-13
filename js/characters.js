@@ -1842,9 +1842,7 @@ export const CHARACTERS = [
       },
       equipment: { "Armor": "Leather" }
     },
-    quests: [
-      { id: "q1", name: "Acquisition varies by event/cash promotions, no fixed questline." }
-    ]
+    quests: []
   },
   {
     id: "sage-emilia",
@@ -1872,9 +1870,7 @@ export const CHARACTERS = [
       },
       equipment: { "Armor": "Coat, Leather" }
     },
-    quests: [
-      { id: "q1", name: "Acquisition varies by event/premium promotions." }
-    ]
+    quests: []
   },
   {
     id: "soho-the-wind",
