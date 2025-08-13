@@ -37,6 +37,10 @@ const personalGridEl = document.getElementById("personalStatsGrid");
 const equipmentGridEl = document.getElementById("equipmentStatsGrid");
 const personalImgEl = document.getElementById("personalSkillImage");
 
+// Stances UI
+const stancesGridEl = document.getElementById("stancesGrid");
+const stancesHeadingEl = document.getElementById("stancesHeading");
+
 // Fallback legacy grid (if split not present)
 const statsGridEl = document.getElementById("statsGrid");
 
@@ -87,6 +91,56 @@ if (!character) {
   // Render Recruitment & Stats
   renderQuests();
   renderStats();
+}
+
+/* ===================== Stance ===================== */
+function renderStances() {
+  if (!stancesGridEl) return;
+
+  const stances = character.stances || [];
+
+  // Hide if none
+  if (!stances.length) {
+    if (stancesHeadingEl) stancesHeadingEl.style.display = "none";
+    stancesGridEl.style.display = "none";
+    stancesGridEl.innerHTML = "";
+    return;
+  }
+
+  if (stancesHeadingEl) stancesHeadingEl.style.display = "";
+  stancesGridEl.style.display = "";
+  stancesGridEl.innerHTML = "";
+
+  // Header row
+  stancesGridEl.appendChild(stanceRow(["Stance", "Weapon", "Acquisition", "Level"], true));
+
+  // Rows
+  for (const s of stances) {
+    if (typeof s === "string") {
+      stancesGridEl.appendChild(stanceRow([s, "—", "—", "—"]));
+    } else if (s && typeof s === "object") {
+      stancesGridEl.appendChild(
+        stanceRow([
+          s.name || "—",
+          s.weapon || "—",
+          s.acquisition || "—",
+          s.level || "—"
+        ])
+      );
+    }
+  }
+}
+
+function stanceRow(cells, isHead = false) {
+  const row = document.createElement("div");
+  row.className = "stance-row" + (isHead ? " head" : "");
+  for (const text of cells) {
+    const cell = document.createElement("div");
+    cell.className = "cell";
+    cell.textContent = text;
+    row.appendChild(cell);
+  }
+  return row;
 }
 
 /* ===================== Recruitment (progressive steps) ===================== */
@@ -268,6 +322,21 @@ function renderStats() {
         equipmentGridEl.appendChild(statCard(k, v));
       }
     }
+
+    // Equipment
+    if (equipmentGridEl) {
+      equipmentGridEl.innerHTML = "";
+      for (const [k, v] of Object.entries(equipment)) {
+        equipmentGridEl.appendChild(statCard(k, v));
+      }
+    }
+
+    // NEW: Stances (under Equipment)
+    renderStances();
+
+    // Make sure current-level UI reflects persisted value & ownership
+    refreshLevelControls();
+    return;
 
     // Make sure current-level UI reflects persisted value & ownership
     refreshLevelControls();

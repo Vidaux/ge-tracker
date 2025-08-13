@@ -813,3 +813,35 @@ body{
     min-width: 80px;
   }
 }
+
+/* ===== Character page: Stances (under Equipment) ===== */
+.stances-grid{
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr;
+  gap: 8px;
+}
+.stance-row{ display: contents; } /* let cells lay out in the grid */
+.stance-row .cell{
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  color: var(--text);
+}
+.stance-row.head .cell{
+  font-weight: 800;
+  background: rgba(59,130,246,.15);
+  border-color: #35507a;
+  color: #cfe2ff;
+}
+
+@media (max-width: 760px){
+  /* stack into two columns on small screens */
+  .stances-grid{ grid-template-columns: 1fr 1fr; }
+  .stance-row.head .cell:nth-child(n+3),
+  .stance-row .cell:nth-child(n+3){
+    /* ensure reasonable wrapping when reduced to 2 cols */
+    grid-column: auto;
+  }
+}
+
