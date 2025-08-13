@@ -175,6 +175,24 @@ function buildPersonalKeywords(stats) {
   return [ps, skillName, ...levelBits].filter(Boolean).join(" ");
 }
 
+/* ---------- Armor search helper ---------- */
+function buildArmorKeywords(stats) {
+  const armor = stats?.equipment?.["Armor"];
+  if (!armor) return "";
+
+  // Support "Coat, Leather", "Coat; Leather", "Coat/Leather" etc.
+  const parts = String(armor).split(/[;,/|]+/).map(s => s.trim()).filter(Boolean);
+
+  const set = new Set();
+  for (const p of parts) {
+    const low = p.toLowerCase();
+    set.add(low);                    // "coat", "leather"
+    // also index individual words e.g., "leather armor" -> "leather", "armor"
+    low.split(/\s+/).forEach(w => { if (w) set.add(w); });
+  }
+  return Array.from(set).join(" ");
+}
+
 /* ----------------------------- */
 function filteredList() {
   const term = (searchEl.value || "").toLowerCase().trim();
@@ -187,10 +205,12 @@ function filteredList() {
       ? c.stances.map(s => (typeof s === "string" ? s : (s.name || ""))).join(" ")
       : "";
 
+    const armorText = buildArmorKeywords(c.stats);
+
     // NEW: weapon keywords (split + normalize)
     const weaponText = buildWeaponKeywords(c.stances);
 
-    // NEW: personal buff keywords (Personal Skill name + text + Lv lines)
+    // NEW: personal buff keywords (Personal Skill name + text + Lv lines)ee
     const personalText = buildPersonalKeywords(c.stats);
 
     // starting level text for convenience
@@ -203,6 +223,7 @@ function filteredList() {
       c.region,
       stanceText,
       weaponText,
+      armorText,
       personalText,
       startText
     ].join(" ").toLowerCase();
