@@ -38,10 +38,37 @@ const META_ORDER = ["Stock Characters", "Reboldeaux", "The Port of Coimbra", "Ci
 /* -----------------------------
    UI refs
 ------------------------------*/
-const cardsEl = document.getElementById("cards");
+const cardsEl  = document.getElementById("cards");
 const searchEl = document.getElementById("searchInput");
 const regionEl = document.getElementById("regionFilter");
-const ownedEl = document.getElementById("ownedFilter");
+const ownedEl  = document.getElementById("ownedFilter");
+
+/* -----------------------------
+   Filter persistence (per-tab)
+------------------------------*/
+const FILTER_KEY = "ge:listFilters:v1";
+
+function saveFiltersToSession() {
+  const data = {
+    q: searchEl?.value ?? "",
+    r: regionEl?.value ?? "",
+    o: ownedEl?.value ?? ""
+  };
+  try { sessionStorage.setItem(FILTER_KEY, JSON.stringify(data)); } catch {}
+}
+
+function restoreFiltersFromSession() {
+  try {
+    const raw = sessionStorage.getItem(FILTER_KEY);
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    if (searchEl && typeof data.q === "string") searchEl.value = data.q;
+    if (regionEl && typeof data.r === "string") regionEl.value = data.r;
+    if (ownedEl && typeof data.o === "string")  ownedEl.value  = data.o;
+  } catch {
+    sessionStorage.removeItem(FILTER_KEY);
+  }
+}
 
 /* -----------------------------
    Init
@@ -61,11 +88,24 @@ const ownedEl = document.getElementById("ownedFilter");
     regionEl.appendChild(opt);
   }
 
-  // Wire filters
-  [searchEl, regionEl, ownedEl].forEach(el => el.addEventListener("input", render));
+  // Wire filters: save + render on input/change
+  [searchEl, regionEl, ownedEl].forEach(el => {
+    ["input", "change"].forEach(evt =>
+      el.addEventListener(evt, () => { saveFiltersToSession(); render(); })
+    );
+  });
+
+  // Restore saved filters for this tab (e.g., when returning from a character page)
+  restoreFiltersFromSession();
 
   render();
 })();
+
+// Also re-apply when page is shown from bfcache or reloaded in the same tab
+window.addEventListener("pageshow", () => {
+  restoreFiltersFromSession();
+  render();
+});
 
 /* -----------------------------
    Helpers
@@ -224,6 +264,8 @@ function cardNode(c) {
     pill.textContent = now ? "Owned" : "Not owned";
     pill.classList.toggle("unowned", !now);
     pill.classList.toggle("owned", now);
+    // keep current filters persisted as-is
+    saveFiltersToSession();
   });
 
   a.appendChild(img);
