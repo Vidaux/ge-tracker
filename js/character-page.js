@@ -39,23 +39,25 @@ const personalImgEl = document.getElementById("personalSkillImage");
 const statsGridEl = document.getElementById("statsGrid");
 
 if (!character) {
-  document.title = "Not Found — Granado Espada";
+  document.title = "Not Found - Granado Espada";
   if (nameEl) nameEl.textContent = "Character not found";
 } else {
-  document.title = `${character.name} — Granado Espada`;
+  document.title = `${character.name} - Granado Espada`;
   if (nameEl) nameEl.textContent = character.name;
-  if (regionEl) regionEl.textContent = character.region || "—";
+  if (regionEl) regionEl.textContent = character.region || "-";
 
   // Stances: support string or object form
   if (stancesEl) {
     const names = (character.stances || [])
       .map(s => (typeof s === "string" ? s : s?.name))
       .filter(Boolean);
-    stancesEl.textContent = names.length ? names.join(", ") : "—";
+    stancesEl.textContent = names.length ? names.join(", ") : "-";
   }
 
   if (portraitEl) {
-    portraitEl.src = `../${character.portrait}`;
+    // Prefer largePortrait if available, else fall back to portrait
+    const portraitPath = character.largePortrait || character.portrait;
+    portraitEl.src = `../${portraitPath}`;
     portraitEl.alt = `${character.name} portrait`;
   }
 
@@ -124,13 +126,12 @@ function renderQuests() {
     label.className = "quest-label";
     label.textContent = q.name;
 
-    // when user completes a step, mark + re-render to reveal the next one
     cb.addEventListener("change", () => {
       const latest = getQuestProgress(character.id);
       latest[q.id] = cb.checked;
       setQuestProgress(character.id, latest);
       syncOwnershipBasedOnQuests();
-      renderQuests(); // reveal next step
+      renderQuests();
     });
 
     body.appendChild(cb);
@@ -148,12 +149,11 @@ function renderQuests() {
       resetQuestProgress(character.id);
       setOwned(character.id, false);
       if (ownedEl) ownedEl.checked = false;
-      renderQuests(); // refresh UI back to step 1
+      renderQuests();
     };
   }
 }
 
-/** Auto-ownership sync: all quests done -> owned */
 function syncOwnershipBasedOnQuests() {
   const quests = character.quests || [];
   if (!quests.length) return;
@@ -187,13 +187,11 @@ function renderStats() {
   const usingSplit = !!(coreGridEl || personalGridEl || equipmentGridEl || startLevelEl || totalPointsEl);
 
   if (usingSplit) {
-    // Starting Level (solo)
     if (startLevelEl) {
       const sl = core["Starting Level"];
-      startLevelEl.textContent = sl != null ? `Starting Level: ${sl}` : "Starting Level: —";
+      startLevelEl.textContent = sl != null ? `Starting Level: ${sl}` : "Starting Level: -";
     }
 
-    // 2×3 grid for core stats (fixed order)
     const coreOrder = ["STR", "AGI", "HP", "DEX", "INT", "SEN"];
     if (coreGridEl) {
       coreGridEl.innerHTML = "";
@@ -202,13 +200,11 @@ function renderStats() {
       });
     }
 
-    // Total Stat Points underneath
     if (totalPointsEl) {
       const tsp = core["Total Stat Points"];
       totalPointsEl.textContent = tsp != null ? `Total Stat Points: ${tsp}` : "";
     }
 
-    // Personal Skill (ordered)
     if (personalGridEl) {
       personalGridEl.innerHTML = "";
       const order = ["Personal Skill", "Lv1", "Lv10", "Lv11", "Lv12", "Lv13"];
@@ -221,7 +217,6 @@ function renderStats() {
       });
     }
 
-    // Personal skill image (optional)
     if (personalImgEl) {
       if (personal.image) {
         personalImgEl.src = `../${personal.image}`;
@@ -232,7 +227,6 @@ function renderStats() {
       }
     }
 
-    // Equipment
     if (equipmentGridEl) {
       equipmentGridEl.innerHTML = "";
       for (const [k, v] of Object.entries(equipment)) {
@@ -243,7 +237,6 @@ function renderStats() {
     return;
   }
 
-  // Fallback: legacy single grid
   if (statsGridEl) {
     statsGridEl.innerHTML = "";
     const flat = { ...core, ...personal, ...equipment };
