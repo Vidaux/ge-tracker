@@ -132,25 +132,82 @@ function getBannerImage(metaRegion) {
   return BANNER_IMAGES[metaRegion] || `images/regions/${slugify(metaRegion)}.png`;
 }
 
+/* ---------- NEW: helpers for richer search ---------- */
+function buildWeaponKeywords(stances) {
+  const set = new Set();
+  if (!Array.isArray(stances)) return "";
+
+  for (const s of stances) {
+    const weapon = (s && typeof s === "object") ? s.weapon : null;
+    if (!weapon) continue;
+
+    // split on "/" or "+" and normalize
+    const parts = String(weapon).split(/[\/+]/);
+    for (let p of parts) {
+      const t = p.trim().toLowerCase();
+      if (!t || t === "none") continue;
+
+      // add the full phrase (e.g., "two-handed sword")
+      set.add(t);
+      // also add each word inside (so "sword" alone matches)
+      t.split(/\s+/).forEach(w => {
+        if (w && w !== "none") set.add(w);
+      });
+    }
+  }
+  return Array.from(set).join(" ");
+}
+
+function buildPersonalKeywords(stats) {
+  const personal = stats?.personal || {};
+  const ps = typeof personal["Personal Skill"] === "string" ? personal["Personal Skill"] : "";
+
+  // pull out the skill name before " - " if present (e.g., "Concentration")
+  const skillName = ps.split(" - ")[0] || "";
+
+  // include all LvX text so searching “accuracy”, “crit”, etc. can work
+  const levelBits = [];
+  for (let i = 1; i <= 13; i++) {
+    const k = `Lv${i}`;
+    if (typeof personal[k] === "string") levelBits.push(personal[k]);
+  }
+
+  return [ps, skillName, ...levelBits].filter(Boolean).join(" ");
+}
+
+/* ----------------------------- */
 function filteredList() {
   const term = (searchEl.value || "").toLowerCase().trim();
   const regionFilter = regionEl.value || "";
   const ownedFilter = ownedEl.value || "";
 
   return CHARACTERS.filter(c => {
-    // stance text (still searchable even though we don't display it)
+    // stance names (as before)
     const stanceText = Array.isArray(c.stances)
       ? c.stances.map(s => (typeof s === "string" ? s : (s.name || ""))).join(" ")
       : "";
 
-    // starting level text for search convenience
+    // NEW: weapon keywords (split + normalize)
+    const weaponText = buildWeaponKeywords(c.stances);
+
+    // NEW: personal buff keywords (Personal Skill name + text + Lv lines)
+    const personalText = buildPersonalKeywords(c.stats);
+
+    // starting level text for convenience
     const startLvl = c.stats?.core?.["Starting Level"];
     const startText = startLvl != null ? String(startLvl) : "";
 
-    const matchesText =
-      !term ||
-      [c.name, c.region, stanceText, startText].join(" ").toLowerCase().includes(term);
+    // one big haystack to search in
+    const haystack = [
+      c.name,
+      c.region,
+      stanceText,
+      weaponText,
+      personalText,
+      startText
+    ].join(" ").toLowerCase();
 
+    const matchesText = !term || haystack.includes(term);
     const matchesRegion = !regionFilter || c.region === regionFilter;
 
     const ownedState = isOwned(c.id);
