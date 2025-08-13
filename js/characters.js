@@ -991,7 +991,7 @@ export const CHARACTERS = [
     id: "baek-ho",
     name: "Baek Ho",
     region: "City of Auch",
-    portrait: "images/characters/baekho.png",
+    portrait: "images/characters/baek.png",
     stances: [
       { name: "Bare Knuckle", weapon: "None", acquisition: "-", level: "-" },
       { name: "Martial Arts Book-Chap. of Mind", weapon: "Knuckle", acquisition: "-", level: "-" },
