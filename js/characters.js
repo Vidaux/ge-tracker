@@ -13,26 +13,26 @@ export const CHARACTERS = [
     portrait: "images/characters/fighter.png",
     largePortrait: "images/characters/fighter-large.png",
     stances: [
-      { name: "Bare Knuckle", weapon: "None", acquisition: "-", level: "-" },
-      { name: "Back-Guard", weapon: "Sword / Blunt / Sword+Shield / Blunt+Shield", acquisition: "-", level: "-" },
-      { name: "High-Guard", weapon: "Sword + Shield", acquisition: "-", level: "-" },
-      { name: "Hack and Slash", weapon: "Sword + Sword", acquisition: "-", level: "-" },
-      { name: "Heaven or Hell", weapon: "Sword + Pistol", acquisition: "-", level: "-" },
-      { name: "Epee Garde", weapon: "Rapier", acquisition: "-", level: "-" },
-      { name: "Sabre Garde", weapon: "Rapier", acquisition: "-", level: "-" },
-      { name: "Middle-Guard", weapon: "Sabre", acquisition: "-", level: "-" },
-      { name: "Low-Guard", weapon: "Sabre", acquisition: "-", level: "-" },
-      { name: "Plow-Guard", weapon: "Great Sword", acquisition: "-", level: "-" },
-      { name: "Roof-Guard", weapon: "Great Sword", acquisition: "-", level: "-" },
-      { name: "Sidewinder", weapon: "Great Sword", acquisition: "-", level: "-" },
-      { name: "Blandir Cruz", weapon: "Polearm", acquisition: "-", level: "-" },
-      { name: "Mighty Cruz", weapon: "Polearm", acquisition: "-", level: "-" },
-      { name: "Escrima", weapon: "Dagger", acquisition: "-", level: "-" },
-      { name: "Freestyle Shot", weapon: "Pistol", acquisition: "-", level: "-" },
-      { name: "Double-Gun Shot", weapon: "Pistol + Pistol", acquisition: "-", level: "-" },
-      { name: "Advance Garde", weapon: "Rapier + Pistol", acquisition: "-", level: "-" },
-      { name: "Defender", weapon: "Blunt + Shield", acquisition: "-", level: "-" },
-      { name: "Stave Guard", weapon: "Javelin / Javelin + Shield", acquisition: "-", level: "-" }
+      { name: "Bare Knuckle", weapon: "None", acquisition: "Default", level: "1" },
+      { name: "Back-Guard", weapon: "Sword / Blunt / Sword+Shield / Blunt+Shield", acquisition: "Default", level: "1" },
+      { name: "High-Guard", weapon: "Sword + Shield", acquisition: "Master Room 1,200 Vis", level: "12" },
+      { name: "Hack and Slash", weapon: "Sword + Sword", acquisition: "Master Room, 1.200 Vis", level: "12" },
+      { name: "Heaven or Hell", weapon: "Sword + Pistol", acquisition: "Master Room, 1.200 Vis", level: "40" },
+      { name: "Epee Garde", weapon: "Rapier", acquisition: "Master Room 5,000 Vis", level: "48" },
+      { name: "Sabre Garde", weapon: "Rapier", acquisition: "Master Room 5,000 Vis", level: "48" },
+      { name: "Middle-Guard", weapon: "Sabre", acquisition: "Master Room 1,200 Vis", level: "12" },
+      { name: "Low-Guard", weapon: "Sabre", acquisition: "Scholar Bahamar 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" },
+      { name: "Plow-Guard", weapon: "Great Sword", acquisition: "Master Room 2,500 Vis", level: "24" },
+      { name: "Roof-Guard", weapon: "Great Sword", acquisition: "Master Room 4,000 Vis", level: "36" },
+      { name: "Sidewinder", weapon: "Great Sword", acquisition: "Master Room Rare Book of Combat + 50 Mega Aidanium", level: "Veteran" },
+      { name: "Blandir Cruz", weapon: "Polearm", acquisition: "Master Room 2,500 Vis", level: "24" },
+      { name: "Mighty Cruz", weapon: "Polearm", acquisition: "Scholar Bahamar 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" },
+      { name: "Escrima", weapon: "Dagger", acquisition: "Master Room 1,200 Vis", level: "1" },
+      { name: "Freestyle Shot", weapon: "Pistol", acquisition: "Master Room 2,500 Vis", level: "24" },
+      { name: "Double-Gun Shot", weapon: "Pistol + Pistol", acquisition: "Master Room 4,000 Vis", level: "60" },
+      { name: "Advance Garde", weapon: "Rapier + Pistol", acquisition: "Master Room Rare Book of Combat + 50 Mega Etretanium", level: "Veteran" },
+      { name: "Defender", weapon: "Blunt + Shield", acquisition: "Master Room Rare Book of Combat + 50 Mega Ionium", level: "Veteran" },
+      { name: "Stave Guard", weapon: "Javelin / Javelin + Shield", acquisition: "Master Room  Rare Book of Combat + 50 Mega Ionium", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -62,15 +62,15 @@ export const CHARACTERS = [
     portrait: "images/characters/musketeer.png",
     largePortrait: "images/characters/musketeer-large.png",
     stances: [
-      { name: "Bare Knuckle", weapon: "None", acquisition: "-", level: "-" },
-      { name: "Aiming Shot", weapon: "Pistol", acquisition: "-", level: "-" },
-      { name: "Freestyle Shot", weapon: "Pistol", acquisition: "-", level: "-" },
-      { name: "Sight Shot", weapon: "Pistol", acquisition: "-", level: "-" },
-      { name: "Double-Gun Shot", weapon: "Pistol + Pistol", acquisition: "-", level: "-" },
-      { name: "Outrage Shot", weapon: "Pistol + Pistol", acquisition: "-", level: "-" },
-      { name: "Standing Shot", weapon: "Rifle / Bayonet", acquisition: "-", level: "-" },
-      { name: "Kneeling Shot", weapon: "Rifle / Bayonet", acquisition: "-", level: "-" },
-      { name: "Encounter Shot", weapon: "Bayonet", acquisition: "-", level: "-" }
+      { name: "Bare Knuckle", weapon: "None", acquisition: "Default", level: "1" },
+      { name: "Aiming Shot", weapon: "Pistol", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Freestyle Shot", weapon: "Pistol", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Sight Shot", weapon: "Pistol", acquisition: "Scholar Bahamar - 30 Explorer Team Box + 25 Mysterious Powder OR 30 Explorer Team Box + 50 Shiny Crystal", level: "Veteran" },
+      { name: "Double-Gun Shot", weapon: "Pistol + Pistol", acquisition: "Master Room 4,000 Vis", level: 60 },
+      { name: "Outrage Shot", weapon: "Pistol + Pistol", acquisition: "Scholar Bahamar - 30 Explorer Team Box + 25 Mysterious Powder OR 30 Explorer Team Box + 50 Shiny Crystal", level: "Veteran" },
+      { name: "Standing Shot", weapon: "Rifle / Bayonet", acquisition: "Default", level: 1 },
+      { name: "Kneeling Shot", weapon: "Rifle / Bayonet", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Encounter Shot", weapon: "Bayonet", acquisition: "Master Room - Rare Book of Shooting + 50 Mega Aidanium", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -100,11 +100,11 @@ export const CHARACTERS = [
     portrait: "images/characters/scout.png",
     largePortrait: "images/characters/scout-large.png",
     stances: [
-      { name: "First Aid", weapon: "None / Rosario", acquisition: "-", level: "-" },
-      { name: "Fortitudo", weapon: "None / Rosario", acquisition: "-", level: "-" },
-      { name: "Install Trap", weapon: "None", acquisition: "-", level: "-" },
-      { name: "Escrima", weapon: "Dagger", acquisition: "-", level: "-" },
-      { name: "Dobalada Corte", weapon: "Dagger + Dagger", acquisition: "-", level: "-" }
+      { name: "First Aid", weapon: "None / Rosario", acquisition: "Default", level: 1 },
+      { name: "Fortitudo", weapon: "None / Rosario", acquisition: "Master Room 2,000 Vis", level: 18 },
+      { name: "Install Trap", weapon: "None", acquisition: "Master Room 2,000 Vis", level: 18 },
+      { name: "Escrima", weapon: "Dagger", acquisition: "Default", level: 1 },
+      { name: "Dobalada Corte", weapon: "Dagger + Dagger", acquisition: "Default", level: 1 }
     ],
     stats: {
       core: {
@@ -129,16 +129,16 @@ export const CHARACTERS = [
     portrait: "images/characters/warlock.png",
     largePortrait: "images/characters/warlock-large.png",
     stances: [
-      { name: "Elemental Lord", weapon: "Special Bracelet", acquisition: "-", level: "-" },
-      { name: "Possession Fire", weapon: "Fire Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Fire", weapon: "Fire Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
-      { name: "Domination Fire", weapon: "Fire Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
-      { name: "Possession Ice", weapon: "Ice Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Ice", weapon: "Ice Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
-      { name: "Domination Ice", weapon: "Ice Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
-      { name: "Possession Lightning", weapon: "Lightning Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Lightning", weapon: "Lightning Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" },
-      { name: "Domination Lightning", weapon: "Lightning Bracelet / Bone Bracelet / Special Bracelet", acquisition: "-", level: "-" }
+      { name: "Elemental Lord", weapon: "Special Bracelet", acquisition: "Master Room 20,000 Vis", level: 72 },
+      { name: "Possession Fire", weapon: "Fire Bracelet / Bone Bracelet / Special Bracelet", acquisition: "Default", level: 1 },
+      { name: "Evocation Fire", weapon: "Fire Bracelet / Bone Bracelet / Special Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Domination Fire", weapon: "Fire Bracelet / Bone Bracelet / Special Bracelet", acquisition: "Master Room - Rare Book of Magic + 50 Mega Ionium", level: "Veteran" },
+      { name: "Possession Ice", weapon: "Ice Bracelet / Bone Bracelet / Special Bracelet", acquisition: "Default", level: 1 },
+      { name: "Evocation Ice", weapon: "Ice Bracelet / Bone Bracelet / Special Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Domination Ice", weapon: "Ice Bracelet / Bone Bracelet / Special Bracelet", acquisition: "Master Room - Rare Book of Magic + 50 Mega Aidanium", level: "Veteran" },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet / Bone Bracelet / Special Bracelet", acquisition: "Default", level: 1 },
+      { name: "Evocation Lightning", weapon: "Lightning Bracelet / Bone Bracelet / Special Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Domination Lightning", weapon: "Lightning Bracelet / Bone Bracelet / Special Bracelet", acquisition: "Master Room - Rare Book of Magic + 50 Mega Etretanium", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -168,12 +168,12 @@ export const CHARACTERS = [
     portrait: "images/characters/wizard.png",
     largePortrait: "images/characters/wizard-large.png",
     stances: [
-      { name: "Psychokinesis", weapon: "None / Staff / Rod", acquisition: "-", level: "-" },
-      { name: "Illusionist", weapon: "Staff", acquisition: "-", level: "-" },
-      { name: "Levitation", weapon: "Staff / Rod", acquisition: "-", level: "-" },
-      { name: "Anathema", weapon: "Staff", acquisition: "-", level: "-" },
-      { name: "ESP", weapon: "Rod", acquisition: "-", level: "-" },
-      { name: "Incantation", weapon: "Rod", acquisition: "-", level: "-" }
+      { name: "Psychokinesis", weapon: "None / Staff / Rod", acquisition: "Default", level: 1 },
+      { name: "Illusionist", weapon: "Staff", acquisition: "Master Room 4,000 Vis", level: 40 },
+      { name: "Levitation", weapon: "Staff / Rod", acquisition: "Master Room 20,000 Vis", level: 60 },
+      { name: "Anathema", weapon: "Staff", acquisition: "Master Room - Rare Book of Magic + 50 Mega Aidanium", level: "Veteran" },
+      { name: "ESP", weapon: "Rod", acquisition: "Master Room 2,000 Vis", level: 24 },
+      { name: "Incantation", weapon: "Rod", acquisition: "Master Room - Rare Book of Magic + 50 Mega Ionium", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -209,7 +209,7 @@ export const CHARACTERS = [
 
     // Structured stances
     stances: [
-      { name: "Bare Knuckle",       weapon: "None",                 acquisition: "Default", level: "-"     },
+      { name: "Bare Knuckle",       weapon: "None",                 acquisition: "Default", level: "1"     },
       { name: "Epee Garde",         weapon: "Rapier",               acquisition: "Default", level: "Lv 48"  },
       { name: "Sabre Garde",        weapon: "Rapier",               acquisition: "Default", level: "Lv 48"  },
       { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche", acquisition: "Default", level: "Lv 60"  }
@@ -254,12 +254,12 @@ export const CHARACTERS = [
     portrait: "images/characters/brunie.png",
     largePortrait: "images/characters/brunie-large.png",
     stances: [
-      { name: "Bare Knuckle",    weapon: "None",             acquisition: "-", level: "-" },
-      { name: "Aiming Shot",     weapon: "Pistol",           acquisition: "-", level: "-" },
-      { name: "Freestyle Shot",  weapon: "Pistol",           acquisition: "-", level: "-" },
-      { name: "Sight Shot",      weapon: "Pistol",           acquisition: "-", level: "-" },
-      { name: "Double-Gun Shot", weapon: "Pistol + Pistol",  acquisition: "-", level: "-" },
-      { name: "Outrage Shot",    weapon: "Pistol + Pistol",  acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",    weapon: "None",             acquisition: "Default", level: "1" },
+      { name: "Aiming Shot",     weapon: "Pistol",           acquisition: "Default", level: 24 },
+      { name: "Freestyle Shot",  weapon: "Pistol",           acquisition: "Default", level: 24 },
+      { name: "Sight Shot",      weapon: "Pistol",           acquisition: "Scholar Bahamar - 30 Explorer Team Box + 25 Mysterious Powder", level: "Veteran" },
+      { name: "Double-Gun Shot", weapon: "Pistol + Pistol",  acquisition: "Default", level: 60 },
+      { name: "Outrage Shot",    weapon: "Pistol + Pistol",  acquisition: "Scholar Bahamar - 30 Explorer Team Box + 25 Mysterious Powder", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -287,19 +287,19 @@ export const CHARACTERS = [
     portrait: "images/characters/claude.png",
     largePortrait: "images/characters/claude-large.png",
     stances: [
-      { name: "Bare Knuckle",   weapon: "None",              acquisition: "-", level: "-" },
-      { name: "Back-Guard",     weapon: "Sword",             acquisition: "-", level: "-" },
-      { name: "Hack and Slash", weapon: "Sword + Sword",     acquisition: "-", level: "-" },
-      { name: "Middle-Guard",   weapon: "Sabre",             acquisition: "-", level: "-" },
-      { name: "Back-Guard",     weapon: "Sabre",             acquisition: "-", level: "-" },
-      { name: "Twin Blades",    weapon: "Sabre + Sabre",     acquisition: "-", level: "-" },
-      { name: "Plow-Guard",     weapon: "Great Sword",       acquisition: "-", level: "-" },
-      { name: "Tail-Guard",     weapon: "Great Sword",       acquisition: "-", level: "-" },
-      { name: "Blandir Cruz",   weapon: "Polearm",           acquisition: "-", level: "-" },
-      { name: "Penetrar Cruz",  weapon: "Polearm",           acquisition: "-", level: "-" },
-      { name: "Mighty Cruz",    weapon: "Polearm",           acquisition: "-", level: "-" },
-      { name: "Back-Guard",     weapon: "Blunt",             acquisition: "-", level: "-" },
-      { name: "Stave Guard",    weapon: "Javelin",           acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",   weapon: "None",              acquisition: "Default", level: "1" },
+      { name: "Back-Guard",     weapon: "Sword",             acquisition: "Default", level: 1 },
+      { name: "Hack and Slash", weapon: "Sword + Sword",     acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Middle-Guard",   weapon: "Sabre",             acquisition: "Default", level: 12 },
+      { name: "Back-Guard",     weapon: "Sabre",             acquisition: "Default", level: 1 },
+      { name: "Twin Blades",    weapon: "Sabre + Sabre",     acquisition: "Master Room 4,000 Vis", level: 36 },
+      { name: "Plow-Guard",     weapon: "Great Sword",       acquisition: "Default", level: 24 },
+      { name: "Tail-Guard",     weapon: "Great Sword",       acquisition: "Master Room 6,000 Vis", level: 48 },
+      { name: "Blandir Cruz",   weapon: "Polearm",           acquisition: "Default", level: 24 },
+      { name: "Penetrar Cruz",  weapon: "Polearm",           acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Mighty Cruz",    weapon: "Polearm",           acquisition: "Scholar Bahamar - 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" },
+      { name: "Back-Guard",     weapon: "Blunt",             acquisition: "Default", level: 1 },
+      { name: "Stave Guard",    weapon: "Javelin",           acquisition: "Master Room - Rare Book of Combat + 50 Mega Ionium", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -331,12 +331,12 @@ export const CHARACTERS = [
     portrait: "images/characters/diego.png",
     largePortrait: "images/characters/diego-large.png",
     stances: [
-      { name: "Install Trap",           weapon: "None", acquisition: "-", level: "-" },
-      { name: "Defensive Construction", weapon: "None", acquisition: "-", level: "-" },
-      { name: "Back-Guard",             weapon: "Sword", acquisition: "-", level: "-" },
-      { name: "Hack and Slash",         weapon: "Sword + Sword", acquisition: "-", level: "-" },
-      { name: "Install Trap",           weapon: "Tool", acquisition: "-", level: "-" },
-      { name: "Defensive Construction", weapon: "Tool", acquisition: "-", level: "-" }
+      { name: "Install Trap",           weapon: "None", acquisition: "Default", level: 18 },
+      { name: "Defensive Construction", weapon: "None", acquisition: "Default", level: 18 },
+      { name: "Back-Guard",             weapon: "Sword", acquisition: "Default", level: 1 },
+      { name: "Hack and Slash",         weapon: "Sword + Sword", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Install Trap",           weapon: "Tool", acquisition: "Default", level: 18 },
+      { name: "Defensive Construction", weapon: "Tool", acquisition: "Default", level: 18 }
     ],
     stats: {
       core: {
@@ -369,14 +369,14 @@ export const CHARACTERS = [
     portrait: "images/characters/idge.png",
     largePortrait: "images/characters/idge-large.png",
     stances: [
-      { name: "Bare Knuckle",  weapon: "None",         acquisition: "-", level: "-" },
-      { name: "Plow-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Tail-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Roof-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Sidewinder",    weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Blandir Cruz",  weapon: "Polearm",      acquisition: "-", level: "-" },
-      { name: "Penetrar Cruz", weapon: "Polearm",      acquisition: "-", level: "-" },
-      { name: "Mighty Cruz",   weapon: "Polearm",      acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",  weapon: "None",         acquisition: "Default", level: "1" },
+      { name: "Plow-Guard",    weapon: "Great Sword",  acquisition: "Default", level: 24 },
+      { name: "Tail-Guard",    weapon: "Great Sword",  acquisition: "Master Room 6,000 Vis", level: 48 },
+      { name: "Roof-Guard",    weapon: "Great Sword",  acquisition: "Master Room 4,000 Vis", level: 36 },
+      { name: "Sidewinder",    weapon: "Great Sword",  acquisition: "Master Room - Rare Book of Combat + 50 Mega Aidanium", level: "Veteran" },
+      { name: "Blandir Cruz",  weapon: "Polearm",      acquisition: "Default", level: 24 },
+      { name: "Penetrar Cruz", weapon: "Polearm",      acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Mighty Cruz",   weapon: "Polearm",      acquisition: "Scholar Bahamar - 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -406,15 +406,15 @@ export const CHARACTERS = [
     portrait: "images/characters/najib.png",
     largePortrait: "images/characters/najib-large.png",
     stances: [
-      { name: "Bare Knuckle",   weapon: "None",            acquisition: "-", level: "-" },
-      { name: "Standing Shot",  weapon: "Rifle",           acquisition: "-", level: "-" },
-      { name: "Kneeling Shot",  weapon: "Rifle",           acquisition: "-", level: "-" },
-      { name: "Middle-Guard",   weapon: "Sabre",           acquisition: "-", level: "-" },
-      { name: "Low-Guard",      weapon: "Sabre",           acquisition: "-", level: "-" },
-      { name: "Twin Blades",    weapon: "Sabre + Sabre",   acquisition: "-", level: "-" },
-      { name: "Standing Shot",  weapon: "Bayonet",         acquisition: "-", level: "-" },
-      { name: "Kneeling Shot",  weapon: "Bayonet",         acquisition: "-", level: "-" },
-      { name: "Encounter Shot", weapon: "Bayonet",         acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",   weapon: "None", acquisition: "Default", level: "-" },
+      { name: "Standing Shot",  weapon: "Rifle", acquisition: "Default", level: 44 },   // Targan Shot equivalent
+      { name: "Kneeling Shot",  weapon: "Rifle", acquisition: "Default", level: 44 },   // Straight Shot equivalent
+      { name: "Middle-Guard",   weapon: "Sabre", acquisition: "Default", level: 12 },
+      { name: "Low-Guard",      weapon: "Sabre", acquisition: "Scholar Bahamar - 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" },
+      { name: "Twin Blades",    weapon: "Sabre + Sabre", acquisition: "Default", level: 36 },
+      { name: "Standing Shot",  weapon: "Bayonet", acquisition: "Default", level: 44 }, // Targan Shot with Bayonet
+      { name: "Kneeling Shot",  weapon: "Bayonet", acquisition: "Default", level: 44 }, // Straight Shot with Bayonet
+      { name: "Encounter Shot", weapon: "Bayonet", acquisition: "Master Room - Rare Book of Shooting + 50 Mega Aidanium", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -447,13 +447,13 @@ export const CHARACTERS = [
     portrait: "images/characters/panfilo.png",
     largePortrait: "images/characters/panfilo-large.png",
     stances: [
-      { name: "Bare Knuckle",      weapon: "None",                         acquisition: "-", level: "-" },
-      { name: "Back-Guard",        weapon: "Sword",                        acquisition: "-", level: "-" },
-      { name: "Hack and Slash",    weapon: "Sword + Sword",                acquisition: "-", level: "-" },
-      { name: "Flame-Guard",       weapon: "Sword + Fire Bracelet",        acquisition: "-", level: "-" },
-      { name: "Middle-Guard",      weapon: "Sabre",                        acquisition: "-", level: "-" },
-      { name: "Low-Guard",         weapon: "Sabre",                        acquisition: "-", level: "-" },
-      { name: "Flame-Guard",       weapon: "Sabre + Fire Bracelet",        acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",      weapon: "None", acquisition: "Default", level: "1" },
+      { name: "Back-Guard",        weapon: "Sword", acquisition: "Default", level: 1 },
+      { name: "Hack and Slash",    weapon: "Sword + Sword", acquisition: "Default", level: 12 },
+      { name: "Flame-Guard",       weapon: "Sword + Fire Bracelet", acquisition: "Master Room 16,000 Vis", level: 60 },
+      { name: "Middle-Guard",      weapon: "Sabre", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Low-Guard",         weapon: "Sabre", acquisition: "Scholar Bahamar - 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" },
+      { name: "Flame-Guard",       weapon: "Sabre + Fire Bracelet", acquisition: "Master Room 16,000 Vis", level: 60 }
     ],
     stats: {
       core: {
@@ -482,16 +482,16 @@ export const CHARACTERS = [
     portrait: "images/characters/soldier.png",
     largePortrait: "images/characters/soldier-large.png",
     stances: [
-      { name: "Bare Knuckle",    weapon: "None",                 acquisition: "-", level: "-" },
-      { name: "Blandir Cruz",    weapon: "Polearm",              acquisition: "-", level: "-" },
-      { name: "Penetrar Cruz",   weapon: "Polearm",              acquisition: "-", level: "-" },
-      { name: "Mighty Cruz",     weapon: "Polearm",              acquisition: "-", level: "-" },
-      { name: "Back-Guard",      weapon: "Sword",                acquisition: "-", level: "-" },
-      { name: "Back-Guard",      weapon: "Blunt",                acquisition: "-", level: "-" },
-      { name: "Back-Guard",      weapon: "Sword + Shield",       acquisition: "-", level: "-" },
-      { name: "High-Guard",      weapon: "Sword + Shield",       acquisition: "-", level: "-" },
-      { name: "Back-Guard",      weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
-      { name: "Defender",        weapon: "Blunt + Shield",       acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",    weapon: "None", acquisition: "Default", level: "1" },
+      { name: "Blandir Cruz",    weapon: "Polearm", acquisition: "Master Room 3,000 Vis", level: 24 },
+      { name: "Penetrar Cruz",   weapon: "Polearm", acquisition: "Default", level: 24 },
+      { name: "Mighty Cruz",     weapon: "Polearm", acquisition: "Master Guardian 1,000,000 Vis", level: "Veteran" },
+      { name: "Back-Guard",      weapon: "Sword", acquisition: "Default", level: 1 },
+      { name: "Back-Guard",      weapon: "Blunt", acquisition: "Default", level: 1 },
+      { name: "Back-Guard",      weapon: "Sword + Shield", acquisition: "Default", level: 1 },
+      { name: "High-Guard",      weapon: "Sword + Shield", acquisition: "Master Room 1,500 Vis", level: 12 },
+      { name: "Back-Guard",      weapon: "Blunt + Shield", acquisition: "Default", level: 1 },
+      { name: "Defender",        weapon: "Blunt + Shield", acquisition: "Master Room 1,000,000 Vis", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -520,9 +520,9 @@ export const CHARACTERS = [
     portrait: "images/characters/angie.png",
     largePortrait: "images/characters/angie-large.png",
     stances: [
-      { name: "Install Trap",           weapon: "Tool", acquisition: "-", level: "-" },
-      { name: "Construction",           weapon: "Tool", acquisition: "-", level: "-" },
-      { name: "Defensive Construction", weapon: "Tool", acquisition: "-", level: "-" }
+      { name: "Install Trap",           weapon: "Tool", acquisition: "Default", level: 18 },
+      { name: "Construction",           weapon: "Tool", acquisition: "Default", level: 18 },
+      { name: "Defensive Construction", weapon: "Tool", acquisition: "Default", level: 18 }
     ],
     stats: {
       core: {
@@ -549,13 +549,13 @@ export const CHARACTERS = [
     portrait: "images/characters/ramiro.png",
     largePortrait: "images/characters/ramiro-large.png",
     stances: [
-      { name: "Bare Knuckle",  weapon: "None",           acquisition: "-", level: "-" },
-      { name: "Plow-Guard",    weapon: "Sword",          acquisition: "-", level: "-" },
-      { name: "Roof-Guard",    weapon: "Sword",          acquisition: "-", level: "-" },
-      { name: "Sidewinder",    weapon: "Sword",          acquisition: "-", level: "-" },
-      { name: "Middle-Guard",  weapon: "Main Gauche",    acquisition: "-", level: "-" },
-      { name: "Back-Guard",    weapon: "Main Gauche",    acquisition: "-", level: "-" },
-      { name: "Low-Guard",     weapon: "Main Gauche",    acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",  weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Plow-Guard",    weapon: "Sword", acquisition: "Default", level: 24 },
+      { name: "Roof-Guard",    weapon: "Sword", acquisition: "Master Guardian 4,000 Vis", level: 36 },
+      { name: "Sidewinder",    weapon: "Sword", acquisition: "Master Guardian 1,000,000 Vis", level: "Veteran" },
+      { name: "Middle-Guard",  weapon: "Main Gauche", acquisition: "Default", level: 12 },
+      { name: "Back-Guard",    weapon: "Main Gauche", acquisition: "Master Guardian 1,500 Vis", level: 1 },
+      { name: "Low-Guard",     weapon: "Main Gauche", acquisition: "Master Guardian 1,000,000 Vis", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -591,11 +591,11 @@ export const CHARACTERS = [
     portrait: "images/characters/jack.png",
     largePortrait: "images/characters/jack-large.png",
     stances: [
-      { name: "Install Trap",  weapon: "None", acquisition: "-", level: "-" },
-      { name: "Construction",  weapon: "None", acquisition: "-", level: "-" },
-      { name: "Penetrar Cruz", weapon: "Polearm", acquisition: "-", level: "-" },
-      { name: "Install Trap",  weapon: "Tool", acquisition: "-", level: "-" },
-      { name: "Construction",  weapon: "Tool", acquisition: "-", level: "-" }
+      { name: "Install Trap",  weapon: "None", acquisition: "Default", level: 18 },
+      { name: "Construction",  weapon: "None", acquisition: "Default", level: 18 },
+      { name: "Penetrar Cruz", weapon: "Polearm", acquisition: "Default", level: 1 },
+      { name: "Install Trap",  weapon: "Tool", acquisition: "Default", level: 18 },
+      { name: "Construction",  weapon: "Tool", acquisition: "Default", level: 18 }
     ],
     stats: {
       core: {
@@ -625,14 +625,14 @@ export const CHARACTERS = [
     portrait: "images/characters/adelina.png",
     largePortrait: "images/characters/adelina-large.png",
     stances: [
-      { name: "Bare Knuckle",    weapon: "None",             acquisition: "-", level: "-" },
-      { name: "Middle-Guard",    weapon: "Sabre",            acquisition: "-", level: "-" },
-      { name: "Back-Guard",      weapon: "Sabre",            acquisition: "-", level: "-" },
-      { name: "Low-Guard",       weapon: "Sabre",            acquisition: "-", level: "-" },
-      { name: "Twin Blades",     weapon: "Sabre + Sabre",    acquisition: "-", level: "-" },
-      { name: "Heaven or Hell",  weapon: "Sabre + Pistol",   acquisition: "-", level: "-" },
-      { name: "Freestyle Shot",  weapon: "Pistol",           acquisition: "-", level: "-" },
-      { name: "Double-Gun Shot", weapon: "Pistol + Pistol",  acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",    weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Middle-Guard",    weapon: "Sabre", acquisition: "Default", level: 12 },
+      { name: "Back-Guard",      weapon: "Sabre", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Low-Guard",       weapon: "Sabre", acquisition: "Scholar Bahamar - 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" },
+      { name: "Twin Blades",     weapon: "Sabre + Sabre", acquisition: "Master Room 4,000 Vis", level: 36 },
+      { name: "Heaven or Hell",  weapon: "Sabre + Pistol", acquisition: "Master Room 7,500 Vis", level: 40 },
+      { name: "Freestyle Shot",  weapon: "Pistol", acquisition: "Default", level: 24 },
+      { name: "Double-Gun Shot", weapon: "Pistol + Pistol", acquisition: "Master Room 4,000 Vis", level: 60 }
     ],
     stats: {
       core: {
@@ -660,13 +660,13 @@ export const CHARACTERS = [
     portrait: "images/characters/alejandro.png",
     largePortrait: "images/characters/alejandro-large.png",
     stances: [
-      { name: "Bare Knuckle",  weapon: "None",         acquisition: "-", level: "-" },
-      { name: "Plow-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Tail-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Blandir Cruz",  weapon: "Polearm",      acquisition: "-", level: "-" },
-      { name: "Penetrar Cruz", weapon: "Polearm",      acquisition: "-", level: "-" },
-      { name: "Mighty Cruz",   weapon: "Polearm",      acquisition: "-", level: "-" },
-      { name: "Stave Guard",   weapon: "Javelin",      acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",  weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Plow-Guard",    weapon: "Great Sword", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Tail-Guard",    weapon: "Great Sword", acquisition: "Master Room 6,000 Vis", level: 48 },
+      { name: "Blandir Cruz",  weapon: "Polearm", acquisition: "Default", level: 24 },
+      { name: "Penetrar Cruz", weapon: "Polearm", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Mighty Cruz",   weapon: "Polearm", acquisition: "Scholar Bahamar - 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" },
+      { name: "Stave Guard",   weapon: "Javelin", acquisition: "Master Room - Rare Book of Combat + 50 Mega Ionium", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -695,16 +695,16 @@ export const CHARACTERS = [
     portrait: "images/characters/trooper.png",
     largePortrait: "images/characters/trooper-large.png",
     stances: [
-      { name: "Bare Knuckle",   weapon: "None",                 acquisition: "-", level: "-" },
-      { name: "Back-Guard",     weapon: "Sword",                acquisition: "-", level: "-" },
-      { name: "Back-Guard",     weapon: "Sword + Shield",       acquisition: "-", level: "-" },
-      { name: "High-Guard",     weapon: "Sword + Shield",       acquisition: "-", level: "-" },
-      { name: "Hack and Slash", weapon: "Sword + Sword",        acquisition: "-", level: "-" },
-      { name: "Blandir Cruz",   weapon: "Polearm",              acquisition: "-", level: "-" },
-      { name: "Penetrar Cruz",  weapon: "Polearm",              acquisition: "-", level: "-" },
-      { name: "Mighty Cruz",    weapon: "Polearm",              acquisition: "-", level: "-" },
-      { name: "Back-Guard",     weapon: "Blunt",                acquisition: "-", level: "-" },
-      { name: "Defender",       weapon: "Blunt + Shield",       acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",   weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Back-Guard",     weapon: "Sword", acquisition: "Default", level: 1 },
+      { name: "Back-Guard",     weapon: "Sword + Shield", acquisition: "Default", level: 1 },
+      { name: "High-Guard",     weapon: "Sword + Shield", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Hack and Slash", weapon: "Sword + Sword", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Blandir Cruz",   weapon: "Polearm", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Penetrar Cruz",  weapon: "Polearm", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Mighty Cruz",    weapon: "Polearm", acquisition: "Scholar Bahamar - 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" },
+      { name: "Back-Guard",     weapon: "Blunt", acquisition: "Default", level: 1 },
+      { name: "Defender",       weapon: "Blunt + Shield", acquisition: "Master Room - Rare Book of Combat + 50 Mega Ionium", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -736,10 +736,10 @@ export const CHARACTERS = [
     portrait: "images/characters/emilia.png",
     largePortrait: "images/characters/emilia-large.png",
     stances: [
-      { name: "First Aid",   weapon: "None / Rosario", acquisition: "-", level: "-" },
-      { name: "Fortitudo",   weapon: "None / Rosario", acquisition: "-", level: "-" },
-      { name: "ESP",         weapon: "None / Rod",     acquisition: "-", level: "-" },
-      { name: "Incantation", weapon: "Rod",            acquisition: "-", level: "-" }
+      { name: "First Aid",   weapon: "None / Rosario", acquisition: "Default", level: 1 },
+      { name: "Fortitudo",   weapon: "None / Rosario", acquisition: "Master Room 2,000 Vis", level: 18 },
+      { name: "ESP",         weapon: "None / Rod", acquisition: "Default", level: 24 },
+      { name: "Incantation", weapon: "Rod", acquisition: "Master Room - Rare Book of Magic + 50 Mega Ionium", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -767,15 +767,15 @@ export const CHARACTERS = [
     portrait: "images/characters/grace.png",
     largePortrait: "images/characters/grace-large.png",
     stances: [
-      { name: "Bare Knuckle",    weapon: "None",            acquisition: "-", level: "-" },
-      { name: "Aiming Shot",     weapon: "Pistol",          acquisition: "-", level: "-" },
-      { name: "Freestyle Shot",  weapon: "Pistol",          acquisition: "-", level: "-" },
-      { name: "Double-Gun Shot", weapon: "Pistol + Pistol", acquisition: "-", level: "-" },
-      { name: "Standing Shot",   weapon: "Rifle / Bayonet", acquisition: "-", level: "-" },
-      { name: "Kneeling Shot",   weapon: "Rifle / Bayonet", acquisition: "-", level: "-" },
-      { name: "Encounter Shot",  weapon: "Bayonet",         acquisition: "-", level: "-" },
-      { name: "Shotgun Blaster", weapon: "Shotgun",         acquisition: "-", level: "-" },
-      { name: "Gigantic Blaster",weapon: "Shotgun",         acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",    weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Aiming Shot",     weapon: "Pistol", acquisition: "Default", level: 24 },
+      { name: "Freestyle Shot",  weapon: "Pistol", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Double-Gun Shot", weapon: "Pistol + Pistol", acquisition: "Master Room 4,000 Vis", level: 60 },
+      { name: "Standing Shot",   weapon: "Rifle / Bayonet", acquisition: "Default", level: 1 },
+      { name: "Kneeling Shot",   weapon: "Rifle / Bayonet", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Encounter Shot",  weapon: "Bayonet", acquisition: "Master Room - Rare Book of Shooting + 50 Mega Aidanium", level: "Veteran" },
+      { name: "Shotgun Blaster", weapon: "Shotgun", acquisition: "Master Room 10,000 Vis", level: 48 },
+      { name: "Gigantic Blaster",weapon: "Shotgun", acquisition: "Scholar Bahamar - 30 Explorer Team Box + 25 Mysterious Powder", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -806,9 +806,9 @@ export const CHARACTERS = [
     portrait: "images/characters/gracielo.png",
     largePortrait: "images/characters/gracielo-large.png",
     stances: [
-      { name: "Bare Knuckle",               weapon: "None",      acquisition: "-", level: "-" },
-      { name: "Bare Knuckle",               weapon: "Knuckle",   acquisition: "-", level: "-" },
-      { name: "Martial Arts - Chap. of Wind", weapon: "Legguard", acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",                 weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Bare Knuckle",                 weapon: "Knuckle", acquisition: "Default", level: 1 },
+      { name: "Martial Arts - Chap. of Wind", weapon: "Legguard", acquisition: "Quest", level: 40 }
     ],
     stats: {
       core: {
@@ -847,11 +847,11 @@ export const CHARACTERS = [
     portrait: "images/characters/irawan.png",
     largePortrait: "images/characters/irawan-large.png",
     stances: [
-      { name: "Bare Knuckle",                    weapon: "None",      acquisition: "-", level: "-" },
-      { name: "Muathai",                         weapon: "Knuckle",   acquisition: "-", level: "-" },
-      { name: "Martial Arts - Chap. of Earth",   weapon: "Knuckle",   acquisition: "-", level: "-" },
-      { name: "Muathai",                         weapon: "Legguard",  acquisition: "-", level: "-" },
-      { name: "Martial Arts - Chap. of Wind",    weapon: "Legguard",  acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",                  weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Muathai",                        weapon: "Knuckle", acquisition: "Default", level: 1 },
+      { name: "Martial Arts - Chap. of Earth",  weapon: "Knuckle", acquisition: "Default", level: 1 },
+      { name: "Muathai",                        weapon: "Legguard", acquisition: "Default", level: 1 },
+      { name: "Martial Arts - Chap. of Wind",   weapon: "Legguard", acquisition: "Default", level: 1 }
     ],
     stats: {
       core: {
@@ -878,12 +878,12 @@ export const CHARACTERS = [
     portrait: "images/characters/jose.png",
     largePortrait: "images/characters/jose-large.png",
     stances: [
-      { name: "Bare Knuckle",     weapon: "None",        acquisition: "-", level: "-" },
-      { name: "Blandir Cruz",     weapon: "Polearm",     acquisition: "-", level: "-" },
-      { name: "Penetrar Cruz",    weapon: "Polearm",     acquisition: "-", level: "-" },
-      { name: "Mighty Cruz",      weapon: "Polearm",     acquisition: "-", level: "-" },
-      { name: "Siege Burst",      weapon: "Cannon",      acquisition: "-", level: "-" },
-      { name: "Gigantic Marksmanship", weapon: "Cannon", acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",     weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Blandir Cruz",     weapon: "Polearm", acquisition: "Default", level: 24 },
+      { name: "Penetrar Cruz",    weapon: "Polearm", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Mighty Cruz",      weapon: "Polearm", acquisition: "Scholar Bahamar - 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" },
+      { name: "Siege Burst",      weapon: "Cannon", acquisition: "Default", level: 48 },
+      { name: "Gigantic Marksmanship", weapon: "Cannon", acquisition: "Master Room - Rare Book of Shooting + 50 Mega Etretanium", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -910,10 +910,10 @@ export const CHARACTERS = [
     portrait: "images/characters/lisa.png",
     largePortrait: "images/characters/lisa-large.png",
     stances: [
-      { name: "Bare Knuckle",    weapon: "None",              acquisition: "-", level: "-" },
-      { name: "Escrima",         weapon: "Dagger",            acquisition: "-", level: "-" },
-      { name: "Dobalada Corte",  weapon: "Dagger + Dagger",   acquisition: "-", level: "-" },
-      { name: "Raid Assault",    weapon: "Dagger + Dagger",   acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",    weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Escrima",         weapon: "Dagger", acquisition: "Default", level: 1 },
+      { name: "Dobalada Corte",  weapon: "Dagger + Dagger", acquisition: "Default", level: 1 },
+      { name: "Raid Assault",    weapon: "Dagger + Dagger", acquisition: "Scholar Bahamar - 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -939,18 +939,18 @@ export const CHARACTERS = [
     portrait: "images/characters/mboma.png",
     largePortrait: "images/characters/mboma-large.png",
     stances: [
-      { name: "Illusionist",       weapon: "None",           acquisition: "-", level: "-" },
-      { name: "Possession Fire",   weapon: "None",           acquisition: "-", level: "-" },
-      { name: "Illusionist",       weapon: "Staff",          acquisition: "-", level: "-" },
-      { name: "Levitation",        weapon: "Staff",          acquisition: "-", level: "-" },
-      { name: "Anathema",          weapon: "Staff",          acquisition: "-", level: "-" },
-      { name: "Possession Fire",   weapon: "Fire Bracelet",  acquisition: "-", level: "-" },
-      { name: "Possession Fire",   weapon: "Fire Bracelet + Fire Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Fire",    weapon: "Fire Bracelet + Fire Bracelet", acquisition: "-", level: "-" },
-      { name: "Domination Fire",   weapon: "Fire Bracelet + Fire Bracelet", acquisition: "-", level: "-" },
-      { name: "Possession Fire",   weapon: "Fire Bracelet + Special Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Fire",    weapon: "Fire Bracelet + Special Bracelet", acquisition: "-", level: "-" },
-      { name: "Domination Fire",   weapon: "Fire Bracelet + Special Bracelet", acquisition: "-", level: "-" }
+      { name: "Illusionist",       weapon: "None", acquisition: "Default", level: 40 },
+      { name: "Possession Fire",   weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Illusionist",       weapon: "Staff", acquisition: "Default", level: 40 },
+      { name: "Levitation",        weapon: "Staff", acquisition: "Master Room 20,000 Vis", level: 60 },
+      { name: "Anathema",          weapon: "Staff", acquisition: "Master Room - Rare Book of Magic + 50 Mega Aidanium", level: "Veteran" },
+      { name: "Possession Fire",   weapon: "Fire Bracelet", acquisition: "Default", level: 1 },
+      { name: "Possession Fire",   weapon: "Fire Bracelet + Fire Bracelet", acquisition: "Default", level: 1 },
+      { name: "Evocation Fire",    weapon: "Fire Bracelet + Fire Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Domination Fire",   weapon: "Fire Bracelet + Fire Bracelet", acquisition: "Master Room - Rare Book of Magic + 50 Mega Ionium", level: "Veteran" },
+      { name: "Possession Fire",   weapon: "Fire Bracelet + Special Bracelet", acquisition: "Default", level: 1 },
+      { name: "Evocation Fire",    weapon: "Fire Bracelet + Special Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Domination Fire",   weapon: "Fire Bracelet + Special Bracelet", acquisition: "Master Room - Rare Book of Magic + 50 Mega Ionium", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -976,8 +976,8 @@ export const CHARACTERS = [
     portrait: "images/characters/soho.png",
     largePortrait: "images/characters/soho-large.png",
     stances: [
-      { name: "Fortitudo", weapon: "None / Rosario", acquisition: "-", level: "-" },
-      { name: "Escrima",   weapon: "Dagger",         acquisition: "-", level: "-" }
+      { name: "Fortitudo", weapon: "None / Rosario", acquisition: "Default", level: 18 },
+      { name: "Escrima",   weapon: "Dagger", acquisition: "Default", level: 1 }
     ],
     stats: {
       core: {
@@ -994,12 +994,12 @@ export const CHARACTERS = [
       }
     },
     quests: [
-      { id: "q1", name: "Bison Horn (Req Lv 25) — Port of Coimbra (Soho I-6): go to King's Garden, collect 25 Bison Horns from Brown Bison, return. (1,000 Vis, Polish Initiate (3))" },
-      { id: "q2", name: "Gargoyle Wing — Tetra Grand Corridor: collect Flying Daemon Wings; return to Soho for Soho Character Card. (Polish Novice (3))" },
-      { id: "q3", name: "Mystery of Enchanting (Req Lv 36) — Jezebel Glen: gather items from Elite Pirate Swordsmen, Elite Milhou Thugs, Elite Milhou Axemen; return. (Enchantment Chip 36, EXP Card (3), Polish Novice)" },
-      { id: "q4", name: "Secret of Enchanting (Req Lv 40) — Porto Bello: The Deck: defeat Elite Scarlet Claws; return. (3,000 Vis, Enchantment Chip 40, EXP Card (3), Polish Disciple (3))" },
-      { id: "q5", name: "Soho's Gift (Req Lv 44) — Porto Bello: The Hold: defeat Elite Abyssal Claw & Elite Zavi di Gavi; return. (5,000 Vis, Enchantment Chip 44, EXP Card (3), Polish Disciple (3))" },
-      { id: "q6", name: "Forgettable (Req Lv 48) — Porto Bello: The Deck → Forgotten Territory entrance (B-6): use 1-Day Pass, defeat Forgotten mobs, return. (Forgotten Territory Pass (1 Day), 10,000 Vis, Enchantment Chip 48, EXP Card (3), Polish Disciple (3))" }
+      { id: "q1", name: "Bison Horn (Req Lv 25) - Port of Coimbra (Soho I-6): go to King's Garden, collect 25 Bison Horns from Brown Bison, return. (1,000 Vis, Polish Initiate (3))" },
+      { id: "q2", name: "Gargoyle Wing - Tetra Grand Corridor: collect Flying Daemon Wings; return to Soho for Soho Character Card. (Polish Novice (3))" },
+      { id: "q3", name: "Mystery of Enchanting (Req Lv 36) - Jezebel Glen: gather items from Elite Pirate Swordsmen, Elite Milhou Thugs, Elite Milhou Axemen; return. (Enchantment Chip 36, EXP Card (3), Polish Novice)" },
+      { id: "q4", name: "Secret of Enchanting (Req Lv 40) - Porto Bello: The Deck: defeat Elite Scarlet Claws; return. (3,000 Vis, Enchantment Chip 40, EXP Card (3), Polish Disciple (3))" },
+      { id: "q5", name: "Soho's Gift (Req Lv 44) - Porto Bello: The Hold: defeat Elite Abyssal Claw & Elite Zavi di Gavi; return. (5,000 Vis, Enchantment Chip 44, EXP Card (3), Polish Disciple (3))" },
+      { id: "q6", name: "Forgettable (Req Lv 48) - Porto Bello: The Deck → Forgotten Territory entrance (B-6): use 1-Day Pass, defeat Forgotten mobs, return. (Forgotten Territory Pass (1 Day), 10,000 Vis, Enchantment Chip 48, EXP Card (3), Polish Disciple (3))" }
     ]
   },
 
@@ -1013,11 +1013,11 @@ export const CHARACTERS = [
     portrait: "images/characters/soso.png",
     largePortrait: "images/characters/soso-large.png",
     stances: [
-      { name: "Bare Knuckle",                      weapon: "None",     acquisition: "-", level: "-" },
-      { name: "Martial Arts Book - Chap. of Ice",  weapon: "Knuckle",  acquisition: "-", level: "-" },
-      { name: "Martial Arts Book - Chap. of Earth",weapon: "Knuckle",  acquisition: "-", level: "-" },
-      { name: "Martial Arts Book - Chap. of Ice",  weapon: "Legguard", acquisition: "-", level: "-" },
-      { name: "Martial Arts Book - Chap. of Wind", weapon: "Legguard", acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",                      weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Martial Arts Book - Chap. of Ice",  weapon: "Knuckle", acquisition: "Default", level: 1 },
+      { name: "Martial Arts Book - Chap. of Earth",weapon: "Knuckle", acquisition: "Default", level: 1 },
+      { name: "Martial Arts Book - Chap. of Ice",  weapon: "Legguard", acquisition: "Default", level: 1 },
+      { name: "Martial Arts Book - Chap. of Wind", weapon: "Legguard", acquisition: "Default", level: 1 }
     ],
     stats: {
       core: {
@@ -1049,12 +1049,10 @@ export const CHARACTERS = [
     portrait: "images/characters/baek.png",
     largePortrait: "images/characters/baek-large.png",
     stances: [
-      { name: "Bare Knuckle", weapon: "None", acquisition: "-", level: "-" },
-      { name: "Martial Arts Book-Chap. of Mind", weapon: "Knuckle", acquisition: "-", level: "-" },
-      { name: "Martial Arts Book-Chap. of Earth", weapon: "Knuckle", acquisition: "-", level: "-" },
-      { name: "Martial Arts Book-Chap. of Wind", weapon: "Knuckle", acquisition: "-", level: "-" },
-      { name: "Master Martial Arts", weapon: "Knuckle", acquisition: "-", level: "-" },
-      { name: "AoA", weapon: "Knuckle", acquisition: "-", level: "-" }
+      { name: "Bare Knuckle", weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Martial Arts Book-Chap. of Mind", weapon: "Knuckle", acquisition: "Default", level: 1 },
+      { name: "Martial Arts Book-Chap. of Earth", weapon: "Knuckle", acquisition: "Default", level: 1 },
+      { name: "Martial Arts Book-Chap. of Wind", weapon: "Knuckle", acquisition: "Default", level: 1 }
     ],
     stats: {
       core: {
@@ -1089,9 +1087,9 @@ export const CHARACTERS = [
     portrait: "images/characters/infantry.png",
     largePortrait: "images/characters/infantry-large.png",
     stances: [
-      { name: "Bare Knuckle",  weapon: "None",                 acquisition: "-", level: "-" },
-      { name: "Standing Shot", weapon: "Rifle / Bayonet",      acquisition: "-", level: "-" },
-      { name: "Kneeling Shot", weapon: "Rifle / Bayonet",      acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",  weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Standing Shot", weapon: "Rifle / Bayonet", acquisition: "Default", level: 1 },
+      { name: "Kneeling Shot", weapon: "Rifle / Bayonet", acquisition: "Default", level: 24 }
     ],
     stats: {
       core: {
@@ -1123,8 +1121,8 @@ export const CHARACTERS = [
     portrait: "images/characters/grutrude.png",
     largePortrait: "images/characters/grutrude-large.png",
     stances: [
-      { name: "Bare Knuckle",                    weapon: "None",    acquisition: "-", level: "-" },
-      { name: "Martial Arts - Chap. of Earth",  weapon: "Knuckle",  acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",                   weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Martial Arts - Chap. of Earth",  weapon: "Knuckle", acquisition: "Default", level: 1 }
     ],
     stats: {
       core: {
@@ -1156,11 +1154,11 @@ export const CHARACTERS = [
     portrait: "images/characters/karjalainen.png",
     largePortrait: "images/characters/karjalainen-large.png",
     stances: [
-      { name: "Bare Knuckle",  weapon: "None",                 acquisition: "-", level: "-" },
-      { name: "Epee Garde",    weapon: "Rapier",               acquisition: "-", level: "-" },
-      { name: "Sabre Garde",   weapon: "Rapier",               acquisition: "-", level: "-" },
-      { name: "Epee Glacier",  weapon: "Rapier + Ice Bracelet",acquisition: "-", level: "-" },
-      { name: "Sabre Glacier", weapon: "Rapier + Ice Bracelet",acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",  weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Epee Garde",    weapon: "Rapier", acquisition: "Default", level: 48 },
+      { name: "Sabre Garde",   weapon: "Rapier", acquisition: "Default", level: 48 },
+      { name: "Epee Glacier",  weapon: "Rapier + Ice Bracelet", acquisition: "Default", level: 56 },
+      { name: "Sabre Glacier", weapon: "Rapier + Ice Bracelet", acquisition: "Default", level: 56 }
     ],
     stats: {
       core: {
@@ -1185,9 +1183,9 @@ export const CHARACTERS = [
     portrait: "images/characters/lorch.png",
     largePortrait: "images/characters/lorch-large.png",
     stances: [
-      { name: "Install Trap",      weapon: "None",     acquisition: "-", level: "-" },
-      { name: "Shotgun Blaster",   weapon: "Shotgun",  acquisition: "-", level: "-" },
-      { name: "Gigantic Blaster",  weapon: "Shotgun",  acquisition: "-", level: "-" }
+      { name: "Install Trap",     weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Shotgun Blaster",  weapon: "Shotgun", acquisition: "Default", level: 52 },
+      { name: "Gigantic Blaster", weapon: "Shotgun", acquisition: "Scholar Bahamar - 30 Explorer Team Box + 25 Mysterious Powder", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -1219,13 +1217,13 @@ export const CHARACTERS = [
     portrait: "images/characters/tiburon.png",
     largePortrait: "images/characters/tiburon-large.png",
     stances: [
-      { name: "Bare Knuckle",  weapon: "None",         acquisition: "-", level: "-" },
-      { name: "Plow-Guard",    weapon: "Sword",        acquisition: "-", level: "-" },
-      { name: "Tail-Guard",    weapon: "Sword",        acquisition: "-", level: "-" },
-      { name: "Sidewinder",    weapon: "Sword",        acquisition: "-", level: "-" },
-      { name: "Middle-Guard",  weapon: "Main Gauche",  acquisition: "-", level: "-" },
-      { name: "Back-Guard",    weapon: "Main Gauche",  acquisition: "-", level: "-" },
-      { name: "Low-Guard",     weapon: "Main Gauche",  acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",  weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Plow-Guard",    weapon: "Sword", acquisition: "Default", level: 24 },
+      { name: "Tail-Guard",    weapon: "Sword", acquisition: "Master Guardian 6,000 Vis", level: 48 },
+      { name: "Sidewinder",    weapon: "Sword", acquisition: "Master Guardian 1,000,000 Vis", level: "Veteran" },
+      { name: "Middle-Guard",  weapon: "Main Gauche", acquisition: "Default", level: 12 },
+      { name: "Back-Guard",    weapon: "Main Gauche", acquisition: "Master Guardian 1,500 Vis", level: 1 },
+      { name: "Low-Guard",     weapon: "Main Gauche", acquisition: "Master Guardian 1,000,000 Vis", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -1260,10 +1258,10 @@ export const CHARACTERS = [
     portrait: "images/characters/viki.png",
     largePortrait: "images/characters/viki-large.png",
     stances: [
-      { name: "First Aid",  weapon: "None / Rosario", acquisition: "-", level: "-" },
-      { name: "Fortitudo",  weapon: "None / Rosario", acquisition: "-", level: "-" },
-      { name: "Amicus",     weapon: "Pendant",         acquisition: "-", level: "-" },
-      { name: "Testis",     weapon: "Pendant",         acquisition: "-", level: "-" }
+      { name: "First Aid",  weapon: "None / Rosario", acquisition: "Default", level: 1 },
+      { name: "Fortitudo",  weapon: "None / Rosario", acquisition: "Master Room 2,000 Vis", level: 18 },
+      { name: "Amicus",     weapon: "Pendant", acquisition: "Quest", level: 16 },
+      { name: "Testis",     weapon: "Pendant", acquisition: "Quest", level: 16 }
     ],
     stats: {
       core: {
@@ -1297,8 +1295,8 @@ export const CHARACTERS = [
     portrait: "images/characters/catherine.png",
     largePortrait: "images/characters/catherine-large.png",
     stances: [
-      { name: "Marionette", weapon: "Controller", acquisition: "-", level: "-" },
-      { name: "Marionette", weapon: "None",       acquisition: "-", level: "-" }
+      { name: "Marionette", weapon: "Controller", acquisition: "Default", level: 1 },
+      { name: "Marionette", weapon: "None", acquisition: "Default", level: 1 }
     ],
     stats: {
       core: {
@@ -1336,54 +1334,54 @@ export const CHARACTERS = [
     portrait: "images/characters/catherine.png",
     largePortrait: "images/characters/catherine-large.png",
     stances: [
-      { name: "Bare Knuckle",       weapon: "None",                 acquisition: "-", level: "-" },
-      { name: "Back-Guard",         weapon: "Sword",                acquisition: "-", level: "-" },
-      { name: "Hack and Slash",     weapon: "Sword + Sword",        acquisition: "-", level: "-" },
-      { name: "Back-Guard",         weapon: "Sword + Shield",       acquisition: "-", level: "-" },
-      { name: "High-Guard",         weapon: "Sword + Shield",       acquisition: "-", level: "-" },
-      { name: "Heaven or Hell",     weapon: "Sword + Pistol",       acquisition: "-", level: "-" },
-      { name: "Epee Garde",         weapon: "Rapier",               acquisition: "-", level: "-" },
-      { name: "Sabre Garde",        weapon: "Rapier",               acquisition: "-", level: "-" },
-      { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche", acquisition: "-", level: "-" },
-      { name: "Middle-Guard",       weapon: "Sabre",                acquisition: "-", level: "-" },
-      { name: "Twin Blades",        weapon: "Sabre + Sabre",        acquisition: "-", level: "-" },
-      { name: "Plow-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
-      { name: "Tail-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
-      { name: "Roof-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
-      { name: "Blandir Cruz",       weapon: "Polearm",              acquisition: "-", level: "-" },
-      { name: "Penetrar Cruz",      weapon: "Polearm",              acquisition: "-", level: "-" },
-      { name: "Escrima",            weapon: "Dagger",               acquisition: "-", level: "-" },
-      { name: "Dobalada Corte",     weapon: "Dagger + Dagger",      acquisition: "-", level: "-" },
-      { name: "Back-Guard",         weapon: "Blunt",                acquisition: "-", level: "-" },
-      { name: "Back-Guard",         weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
-      { name: "High-Guard",         weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
-      { name: "Aiming Shot",        weapon: "Pistol",               acquisition: "-", level: "-" },
-      { name: "Freestyle Shot",     weapon: "Pistol",               acquisition: "-", level: "-" },
-      { name: "Double-Gun Shot",    weapon: "Pistol + Pistol",      acquisition: "-", level: "-" },
-      { name: "Standing Shot",      weapon: "Rifle",                acquisition: "-", level: "-" },
-      { name: "Kneeling Shot",      weapon: "Rifle",                acquisition: "-", level: "-" },
-      { name: "Shotgun Blaster",    weapon: "Shotgun",              acquisition: "-", level: "-" },
-      { name: "Standing Shot",      weapon: "Bayonet",              acquisition: "-", level: "-" },
-      { name: "Kneeling Shot",      weapon: "Bayonet",              acquisition: "-", level: "-" },
-      { name: "Possession Fire",    weapon: "Fire Bracelet",        acquisition: "-", level: "-" },
-      { name: "Possession Fire",    weapon: "Fire Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Fire",     weapon: "Fire Bracelet + Fire Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Fire",     weapon: "Fire Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Possession Ice",     weapon: "Ice Bracelet",         acquisition: "-", level: "-" },
-      { name: "Possession Ice",     weapon: "Ice Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Ice",      weapon: "Ice Bracelet + Ice Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Ice",      weapon: "Ice Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Possession Lightning", weapon: "Lightning Bracelet", acquisition: "-", level: "-" },
-      { name: "Possession Lightning", weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Lightning Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Elemental Lord",     weapon: "Special Bracelet",     acquisition: "-", level: "-" },
-      { name: "Possession Fire",    weapon: "Special Bracelet",     acquisition: "-", level: "-" },
-      { name: "Possession Ice",     weapon: "Special Bracelet",     acquisition: "-", level: "-" },
-      { name: "Possession Lightning", weapon: "Special Bracelet",   acquisition: "-", level: "-" },
-      { name: "Psychokinesis",      weapon: "Rod",                  acquisition: "-", level: "-" },
-      { name: "ESP",                weapon: "Rod",                  acquisition: "-", level: "-" },
-      { name: "Illusionist",        weapon: "Staff",                acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",       weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Back-Guard",         weapon: "Sword", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Hack and Slash",     weapon: "Sword + Sword", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Back-Guard",         weapon: "Sword + Shield", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "High-Guard",         weapon: "Sword + Shield", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Heaven or Hell",     weapon: "Sword + Pistol", acquisition: "Master Room 1,200 Vis", level: 40 },
+      { name: "Epee Garde",         weapon: "Rapier", acquisition: "Master Room 5,000 Vis", level: 48 },
+      { name: "Sabre Garde",        weapon: "Rapier", acquisition: "Master Room 5,000 Vis", level: 48 },
+      { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche", acquisition: "Master Room 6,400 Vis", level: 60 },
+      { name: "Middle-Guard",       weapon: "Sabre", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Twin Blades",        weapon: "Sabre + Sabre", acquisition: "Master Room 4,000 Vis", level: 36 },
+      { name: "Plow-Guard",         weapon: "Great Sword", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Tail-Guard",         weapon: "Great Sword", acquisition: "Master Room 6,000 Vis", level: 48 },
+      { name: "Roof-Guard",         weapon: "Great Sword", acquisition: "Master Room 4,000 Vis", level: 36 },
+      { name: "Blandir Cruz",       weapon: "Polearm", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Penetrar Cruz",      weapon: "Polearm", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Escrima",            weapon: "Dagger", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Dobalada Corte",     weapon: "Dagger + Dagger", acquisition: "Master Room 6,400 Vis", level: 48 },
+      { name: "Back-Guard",         weapon: "Blunt", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Back-Guard",         weapon: "Blunt + Shield", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "High-Guard",         weapon: "Blunt + Shield", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Aiming Shot",        weapon: "Pistol", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Freestyle Shot",     weapon: "Pistol", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Double-Gun Shot",    weapon: "Pistol + Pistol", acquisition: "Master Room 4,000 Vis", level: 60 },
+      { name: "Standing Shot",      weapon: "Rifle", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Kneeling Shot",      weapon: "Rifle", acquisition: "Master Room 1,200 Vis", level: 24 },
+      { name: "Shotgun Blaster",    weapon: "Shotgun", acquisition: "Master Room 10,000 Vis", level: 48 },
+      { name: "Standing Shot",      weapon: "Bayonet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Kneeling Shot",      weapon: "Bayonet", acquisition: "Master Room 1,200 Vis", level: 24 },
+      { name: "Possession Fire",    weapon: "Fire Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Fire",    weapon: "Fire Bracelet + Bone Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Evocation Fire",     weapon: "Fire Bracelet + Fire Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Evocation Fire",     weapon: "Fire Bracelet + Bone Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Possession Ice",     weapon: "Ice Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Ice",     weapon: "Ice Bracelet + Bone Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Evocation Ice",      weapon: "Ice Bracelet + Ice Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Evocation Ice",      weapon: "Ice Bracelet + Bone Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Lightning Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Elemental Lord",     weapon: "Special Bracelet", acquisition: "Master Room 20,000 Vis", level: 72 },
+      { name: "Possession Fire",    weapon: "Special Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Ice",     weapon: "Special Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Lightning", weapon: "Special Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Psychokinesis",      weapon: "Rod", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "ESP",                weapon: "Rod", acquisition: "Master Room 2,000 Vis", level: 24 },
+      { name: "Illusionist",        weapon: "Staff", acquisition: "Master Room 4,000 Vis", level: 40 }
     ],
     stats: {
       core: {
@@ -1410,54 +1408,54 @@ export const CHARACTERS = [
     portrait: "images/characters/catherine.png",
     largePortrait: "images/characters/catherine-large.png",
     stances: [
-      { name: "Bare Knuckle",       weapon: "None",                 acquisition: "-", level: "-" },
-      { name: "Back-Guard",         weapon: "Sword",                acquisition: "-", level: "-" },
-      { name: "Hack and Slash",     weapon: "Sword + Sword",        acquisition: "-", level: "-" },
-      { name: "Back-Guard",         weapon: "Sword + Shield",       acquisition: "-", level: "-" },
-      { name: "High-Guard",         weapon: "Sword + Shield",       acquisition: "-", level: "-" },
-      { name: "Heaven or Hell",     weapon: "Sword + Pistol",       acquisition: "-", level: "-" },
-      { name: "Epee Garde",         weapon: "Rapier",               acquisition: "-", level: "-" },
-      { name: "Sabre Garde",        weapon: "Rapier",               acquisition: "-", level: "-" },
-      { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche", acquisition: "-", level: "-" },
-      { name: "Middle-Guard",       weapon: "Sabre",                acquisition: "-", level: "-" },
-      { name: "Twin Blades",        weapon: "Sabre + Sabre",        acquisition: "-", level: "-" },
-      { name: "Plow-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
-      { name: "Tail-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
-      { name: "Roof-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
-      { name: "Blandir Cruz",       weapon: "Polearm",              acquisition: "-", level: "-" },
-      { name: "Penetrar Cruz",      weapon: "Polearm",              acquisition: "-", level: "-" },
-      { name: "Escrima",            weapon: "Dagger",               acquisition: "-", level: "-" },
-      { name: "Dobalada Corte",     weapon: "Dagger + Dagger",      acquisition: "-", level: "-" },
-      { name: "Back-Guard",         weapon: "Blunt",                acquisition: "-", level: "-" },
-      { name: "Back-Guard",         weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
-      { name: "High-Guard",         weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
-      { name: "Aiming Shot",        weapon: "Pistol",               acquisition: "-", level: "-" },
-      { name: "Freestyle Shot",     weapon: "Pistol",               acquisition: "-", level: "-" },
-      { name: "Double-Gun Shot",    weapon: "Pistol + Pistol",      acquisition: "-", level: "-" },
-      { name: "Standing Shot",      weapon: "Rifle",                acquisition: "-", level: "-" },
-      { name: "Kneeling Shot",      weapon: "Rifle",                acquisition: "-", level: "-" },
-      { name: "Shotgun Blaster",    weapon: "Shotgun",              acquisition: "-", level: "-" },
-      { name: "Standing Shot",      weapon: "Bayonet",              acquisition: "-", level: "-" },
-      { name: "Kneeling Shot",      weapon: "Bayonet",              acquisition: "-", level: "-" },
-      { name: "Possession Fire",    weapon: "Fire Bracelet",        acquisition: "-", level: "-" },
-      { name: "Possession Fire",    weapon: "Fire Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Fire",     weapon: "Fire Bracelet + Fire Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Fire",     weapon: "Fire Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Possession Ice",     weapon: "Ice Bracelet",         acquisition: "-", level: "-" },
-      { name: "Possession Ice",     weapon: "Ice Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Ice",      weapon: "Ice Bracelet + Ice Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Ice",      weapon: "Ice Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Possession Lightning", weapon: "Lightning Bracelet", acquisition: "-", level: "-" },
-      { name: "Possession Lightning", weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Lightning Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Elemental Lord",     weapon: "Special Bracelet",     acquisition: "-", level: "-" },
-      { name: "Possession Fire",    weapon: "Special Bracelet",     acquisition: "-", level: "-" },
-      { name: "Possession Ice",     weapon: "Special Bracelet",     acquisition: "-", level: "-" },
-      { name: "Possession Lightning", weapon: "Special Bracelet",   acquisition: "-", level: "-" },
-      { name: "Psychokinesis",      weapon: "Rod",                  acquisition: "-", level: "-" },
-      { name: "ESP",                weapon: "Rod",                  acquisition: "-", level: "-" },
-      { name: "Illusionist",        weapon: "Staff",                acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",       weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Back-Guard",         weapon: "Sword", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Hack and Slash",     weapon: "Sword + Sword", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Back-Guard",         weapon: "Sword + Shield", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "High-Guard",         weapon: "Sword + Shield", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Heaven or Hell",     weapon: "Sword + Pistol", acquisition: "Master Room 1,200 Vis", level: 40 },
+      { name: "Epee Garde",         weapon: "Rapier", acquisition: "Master Room 5,000 Vis", level: 48 },
+      { name: "Sabre Garde",        weapon: "Rapier", acquisition: "Master Room 5,000 Vis", level: 48 },
+      { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche", acquisition: "Master Room 6,400 Vis", level: 60 },
+      { name: "Middle-Guard",       weapon: "Sabre", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Twin Blades",        weapon: "Sabre + Sabre", acquisition: "Master Room 4,000 Vis", level: 36 },
+      { name: "Plow-Guard",         weapon: "Great Sword", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Tail-Guard",         weapon: "Great Sword", acquisition: "Master Room 6,000 Vis", level: 48 },
+      { name: "Roof-Guard",         weapon: "Great Sword", acquisition: "Master Room 4,000 Vis", level: 36 },
+      { name: "Blandir Cruz",       weapon: "Polearm", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Penetrar Cruz",      weapon: "Polearm", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Escrima",            weapon: "Dagger", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Dobalada Corte",     weapon: "Dagger + Dagger", acquisition: "Master Room 6,400 Vis", level: 48 },
+      { name: "Back-Guard",         weapon: "Blunt", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Back-Guard",         weapon: "Blunt + Shield", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "High-Guard",         weapon: "Blunt + Shield", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Aiming Shot",        weapon: "Pistol", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Freestyle Shot",     weapon: "Pistol", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Double-Gun Shot",    weapon: "Pistol + Pistol", acquisition: "Master Room 4,000 Vis", level: 60 },
+      { name: "Standing Shot",      weapon: "Rifle", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Kneeling Shot",      weapon: "Rifle", acquisition: "Master Room 1,200 Vis", level: 24 },
+      { name: "Shotgun Blaster",    weapon: "Shotgun", acquisition: "Master Room 10,000 Vis", level: 48 },
+      { name: "Standing Shot",      weapon: "Bayonet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Kneeling Shot",      weapon: "Bayonet", acquisition: "Master Room 1,200 Vis", level: 24 },
+      { name: "Possession Fire",    weapon: "Fire Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Fire",    weapon: "Fire Bracelet + Bone Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Evocation Fire",     weapon: "Fire Bracelet + Fire Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Evocation Fire",     weapon: "Fire Bracelet + Bone Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Possession Ice",     weapon: "Ice Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Ice",     weapon: "Ice Bracelet + Bone Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Evocation Ice",      weapon: "Ice Bracelet + Ice Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Evocation Ice",      weapon: "Ice Bracelet + Bone Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Lightning Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Elemental Lord",     weapon: "Special Bracelet", acquisition: "Master Room 20,000 Vis", level: 72 },
+      { name: "Possession Fire",    weapon: "Special Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Ice",     weapon: "Special Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Lightning", weapon: "Special Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Psychokinesis",      weapon: "Rod", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "ESP",                weapon: "Rod", acquisition: "Master Room 2,000 Vis", level: 24 },
+      { name: "Illusionist",        weapon: "Staff", acquisition: "Master Room 4,000 Vis", level: 40 }
     ],
     stats: {
       core: {
@@ -1484,54 +1482,54 @@ export const CHARACTERS = [
     portrait: "images/characters/catherine.png",
     largePortrait: "images/characters/catherine-large.png",
     stances: [
-      { name: "Bare Knuckle",       weapon: "None",                 acquisition: "-", level: "-" },
-      { name: "Back-Guard",         weapon: "Sword",                acquisition: "-", level: "-" },
-      { name: "Hack and Slash",     weapon: "Sword + Sword",        acquisition: "-", level: "-" },
-      { name: "Back-Guard",         weapon: "Sword + Shield",       acquisition: "-", level: "-" },
-      { name: "High-Guard",         weapon: "Sword + Shield",       acquisition: "-", level: "-" },
-      { name: "Heaven or Hell",     weapon: "Sword + Pistol",       acquisition: "-", level: "-" },
-      { name: "Epee Garde",         weapon: "Rapier",               acquisition: "-", level: "-" },
-      { name: "Sabre Garde",        weapon: "Rapier",               acquisition: "-", level: "-" },
-      { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche", acquisition: "-", level: "-" },
-      { name: "Middle-Guard",       weapon: "Sabre",                acquisition: "-", level: "-" },
-      { name: "Twin Blades",        weapon: "Sabre + Sabre",        acquisition: "-", level: "-" },
-      { name: "Plow-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
-      { name: "Tail-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
-      { name: "Roof-Guard",         weapon: "Great Sword",          acquisition: "-", level: "-" },
-      { name: "Blandir Cruz",       weapon: "Polearm",              acquisition: "-", level: "-" },
-      { name: "Penetrar Cruz",      weapon: "Polearm",              acquisition: "-", level: "-" },
-      { name: "Escrima",            weapon: "Dagger",               acquisition: "-", level: "-" },
-      { name: "Dobalada Corte",     weapon: "Dagger + Dagger",      acquisition: "-", level: "-" },
-      { name: "Back-Guard",         weapon: "Blunt",                acquisition: "-", level: "-" },
-      { name: "Back-Guard",         weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
-      { name: "High-Guard",         weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
-      { name: "Aiming Shot",        weapon: "Pistol",               acquisition: "-", level: "-" },
-      { name: "Freestyle Shot",     weapon: "Pistol",               acquisition: "-", level: "-" },
-      { name: "Double-Gun Shot",    weapon: "Pistol + Pistol",      acquisition: "-", level: "-" },
-      { name: "Standing Shot",      weapon: "Rifle",                acquisition: "-", level: "-" },
-      { name: "Kneeling Shot",      weapon: "Rifle",                acquisition: "-", level: "-" },
-      { name: "Shotgun Blaster",    weapon: "Shotgun",              acquisition: "-", level: "-" },
-      { name: "Standing Shot",      weapon: "Bayonet",              acquisition: "-", level: "-" },
-      { name: "Kneeling Shot",      weapon: "Bayonet",              acquisition: "-", level: "-" },
-      { name: "Possession Fire",    weapon: "Fire Bracelet",        acquisition: "-", level: "-" },
-      { name: "Possession Fire",    weapon: "Fire Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Fire",     weapon: "Fire Bracelet + Fire Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Fire",     weapon: "Fire Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Possession Ice",     weapon: "Ice Bracelet",         acquisition: "-", level: "-" },
-      { name: "Possession Ice",     weapon: "Ice Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Ice",      weapon: "Ice Bracelet + Ice Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Ice",      weapon: "Ice Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Possession Lightning", weapon: "Lightning Bracelet", acquisition: "-", level: "-" },
-      { name: "Possession Lightning", weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Lightning Bracelet", acquisition: "-", level: "-" },
-      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "-", level: "-" },
-      { name: "Elemental Lord",     weapon: "Special Bracelet",     acquisition: "-", level: "-" },
-      { name: "Possession Fire",    weapon: "Special Bracelet",     acquisition: "-", level: "-" },
-      { name: "Possession Ice",     weapon: "Special Bracelet",     acquisition: "-", level: "-" },
-      { name: "Possession Lightning", weapon: "Special Bracelet",   acquisition: "-", level: "-" },
-      { name: "Psychokinesis",      weapon: "Rod",                  acquisition: "-", level: "-" },
-      { name: "ESP",                weapon: "Rod",                  acquisition: "-", level: "-" },
-      { name: "Illusionist",        weapon: "Staff",                acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",       weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Back-Guard",         weapon: "Sword", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Hack and Slash",     weapon: "Sword + Sword", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Back-Guard",         weapon: "Sword + Shield", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "High-Guard",         weapon: "Sword + Shield", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Heaven or Hell",     weapon: "Sword + Pistol", acquisition: "Master Room 1,200 Vis", level: 40 },
+      { name: "Epee Garde",         weapon: "Rapier", acquisition: "Master Room 5,000 Vis", level: 48 },
+      { name: "Sabre Garde",        weapon: "Rapier", acquisition: "Master Room 5,000 Vis", level: 48 },
+      { name: "Main-Gauche Garde",  weapon: "Rapier + Main Gauche", acquisition: "Master Room 6,400 Vis", level: 60 },
+      { name: "Middle-Guard",       weapon: "Sabre", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Twin Blades",        weapon: "Sabre + Sabre", acquisition: "Master Room 4,000 Vis", level: 36 },
+      { name: "Plow-Guard",         weapon: "Great Sword", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Tail-Guard",         weapon: "Great Sword", acquisition: "Master Room 6,000 Vis", level: 48 },
+      { name: "Roof-Guard",         weapon: "Great Sword", acquisition: "Master Room 4,000 Vis", level: 36 },
+      { name: "Blandir Cruz",       weapon: "Polearm", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Penetrar Cruz",      weapon: "Polearm", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Escrima",            weapon: "Dagger", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Dobalada Corte",     weapon: "Dagger + Dagger", acquisition: "Master Room 6,400 Vis", level: 48 },
+      { name: "Back-Guard",         weapon: "Blunt", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Back-Guard",         weapon: "Blunt + Shield", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "High-Guard",         weapon: "Blunt + Shield", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Aiming Shot",        weapon: "Pistol", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Freestyle Shot",     weapon: "Pistol", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Double-Gun Shot",    weapon: "Pistol + Pistol", acquisition: "Master Room 4,000 Vis", level: 60 },
+      { name: "Standing Shot",      weapon: "Rifle", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Kneeling Shot",      weapon: "Rifle", acquisition: "Master Room 1,200 Vis", level: 24 },
+      { name: "Shotgun Blaster",    weapon: "Shotgun", acquisition: "Master Room 10,000 Vis", level: 48 },
+      { name: "Standing Shot",      weapon: "Bayonet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Kneeling Shot",      weapon: "Bayonet", acquisition: "Master Room 1,200 Vis", level: 24 },
+      { name: "Possession Fire",    weapon: "Fire Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Fire",    weapon: "Fire Bracelet + Bone Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Evocation Fire",     weapon: "Fire Bracelet + Fire Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Evocation Fire",     weapon: "Fire Bracelet + Bone Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Possession Ice",     weapon: "Ice Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Ice",     weapon: "Ice Bracelet + Bone Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Evocation Ice",      weapon: "Ice Bracelet + Ice Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Evocation Ice",      weapon: "Ice Bracelet + Bone Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Lightning Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Evocation Lightning",  weapon: "Lightning Bracelet + Bone Bracelet", acquisition: "Master Room 4,000 Vis", level: 30 },
+      { name: "Elemental Lord",     weapon: "Special Bracelet", acquisition: "Master Room 20,000 Vis", level: 72 },
+      { name: "Possession Fire",    weapon: "Special Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Ice",     weapon: "Special Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Possession Lightning", weapon: "Special Bracelet", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Psychokinesis",      weapon: "Rod", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "ESP",                weapon: "Rod", acquisition: "Master Room 2,000 Vis", level: 24 },
+      { name: "Illusionist",        weapon: "Staff", acquisition: "Master Room 4,000 Vis", level: 40 }
     ],
     stats: {
       core: {
@@ -1562,12 +1560,12 @@ export const CHARACTERS = [
     portrait: "images/characters/edward.png",
     largePortrait: "images/characters/edward-large.png",
     stances: [
-      { name: "Bare Knuckle",              weapon: "None",                 acquisition: "-", level: "-" },
-      { name: "Advance Garde of Grim",     weapon: "Rapier + Pistol",      acquisition: "-", level: "-" },
-      { name: "Main-Gauche Garde of Grim", weapon: "Rapier + Main Gauche", acquisition: "-", level: "-" },
-      { name: "Grim Guard",                weapon: "Sabre",                acquisition: "-", level: "-" },
-      { name: "Heaven or Hell of Grim",    weapon: "Sabre + Pistol",       acquisition: "-", level: "-" },
-      { name: "Epee Garde of Grim",        weapon: "Rapier",               acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",              weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Advance Garde of Grim",     weapon: "Rapier + Pistol", acquisition: "Default", level: "Default" },
+      { name: "Main-Gauche Garde of Grim", weapon: "Rapier + Main Gauche", acquisition: "Default", level: "Default" },
+      { name: "Grim Guard",                weapon: "Sabre", acquisition: "Default", level: "Default" },
+      { name: "Heaven or Hell of Grim",    weapon: "Sabre + Pistol", acquisition: "Default", level: "Default" },
+      { name: "Epee Garde of Grim",        weapon: "Rapier", acquisition: "Default", level: "Default" }
     ],
     stats: {
       core: {
@@ -1604,12 +1602,12 @@ export const CHARACTERS = [
     portrait: "images/characters/kurt.png",
     largePortrait: "images/characters/kurt-large.png",
     stances: [
-      { name: "Bare Knuckle",              weapon: "None",                 acquisition: "-", level: "-" },
-      { name: "Advance Garde of Grim",     weapon: "Rapier + Pistol",      acquisition: "-", level: "-" },
-      { name: "Main-Gauche Garde of Grim", weapon: "Rapier + Main Gauche", acquisition: "-", level: "-" },
-      { name: "Grim Guard",                weapon: "Sabre",                acquisition: "-", level: "-" },
-      { name: "Heaven or Hell of Grim",    weapon: "Sabre + Pistol",       acquisition: "-", level: "-" },
-      { name: "Epee Garde of Grim",        weapon: "Rapier",               acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",              weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Advance Garde of Grim",     weapon: "Rapier + Pistol", acquisition: "Default", level: "Default" },
+      { name: "Main-Gauche Garde of Grim", weapon: "Rapier + Main Gauche", acquisition: "Default", level: "Default" },
+      { name: "Grim Guard",                weapon: "Sabre", acquisition: "Default", level: "Default" },
+      { name: "Heaven or Hell of Grim",    weapon: "Sabre + Pistol", acquisition: "Default", level: "Default" },
+      { name: "Epee Garde of Grim",        weapon: "Rapier", acquisition: "Default", level: "Default" }
     ],
     stats: {
       core: {
@@ -1649,11 +1647,11 @@ export const CHARACTERS = [
     portrait: "images/characters/grandma.png",
     largePortrait: "images/characters/grandma-large.png",
     stances: [
-      { name: "Bare Knuckle",  weapon: "None",         acquisition: "-", level: "-" },
-      { name: "Plow-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Tail-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Roof-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Sidewinder",    weapon: "Great Sword",  acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",  weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Plow-Guard",    weapon: "Great Sword", acquisition: "Default", level: 24 },
+      { name: "Tail-Guard",    weapon: "Great Sword", acquisition: "Master Guardian 6,000 Vis", level: 48 },
+      { name: "Roof-Guard",    weapon: "Great Sword", acquisition: "Master Guardian 4,000 Vis", level: 36 },
+      { name: "Sidewinder",    weapon: "Great Sword", acquisition: "Master Guardian 1,000,000 Vis", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -1684,10 +1682,10 @@ export const CHARACTERS = [
     portrait: "images/characters/rescue.png",
     largePortrait: "images/characters/rescue-large.png",
     stances: [
-      { name: "Bare Knuckle",    weapon: "None",   acquisition: "-", level: "-" },
-      { name: "Defending Guard", weapon: "Sword",  acquisition: "-", level: "-" },
-      { name: "Defending Shot",  weapon: "Rifle",  acquisition: "-", level: "-" },
-      { name: "Defending Shot",  weapon: "Bayonet",acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",    weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Defending Guard", weapon: "Sword", acquisition: "Default", level: 52 },
+      { name: "Defending Shot",  weapon: "Rifle", acquisition: "Default", level: 52 },
+      { name: "Defending Shot",  weapon: "Bayonet", acquisition: "Default", level: 52 }
     ],
     stats: {
       core: {
@@ -1717,10 +1715,10 @@ export const CHARACTERS = [
     portrait: "images/characters/romina.png",
     largePortrait: "images/characters/romina-large.png",
     stances: [
-      { name: "Bare Knuckle",    weapon: "None",    acquisition: "-", level: "-" },
-      { name: "Defending Shot",  weapon: "Rifle",   acquisition: "-", level: "-" },
-      { name: "Defending Guard", weapon: "Sword",   acquisition: "-", level: "-" },
-      { name: "Defending Shot",  weapon: "Bayonet", acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",    weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Defending Shot",  weapon: "Rifle", acquisition: "Default", level: 52 },
+      { name: "Defending Guard", weapon: "Sword", acquisition: "Default", level: 52 },
+      { name: "Defending Shot",  weapon: "Bayonet", acquisition: "Default", level: 52 }
     ],
     stats: {
       core: {
@@ -1754,13 +1752,13 @@ export const CHARACTERS = [
     portrait: "images/characters/icp.png",
     largePortrait: "images/characters/icp-large.png",
     stances: [
-      { name: "Bare Knuckle",   weapon: "None",                                   acquisition: "-", level: "-" },
-      { name: "Back-Guard",     weapon: "Sword",                                  acquisition: "-", level: "-" },
-      { name: "Hack and Slash", weapon: "Sword + Sword",                          acquisition: "-", level: "-" },
-      { name: "Flame-Guard",    weapon: "Sword + Fire Bracelet",                  acquisition: "-", level: "-" },
-      { name: "Flame-Guard",    weapon: "Sabre + Fire Bracelet",                  acquisition: "-", level: "-" },
-      { name: "Middle-Guard",   weapon: "Sabre",                                  acquisition: "-", level: "-" },
-      { name: "Low-Guard",      weapon: "Sabre",                                  acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",   weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Back-Guard",     weapon: "Sword", acquisition: "Default", level: 1 },
+      { name: "Hack and Slash", weapon: "Sword + Sword", acquisition: "Default", level: 12 },
+      { name: "Flame-Guard",    weapon: "Sword + Fire Bracelet", acquisition: "Master Room 16,000 Vis", level: 60 },
+      { name: "Flame-Guard",    weapon: "Sabre + Fire Bracelet", acquisition: "Master Room 16,000 Vis", level: 60 },
+      { name: "Middle-Guard",   weapon: "Sabre", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Low-Guard",      weapon: "Sabre", acquisition: "Scholar Bahamar - 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" }
     ],
     stats: {
       core: {
@@ -1785,18 +1783,18 @@ export const CHARACTERS = [
     portrait: "images/characters/bsi.png",
     largePortrait: "images/characters/bsi-large.png",
     stances: [
-      { name: "Bare Knuckle",   weapon: "None",         acquisition: "-", level: "-" },
-      { name: "Plow-Guard",     weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Tail-Guard",     weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Roof-Guard",     weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Sidewinder",     weapon: "Great Sword",  acquisition: "-", level: "-" },
-      { name: "Blandir Cruz",   weapon: "Polearm",      acquisition: "-", level: "-" },
-      { name: "Penetrar Cruz",  weapon: "Polearm",      acquisition: "-", level: "-" },
-      { name: "Mighty Cruz",    weapon: "Polearm",      acquisition: "-", level: "-" },
-      { name: "Back-Guard",     weapon: "Sword",        acquisition: "-", level: "-" },
-      { name: "Back-Guard",     weapon: "Sword + Shield", acquisition: "-", level: "-" },
-      { name: "High-Guard",     weapon: "Sword + Shield", acquisition: "-", level: "-" },
-      { name: "Hack and Slash", weapon: "Sword + Sword", acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",   weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Plow-Guard",     weapon: "Great Sword", acquisition: "Default", level: 24 },
+      { name: "Tail-Guard",     weapon: "Great Sword", acquisition: "Master Room 6,000 Vis", level: 48 },
+      { name: "Roof-Guard",     weapon: "Great Sword", acquisition: "Master Room 4,000 Vis", level: 36 },
+      { name: "Sidewinder",     weapon: "Great Sword", acquisition: "Master Room - Rare Book of Combat + 50 Mega Aidanium", level: "Veteran" },
+      { name: "Blandir Cruz",   weapon: "Polearm", acquisition: "Default", level: 24 },
+      { name: "Penetrar Cruz",  weapon: "Polearm", acquisition: "Master Room 2,500 Vis", level: 24 },
+      { name: "Mighty Cruz",    weapon: "Polearm", acquisition: "Scholar Bahamar - 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" },
+      { name: "Back-Guard",     weapon: "Sword", acquisition: "Default", level: 1 },
+      { name: "Back-Guard",     weapon: "Sword + Shield", acquisition: "Default", level: 1 },
+      { name: "High-Guard",     weapon: "Sword + Shield", acquisition: "Master Room 1,200 Vis", level: 12 },
+      { name: "Hack and Slash", weapon: "Sword + Sword", acquisition: "Master Room 1,200 Vis", level: 12 }
     ],
     stats: {
       core: {
@@ -1821,14 +1819,14 @@ export const CHARACTERS = [
     portrait: "images/characters/atp.png",
     largePortrait: "images/characters/atp-large.png",
     stances: [
-      { name: "Bare Knuckle",     weapon: "None",              acquisition: "-", level: "-" },
-      { name: "Middle-Guard",     weapon: "Sabre",             acquisition: "-", level: "-" },
-      { name: "Back-Guard",       weapon: "Sabre",             acquisition: "-", level: "-" },
-      { name: "Low-Guard",        weapon: "Sabre",             acquisition: "-", level: "-" },
-      { name: "Twin Blades",      weapon: "Sabre + Sabre",     acquisition: "-", level: "-" },
-      { name: "Heaven or Hell",   weapon: "Sabre + Pistol",    acquisition: "-", level: "-" },
-      { name: "Freestyle Shot",   weapon: "Pistol",            acquisition: "-", level: "-" },
-      { name: "Double-Gun Shot",  weapon: "Pistol + Pistol",   acquisition: "-", level: "-" }
+      { name: "Bare Knuckle",     weapon: "None", acquisition: "Default", level: 1 },
+      { name: "Middle-Guard",     weapon: "Sabre", acquisition: "Default", level: 12 },
+      { name: "Back-Guard",       weapon: "Sabre", acquisition: "Master Room 1,200 Vis", level: 1 },
+      { name: "Low-Guard",        weapon: "Sabre", acquisition: "Scholar Bahamar - 30 Explorer Team Memo + 25 Mysterious Powder", level: "Veteran" },
+      { name: "Twin Blades",      weapon: "Sabre + Sabre", acquisition: "Master Room 4,000 Vis", level: 36 },
+      { name: "Heaven or Hell",   weapon: "Sabre + Pistol", acquisition: "Master Room 7,500 Vis", level: 40 },
+      { name: "Freestyle Shot",   weapon: "Pistol", acquisition: "Default", level: 24 },
+      { name: "Double-Gun Shot",  weapon: "Pistol + Pistol", acquisition: "Master Room 4,000 Vis", level: 60 }
     ],
     stats: {
       core: {
@@ -1851,12 +1849,12 @@ export const CHARACTERS = [
     portrait: "images/characters/ets.png",
     largePortrait: "images/characters/ets-large.png",
     stances: [
-      { name: "First Aid",      weapon: "None / Rosario", acquisition: "-", level: "-" },
-      { name: "Fortitudo",      weapon: "None / Rosario", acquisition: "-", level: "-" },
-      { name: "ESP",            weapon: "None / Rod",     acquisition: "-", level: "-" },
-      { name: "Psychokinesis",  weapon: "Rod",            acquisition: "-", level: "-" },
-      { name: "Incantation",    weapon: "Rod",            acquisition: "-", level: "-" },
-      { name: "Levitation",     weapon: "Rod",            acquisition: "-", level: "-" }
+      { name: "First Aid",      weapon: "None / Rosario", acquisition: "Default", level: 1 },
+      { name: "Fortitudo",      weapon: "None / Rosario", acquisition: "Default", level: "18" },
+      { name: "ESP",            weapon: "None / Rod", acquisition: "Default", level: 24 },
+      { name: "Psychokinesis",  weapon: "Rod", acquisition: "Default", level: 1 },
+      { name: "Incantation",    weapon: "Rod", acquisition: "Master Room - Rare Book of Magic + 50 Mega Ionium", level: "Veteran" },
+      { name: "Levitation",     weapon: "Rod", acquisition: "Master Room 20,000 Vis", level: 60 }
     ],
     stats: {
       core: {
@@ -1879,9 +1877,9 @@ export const CHARACTERS = [
     portrait: "images/characters/stw.png",
     largePortrait: "images/characters/stw-large.png",
     stances: [
-      { name: "Fortitudo",                 weapon: "None",     acquisition: "-", level: "-" },
-      { name: "Escrima",                   weapon: "Dagger",   acquisition: "-", level: "-" },
-      { name: "Martial Arts: Chap. of Wind", weapon: "Leguard", acquisition: "-", level: "-" }
+      { name: "Fortitudo",                  weapon: "None", acquisition: "Default", level: 18 },
+      { name: "Escrima",                    weapon: "Dagger", acquisition: "Default", level: 1 },
+      { name: "Martial Arts: Chap. of Wind", weapon: "Leguard", acquisition: "Default", level: 40 }
     ],
     stats: {
       core: {

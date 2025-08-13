@@ -117,14 +117,14 @@ function renderStances() {
   // Rows
   for (const s of stances) {
     if (typeof s === "string") {
-      stancesGridEl.appendChild(stanceRow([s, "—", "—", "—"]));
+      stancesGridEl.appendChild(stanceRow([s, "-", "-", "-"]));
     } else if (s && typeof s === "object") {
       stancesGridEl.appendChild(
         stanceRow([
-          s.name || "—",
-          s.weapon || "—",
-          s.acquisition || "—",
-          s.level || "—"
+          s.name || "-",
+          s.weapon || "-",
+          s.acquisition || "-",
+          s.level || "-"
         ])
       );
     }
