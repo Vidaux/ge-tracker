@@ -40,6 +40,13 @@ const personalImgEl = document.getElementById("personalSkillImage");
 // Fallback legacy grid (if split not present)
 const statsGridEl = document.getElementById("statsGrid");
 
+// ===== Current-level UI (created dynamically) =====
+let levelRowEl;           // wrapper that holds starting-level (left) + current-level (right)
+let levelWrapEl;          // right-side container
+let tierSelectEl;         // Pre-Veteran / Veteran / Expert
+let numberSelectEl;       // 1-100 or 1-10 depending on tier
+let levelLabelEl;         // "Current Level" label
+
 if (!character) {
   document.title = "Not Found - Granado Espada";
   if (nameEl) nameEl.textContent = "Character not found";
@@ -68,9 +75,12 @@ if (!character) {
     ownedEl.checked = isOwned(character.id);
     ownedEl.addEventListener("change", () => {
       setOwned(character.id, ownedEl.checked);
-      // If just owned and level is not set yet, seed it to Starting Level
-      if (ownedEl.checked) ensureLevelInitialized();
-      renderLevelRow(); // refresh right-side "Level" pill
+      // Seed level to Starting Level the first time it's set to owned (or if no level saved yet)
+      if (ownedEl.checked && !getLevel(character.id)) {
+        const sl = character.stats?.core?.["Starting Level"];
+        setLevel(character.id, sl != null ? String(sl) : "1");
+      }
+      refreshLevelControls(); // enable/disable + reflect latest
     });
   }
 
@@ -157,7 +167,7 @@ function renderQuests() {
       setOwned(character.id, false);
       if (ownedEl) ownedEl.checked = false;
       renderQuests();
-      renderLevelRow(); // reflect potential level init removal
+      refreshLevelControls(); // ensure level UI disables if no longer owned
     };
   }
 }
@@ -173,10 +183,12 @@ function syncOwnershipBasedOnQuests() {
   setOwned(character.id, allDone);
   if (ownedEl) ownedEl.checked = allDone;
 
-  if (allDone) {
-    ensureLevelInitialized();
-    renderLevelRow();
+  // Seed level once upon becoming owned via quests
+  if (allDone && !getLevel(character.id)) {
+    const sl = character.stats?.core?.["Starting Level"];
+    setLevel(character.id, sl != null ? String(sl) : "1");
   }
+  refreshLevelControls();
 }
 
 function hideRecruitmentUI() {
@@ -191,88 +203,6 @@ function showRecruitmentUI() {
   if (resetBtn) resetBtn.style.display = "";
 }
 
-/* =============================== Level helpers (character page) =============================== */
-
-function normalizeLevelInput(input) {
-  if (!input) return null;
-  const s = String(input).trim().toLowerCase();
-
-  const n = Number(s);
-  if (Number.isInteger(n) && n >= 1 && n <= 100) return String(n);
-
-  const v = s.match(/^(v(?:et|eteran)?)[\s\-]*([1-9]|10)$/i);
-  if (v) return `Veteran ${Number(v[2])}`;
-
-  const e = s.match(/^(e(?:xp|xpert)?)[\s\-]*([1-9]|10)$/i);
-  if (e) return `Expert ${Number(e[2])}`;
-
-  const full = s.match(/^(veteran|expert)\s+([1-9]|10)$/i);
-  if (full) return `${full[1][0].toUpperCase()}${full[1].slice(1)} ${Number(full[2])}`;
-
-  return null;
-}
-
-function ensureLevelInitialized() {
-  const has = getLevel(character.id);
-  const start = character.stats?.core?.["Starting Level"];
-  if (!has && start != null && isOwned(character.id)) {
-    setLevel(character.id, String(start));
-  }
-}
-
-function getOrCreateLevelRow() {
-  if (!startLevelEl) return null;
-  const block = startLevelEl.parentElement; // .stats-block
-  if (!block) return null;
-
-  let row = block.querySelector(".level-row");
-  if (!row) {
-    row = document.createElement("div");
-    row.className = "level-row";
-    // place the row where the startLevel used to be
-    block.insertBefore(row, startLevelEl);
-    row.appendChild(startLevelEl);
-    const cur = document.createElement("button");
-    cur.id = "currentLevel";
-    cur.type = "button";
-    cur.className = "current-level-badge";
-    row.appendChild(cur);
-  }
-  return row;
-}
-
-function renderLevelRow() {
-  const row = getOrCreateLevelRow();
-  if (!row || !startLevelEl) return;
-
-  // left: Starting Level
-  const start = character.stats?.core?.["Starting Level"];
-  startLevelEl.textContent =
-    start != null ? `Starting Level: ${start}` : "Starting Level: -";
-
-  // right: Current Level
-  const curBtn = row.querySelector("#currentLevel");
-  const current = getLevel(character.id);
-  curBtn.textContent = `Level: ${current ?? "—"}`;
-  curBtn.title = "Click to set current level";
-
-  curBtn.onclick = () => {
-    const def = current ?? (start != null ? String(start) : "");
-    const input = prompt(
-      `Enter current level for ${character.name}:\n- 1 to 100\n- Veteran 1..10 (V10)\n- Expert 1..10 (E10)`,
-      def
-    );
-    if (input == null) return;
-    const normalized = normalizeLevelInput(input);
-    if (!normalized) {
-      alert("Invalid level. Use 1–100, Veteran 1–10, or Expert 1–10.");
-      return;
-    }
-    setLevel(character.id, normalized);
-    renderLevelRow();
-  };
-}
-
 /* =============================== Stats =============================== */
 function renderStats() {
   const stats = character.stats || {};
@@ -283,9 +213,14 @@ function renderStats() {
   const usingSplit = !!(coreGridEl || personalGridEl || equipmentGridEl || startLevelEl || totalPointsEl);
 
   if (usingSplit) {
-    // Ensure the right-side level pill exists and is updated
-    ensureLevelInitialized();
-    renderLevelRow();
+    // Insert "current level" controls on the same row as starting level (left vs right)
+    buildLevelRow();
+
+    // Starting Level text
+    if (startLevelEl) {
+      const sl = core["Starting Level"];
+      startLevelEl.textContent = sl != null ? `Starting Level: ${sl}` : "Starting Level: -";
+    }
 
     // 2×3 grid for core stats (fixed order)
     const coreOrder = ["STR", "AGI", "HP", "DEX", "INT", "SEN"];
@@ -334,6 +269,9 @@ function renderStats() {
       }
     }
 
+    // Make sure current-level UI reflects persisted value & ownership
+    refreshLevelControls();
+
     return;
   }
 
@@ -363,4 +301,148 @@ function statCard(label, value) {
   card.appendChild(name);
   card.appendChild(val);
   return card;
+}
+
+/* =============================== Level UI =============================== */
+
+function buildLevelRow() {
+  if (!startLevelEl || levelRowEl) return;
+
+  // Wrap the existing startLevelEl + our new right-side current-level UI
+  const statsBlockEl = startLevelEl.parentElement; // .stats-block
+  levelRowEl = document.createElement("div");
+  levelRowEl.className = "level-row";
+  // minimal inline layout so it works without CSS edits
+  levelRowEl.style.display = "flex";
+  levelRowEl.style.alignItems = "center";
+  levelRowEl.style.gap = "12px";
+  levelRowEl.style.marginBottom = "12px";
+
+  // Move the existing startLevelEl into the row (left side)
+  startLevelEl.parentElement.insertBefore(levelRowEl, startLevelEl);
+  levelRowEl.appendChild(startLevelEl);
+
+  // Right-side current level control group
+  levelWrapEl = document.createElement("div");
+  levelWrapEl.className = "current-level-wrap";
+  levelWrapEl.style.marginLeft = "auto";
+  levelWrapEl.style.display = "flex";
+  levelWrapEl.style.alignItems = "center";
+  levelWrapEl.style.gap = "8px";
+
+  levelLabelEl = document.createElement("strong");
+  levelLabelEl.textContent = "Current Level";
+
+  tierSelectEl = document.createElement("select");
+  tierSelectEl.id = "levelTier";
+  addOptions(tierSelectEl, ["Pre-Veteran", "Veteran", "Expert"]);
+
+  numberSelectEl = document.createElement("select");
+  numberSelectEl.id = "levelNumber";
+
+  // Change handlers
+  tierSelectEl.addEventListener("change", () => {
+    populateNumberOptions();
+    persistLevelFromUI();
+  });
+  numberSelectEl.addEventListener("change", persistLevelFromUI);
+
+  levelWrapEl.appendChild(levelLabelEl);
+  levelWrapEl.appendChild(tierSelectEl);
+  levelWrapEl.appendChild(numberSelectEl);
+
+  levelRowEl.appendChild(levelWrapEl);
+}
+
+function addOptions(select, items) {
+  select.innerHTML = "";
+  for (const item of items) {
+    const opt = document.createElement("option");
+    opt.value = item;
+    opt.textContent = item;
+    select.appendChild(opt);
+  }
+}
+
+function populateNumberOptions() {
+  const tier = tierSelectEl.value;
+  const max = tier === "Pre-Veteran" ? 100 : 10;
+  const prev = numberSelectEl.value;
+  numberSelectEl.innerHTML = "";
+  for (let i = 1; i <= max; i++) {
+    const opt = document.createElement("option");
+    opt.value = String(i);
+    opt.textContent = String(i);
+    numberSelectEl.appendChild(opt);
+  }
+  // try to keep previous value if in range, else clamp to max
+  if (prev && Number(prev) >= 1 && Number(prev) <= max) {
+    numberSelectEl.value = prev;
+  } else {
+    numberSelectEl.value = String(Math.min(max, Math.max(1, Number(prev) || 1)));
+  }
+}
+
+function refreshLevelControls() {
+  if (!tierSelectEl || !numberSelectEl) return;
+
+  const owned = isOwned(character.id);
+  const sl = character.stats?.core?.["Starting Level"];
+  const saved = getLevel(character.id);
+
+  const { tier, num } = parseLevel(saved, sl);
+
+  // set selects
+  tierSelectEl.value = tier;
+  populateNumberOptions();
+  numberSelectEl.value = String(num);
+
+  // enable/disable based on ownership
+  tierSelectEl.disabled = !owned;
+  numberSelectEl.disabled = !owned;
+  levelLabelEl.style.opacity = owned ? "1" : ".6";
+  levelWrapEl.title = owned ? "" : "Mark as Owned to edit level";
+}
+
+function persistLevelFromUI() {
+  const tier = tierSelectEl.value;
+  const num = Number(numberSelectEl.value || 1);
+  const value = formatLevel(tier, num);
+  setLevel(character.id, value);
+}
+
+function parseLevel(str, startingLevel) {
+  // Accept formats: "45" -> Pre-Veteran 45, "Veteran 3", "Expert 7"
+  const defNum = startingLevel != null ? Number(startingLevel) : 1;
+
+  if (!str || typeof str !== "string") {
+    return { tier: "Pre-Veteran", num: clamp(defNum, 1, 100) };
+  }
+
+  const trimmed = str.trim();
+
+  // Veteran / Expert
+  const vMatch = /^Veteran\s+(\d{1,2})$/i.exec(trimmed);
+  if (vMatch) return { tier: "Veteran", num: clamp(Number(vMatch[1]), 1, 10) };
+
+  const eMatch = /^Expert\s+(\d{1,2})$/i.exec(trimmed);
+  if (eMatch) return { tier: "Expert", num: clamp(Number(eMatch[1]), 1, 10) };
+
+  // Pre-Veteran pure number
+  const n = Number(trimmed);
+  if (!Number.isNaN(n)) {
+    return { tier: "Pre-Veteran", num: clamp(n, 1, 100) };
+  }
+
+  // Fallback
+  return { tier: "Pre-Veteran", num: clamp(defNum, 1, 100) };
+}
+
+function formatLevel(tier, num) {
+  if (tier === "Pre-Veteran") return String(clamp(num, 1, 100));
+  return `${tier} ${clamp(num, 1, 10)}`;
+}
+
+function clamp(n, min, max) {
+  return Math.max(min, Math.min(max, n));
 }

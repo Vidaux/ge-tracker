@@ -713,3 +713,103 @@ body{
   outline: 3px solid color-mix(in srgb, var(--accent) 55%, transparent);
   outline-offset: 2px;
 }
+
+/* ===== Character page: Current Level controls ===== */
+.level-row{
+  /* (JS already sets flex + gap inline; this is just in case) */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.current-level-wrap{
+  margin-left: auto;                /* push to far right */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;                  /* wrap nicely on small widths */
+}
+
+/* Label chip */
+.current-level-wrap > strong{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: .9rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.25), 0 6px 14px rgba(0,0,0,.25) inset;
+}
+
+/* Tier + Level selects */
+.current-level-wrap select{
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 36px 8px 12px;   /* right pad for chevron */
+  border-radius: 10px;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  min-width: 140px;             /* roomy for “Pre-Veteran” text */
+  transition: border-color .15s ease, box-shadow .15s ease, transform .06s ease, background .2s ease;
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\
+<path fill='%23cfd8e3' d='M7 10l5 5 5-5H7z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+}
+
+/* Narrower number selector */
+#levelNumber{
+  min-width: 92px;
+}
+
+/* Hover/Focus/Active states */
+.current-level-wrap select:hover{
+  border-color: #486188;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.20);
+}
+.current-level-wrap select:focus{
+  outline: none;
+  border-color: #486188;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.35);
+}
+.current-level-wrap select:active{
+  transform: translateY(0);
+}
+
+/* Disabled when not owned */
+.current-level-wrap select:disabled{
+  opacity: .55;
+  cursor: not-allowed;
+  filter: grayscale(.2);
+}
+
+/* Mobile: keep things neat */
+@media (max-width: 680px){
+  .current-level-wrap{
+    margin-left: 0;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+  .current-level-wrap > strong{
+    padding: 6px 10px;
+    font-size: .85rem;
+  }
+  .current-level-wrap select{
+    min-width: 128px;
+  }
+  #levelNumber{
+    min-width: 80px;
+  }
+}
