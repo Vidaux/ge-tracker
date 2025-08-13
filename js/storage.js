@@ -28,3 +28,18 @@ export function setQuestProgress(charId, progressMap) {
 export function resetQuestProgress(charId) {
   localStorage.removeItem(`${NS}:q:${charId}`);
 }
+
+/* ===================== Levels (persistent) ===================== */
+// Stored as map: { [charId]: "1" | "100" | "Veteran 3" | "Expert 7" | ... }
+export function getLevelMap() {
+  return getJSON(`${NS}:levels`, {});
+}
+export function getLevel(charId) {
+  const map = getLevelMap();
+  return map[charId] || null;
+}
+export function setLevel(charId, levelDisplay) {
+  const map = getLevelMap();
+  map[charId] = levelDisplay; // keep as human-friendly string
+  setJSON(`${NS}:levels`, map);
+}

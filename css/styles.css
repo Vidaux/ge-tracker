@@ -655,3 +655,37 @@ body{
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+/* ===== Level control (character page) ===== */
+.level-control{
+  margin: 8px 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.level-label{
+  font-weight: 800;
+}
+.level-select{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 10px;
+  outline: none;
+}
+.level-select:focus-visible{
+  box-shadow: 0 0 0 3px rgba(59,130,246,.35);
+}
+
+/* two-column line: left = Starting Level, right = current Level */
+.meta-split{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.meta-split .current-level{
+  margin-left: auto;
+  text-align: right;
+}

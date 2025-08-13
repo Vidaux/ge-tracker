@@ -1,5 +1,5 @@
 // js/main.js
-import { isOwned, setOwned } from "./storage.js";
+import { isOwned, setOwned, getLevel, setLevel } from "./storage.js";
 import { CHARACTERS, allRegions } from "./characters.js";
 
 /* -----------------------------
@@ -241,16 +241,20 @@ function cardNode(c) {
   name.className = "name";
   name.textContent = c.name;
 
-  // Meta: Region + Starting Level (no stances shown on main page)
+  // Meta: Region + Starting Level + Current Level
   const meta = document.createElement("div");
   meta.className = "meta";
 
   const startLvl = c.stats?.core?.["Starting Level"];
   const startLine = startLvl != null ? `<span>Starting Level: ${startLvl}</span>` : "";
 
+  const currentLevel = getLevel(c.id);
+  const levelLine = currentLevel ? `<span>Level: ${currentLevel}</span>` : "";
+
   meta.innerHTML = `
     <span>Region: ${c.region}</span>
     ${startLine}
+    ${levelLine}
   `;
 
   // Owned pill with quick toggle
@@ -262,9 +266,26 @@ function cardNode(c) {
     e.preventDefault(); e.stopPropagation();
     const now = !isOwned(c.id);
     setOwned(c.id, now);
+
+    // Seed level to Starting Level when becoming owned (if not set yet)
+    if (now && !getLevel(c.id)) {
+      const def = startLvl != null ? String(startLvl) : "1";
+      setLevel(c.id, def);
+    }
+
+    // reflect UI immediately (pill + meta lines)
     pill.textContent = now ? "Owned" : "Not owned";
     pill.classList.toggle("unowned", !now);
     pill.classList.toggle("owned", now);
+
+    const updatedLevel = getLevel(c.id);
+    const levelHTML = updatedLevel ? `<span>Level: ${updatedLevel}</span>` : "";
+    meta.innerHTML = `
+      <span>Region: ${c.region}</span>
+      ${startLvl != null ? `<span>Starting Level: ${startLvl}</span>` : ""}
+      ${levelHTML}
+    `;
+
     // keep current filters persisted as-is
     saveFiltersToSession();
   });

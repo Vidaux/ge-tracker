@@ -6,7 +6,9 @@ import {
   setOwned,
   getQuestProgress,
   setQuestProgress,
-  resetQuestProgress
+  resetQuestProgress,
+  getLevel,
+  setLevel
 } from "./storage.js";
 
 const id = getParam("id");
@@ -38,6 +40,15 @@ const personalImgEl = document.getElementById("personalSkillImage");
 // Fallback legacy grid (if split not present)
 const statsGridEl = document.getElementById("statsGrid");
 
+// Build the unified level options: 1–100, Veteran 1–10, Expert 1–10
+const LEVEL_OPTIONS = (() => {
+  const list = [];
+  for (let i = 1; i <= 100; i++) list.push(String(i));
+  for (let i = 1; i <= 10; i++) list.push(`Veteran ${i}`);
+  for (let i = 1; i <= 10; i++) list.push(`Expert ${i}`);
+  return list;
+})();
+
 if (!character) {
   document.title = "Not Found - Granado Espada";
   if (nameEl) nameEl.textContent = "Character not found";
@@ -64,12 +75,78 @@ if (!character) {
   // Owned checkbox toggle
   if (ownedEl) {
     ownedEl.checked = isOwned(character.id);
-    ownedEl.addEventListener("change", () => setOwned(character.id, ownedEl.checked));
+    ownedEl.addEventListener("change", () => {
+      setOwned(character.id, ownedEl.checked);
+      // Seed Level to Starting Level when becoming owned (only if not set yet)
+      if (ownedEl.checked && !getLevel(character.id)) {
+        const sl = character.stats?.core?.["Starting Level"];
+        const def = sl != null ? String(sl) : "1";
+        setLevel(character.id, def);
+        syncLevelControl(def);
+      }
+    });
   }
+
+  // Render Level control (before stats so it shows alongside Starting Level)
+  renderLevelControl();
 
   // Render Recruitment & Stats
   renderQuests();
   renderStats();
+}
+
+/* ===================== Level control ===================== */
+function renderLevelControl() {
+  // Insert a small control under the Starting Level badge
+  const container = document.createElement("div");
+  container.id = "levelControl";
+  container.className = "level-control";
+  container.innerHTML = `
+    <label for="levelSelect" class="level-label">Level</label>
+    <select id="levelSelect" class="level-select" aria-label="Character level"></select>
+  `;
+
+  // Place it right after the Starting Level line if present, else at top of stats section
+  if (startLevelEl && startLevelEl.parentElement) {
+    startLevelEl.insertAdjacentElement("afterend", container);
+  } else {
+    // fallback: add near stats grid if needed
+    const statsSection = document.getElementById("statsSection");
+    statsSection && statsSection.prepend(container);
+  }
+
+  // Populate options
+  const sel = container.querySelector("#levelSelect");
+  sel.innerHTML = "";
+  for (const opt of LEVEL_OPTIONS) {
+    const o = document.createElement("option");
+    o.value = opt;
+    o.textContent = opt;
+    sel.appendChild(o);
+  }
+
+  // Initial value: stored => use it; if owned & none => seed to Starting Level; else leave first option
+  let current = getLevel(character.id);
+  if (!current && isOwned(character.id)) {
+    const sl = character.stats?.core?.["Starting Level"];
+    current = sl != null ? String(sl) : "1";
+    setLevel(character.id, current);
+  }
+  if (current && LEVEL_OPTIONS.includes(current)) {
+    sel.value = current;
+  }
+
+  sel.addEventListener("change", () => {
+    setLevel(character.id, sel.value);
+  });
+}
+
+// Keep UI selector synced if we programmatically set default
+function syncLevelControl(value) {
+  const sel = document.getElementById("levelSelect");
+  if (sel && LEVEL_OPTIONS.includes(value)) {
+    sel.value = value;
+  }
 }
 
 /* ===================== Recruitment (progressive steps) ===================== */
@@ -163,6 +240,14 @@ function syncOwnershipBasedOnQuests() {
 
   setOwned(character.id, allDone);
   if (ownedEl) ownedEl.checked = allDone;
+
+  // When recruitment completes and the char becomes owned, seed Level if needed
+  if (allDone && !getLevel(character.id)) {
+    const sl = character.stats?.core?.["Starting Level"];
+    const def = sl != null ? String(sl) : "1";
+    setLevel(character.id, def);
+    syncLevelControl(def);
+  }
 }
 
 function hideRecruitmentUI() {
