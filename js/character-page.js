@@ -38,6 +38,22 @@ const personalImgEl = document.getElementById("personalSkillImage");
 // Fallback legacy grid (if split not present)
 const statsGridEl = document.getElementById("statsGrid");
 
+// Back button: prefer real browser back, otherwise go to list
+const backLink = document.querySelector(".back");
+if (backLink) {
+  backLink.addEventListener("click", (e) => {
+    const hasHistory = window.history.length > 1;
+    const sameOriginReferrer =
+      document.referrer && new URL(document.referrer).origin === location.origin;
+
+    if (hasHistory && sameOriginReferrer) {
+      e.preventDefault();
+      window.history.back();
+    }
+  });
+}
+
+
 if (!character) {
   document.title = "Not Found — Granado Espada";
   if (nameEl) nameEl.textContent = "Character not found";

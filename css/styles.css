@@ -257,3 +257,135 @@ body{
 @media (max-width: 700px){
   .personal-wrap{ grid-template-columns: 1fr; }
 }
+
+/* ===== Character header: Owned toggle pill ===== */
+.site-header .header-actions{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.owned-toggle{
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  line-height: 1;
+}
+
+/* Keep input accessible but visually hidden over the pill */
+.owned-toggle input{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Pretty pill */
+.owned-toggle span{
+  --pill-min: 120px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+
+  min-width: var(--pill-min);
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: .2px;
+
+  box-shadow: 0 1px 1px rgba(0,0,0,.25), 0 6px 14px rgba(0,0,0,.25);
+  transition: transform .12s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease, filter .2s ease;
+}
+
+/* Star icon */
+.owned-toggle span::before{
+  content: "☆";
+  font-size: 1.1rem;
+  line-height: 1;
+  transform: translateY(-1px);
+  opacity: .9;
+  transition: transform .12s ease, filter .2s ease;
+}
+
+.owned-toggle:hover span{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.35);
+}
+
+.owned-toggle:active span{
+  transform: translateY(0);
+}
+
+/* Keyboard focus */
+.owned-toggle input:focus-visible + span{
+  outline: 3px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  outline-offset: 2px;
+}
+
+/* Checked (owned) state */
+.owned-toggle input:checked + span{
+  background: linear-gradient(135deg, var(--accent), var(--owned));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 12px 28px rgba(34,197,94,.28), inset 0 1px 0 rgba(255,255,255,.2);
+  filter: saturate(1.05);
+}
+
+.owned-toggle input:checked + span::before{
+  content: "★";
+  transform: translateY(-1px) scale(1.08);
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,.35));
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .owned-toggle span,
+  .owned-toggle span::before{
+    transition: none;
+  }
+}
+
+/* ===== Character header: Back button + title ===== */
+.site-header .back{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  line-height: 1;
+  transition: transform .12s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+.site-header .back:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.35);
+  border-color: #35507a;
+}
+.site-header .back:active{ transform: translateY(0); }
+.site-header .back:focus-visible{
+  outline: 3px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  outline-offset: 2px;
+}
+
+/* Make the character name take remaining space and ellipsize if long */
+.site-header h1{
+  flex: 1 1 auto;          /* grab remaining space between back + actions */
+  min-width: 0;            /* allow shrinking so ellipsis can work */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

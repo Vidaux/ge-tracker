@@ -986,6 +986,46 @@ export const CHARACTERS = [
   // =========================
   // City of Auch:
   // =========================
+
+  {
+    id: "baek-ho",
+    name: "Baek Ho",
+    region: "City of Auch",
+    portrait: "images/characters/baekho.png",
+    stances: [
+      { name: "Bare Knuckle", weapon: "None", acquisition: "-", level: "-" },
+      { name: "Martial Arts Book-Chap. of Mind", weapon: "Knuckle", acquisition: "-", level: "-" },
+      { name: "Martial Arts Book-Chap. of Earth", weapon: "Knuckle", acquisition: "-", level: "-" },
+      { name: "Martial Arts Book-Chap. of Wind", weapon: "Knuckle", acquisition: "-", level: "-" },
+      { name: "Master Martial Arts", weapon: "Knuckle", acquisition: "-", level: "-" },
+      { name: "AoA", weapon: "Knuckle", acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 40,
+        "STR": 75, "AGI": 75, "HP": 50, "DEX": 50, "INT": 30, "SEN": 50,
+        "Total Stat Points": 330
+      },
+      personal: {
+        "Personal Skill": "Spirit of Arange — Skills from an ancient warrior group; boosts mental ATK/RES and more. (Self-buff) Cast: 0s, Cooldown: 30s, Duration: 2.57s, SP: 300 + Ancient Star Orb ×4",
+        "Lv1":  "Duration 30s; Mental ATK +15; Mental RES +5; Pen +1; Imm +1; Reset all cooldowns",
+        "Lv10": "Duration 120s; Mental ATK +150; Mental RES +50; Pen +10; Imm +10; -5% skill-shot dmg taken; 6% chance to inflict [Stun] on attack; On use: reset all cooldowns",
+        "Lv11": "Duration 130s; Mental ATK +165; Mental RES +55; Pen +11; Imm +11; -5% skill-shot dmg taken; 7% [Stun] on attack; On use: reset all cooldowns; A.R. +1",
+        "Lv12": "Duration 140s; Mental ATK +180; Mental RES +60; Pen +12; Imm +12; -6% skill-shot dmg taken; 8% [Stun] on attack; On use: reset all cooldowns; A.R. +1",
+        "Lv13": "Duration 150s; Mental ATK +195; Mental RES +65; Pen +13; Imm +13; -7% skill-shot dmg taken; 8% [Stun] on attack; On use: reset all cooldowns; A.R. +1",
+        "image": "/images/skills/com_hwoarangsspirits.png"
+      },
+      equipment: {
+        "Armor": "Leather"
+      }
+    },
+    quests: [
+      { id: "q1", name: "Byakko of Coria — Speak to Baek Ho (Auch G-10) and enter the duel instance (win or lose advances)." },
+      { id: "q2", name: "Consult the Martial Artists — Talk to Gertrude (Auch), Feng Ling (Gigante), Irawan (Coimbra), and Gracielo (Coimbra); return to Baek Ho." },
+      { id: "q3", name: "Choose the Way — Either hand over 25 Mysterious Powders, or defeat Dr. Fran in Prison de Joaquin: Corridor of Assize (Coimbra Nimrod Bridge daily)." },
+      { id: "q4", name: "Baek Ho Joins — Report back to receive the Baek Ho Character Card." }
+    ]
+  },
   {
     id: "city-of-auch-infantry",
     name: "City of Auch Infantry",
