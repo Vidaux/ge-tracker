@@ -358,9 +358,36 @@ export const CHARACTERS = [
     name: "Idge Imbrulia",
     region: "Reboldeaux",
     portrait: "images/characters/idge.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",  weapon: "None",         acquisition: "-", level: "-" },
+      { name: "Plow-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Tail-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Roof-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Sidewinder",    weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Blandir Cruz",  weapon: "Polearm",      acquisition: "-", level: "-" },
+      { name: "Penetrar Cruz", weapon: "Polearm",      acquisition: "-", level: "-" },
+      { name: "Mighty Cruz",   weapon: "Polearm",      acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 40,
+        "STR": 60, "AGI": 70, "HP": 50, "DEX": 60, "INT": 30, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "Armor Crafting - Manufacture leather/metal armors and shields. Use it then drag armor/shield recipe to Idge in Reboldeaux. Cast: 0s, Cooldown: 1s, Duration: 1.1s, SP: None",
+        "image": "/images/skills/job_craftarmor.png"
+      },
+      equipment: { "Armor": "Leather; Metal" }
+    },
+    quests: [
+      { id: "q1", name: "An Old Armor (Req Lv 4) — Ferruccio Junction G-7 flat stone; return. (EXP Card (3), Polish Novice (3))" },
+      { id: "q2", name: "Fanatic Mail (Req Lv 17, post 'Source of the Taint') — Al Quelt Moreza Arcade fanatics for parts; return. (Fanatic Mail, EXP Card (3), Polish Novice (3))" },
+      { id: "q3", name: "The Lost Drawing (Req Lv 30) — Multi-step investigation across Auch/Reboldeaux/Tetra; defeat Claude; find cottage key; thieves instance (Tetra Grand Corridor I-8); return. (EXP Card (3), Polish Disciple (3))" },
+      { id: "q4", name: "Idge's Series (Req Lv 35) — Complete 'Raw Materials for Silver Bar' then return for Idge's Boots/Gloves/Helmet. (EXP Card (3), Polish Disciple (3))" },
+      { id: "q5", name: "Raw Materials for Silver Bar — Horned Gargoyle, Nevare, Box Octopus drops; smelt at bonfires; return. (60 Silver Bar)" },
+      { id: "q6", name: "Idge's Breastplate (Req Lv 38) — Eusebio, then Jezebel Glen E-11 instance vs Grim Reaper; Porto Bello mermen drops; return for Idge Card & Breastplate. (EXP Card (3), Polish Disciple (3))" }
+    ]
   },
   {
     id: "najib-sharif",
@@ -439,9 +466,29 @@ export const CHARACTERS = [
     name: "Jack",
     region: "Rebouldeaux Stone Pit",
     portrait: "images/characters/jack.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Install Trap",  weapon: "None", acquisition: "-", level: "-" },
+      { name: "Construction",  weapon: "None", acquisition: "-", level: "-" },
+      { name: "Penetrar Cruz", weapon: "Polearm", acquisition: "-", level: "-" },
+      { name: "Install Trap",  weapon: "Tool", acquisition: "-", level: "-" },
+      { name: "Construction",  weapon: "Tool", acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 16,
+        "STR": 50, "AGI": 70, "HP": 50, "DEX": 60, "INT": 40, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "Remove Construction - Removes constructions; some summons (e.g., Amber) will be released. (Self-buff) Cast: 0s, Cooldown: 60s, Duration: 1.5s, SP: None",
+        "image": "/images/skills/job_cancelsummon.png"
+      },
+      equipment: { "Armor": "Leather" }
+    },
+    quests: [
+      { id: "q1", name: "Request From Jack (Req Lv 4) — Stone Pit instance: reach red square; kill 5 bears; return. (EXP Card (3), Polish Initiate (3))" },
+      { id: "q2", name: "Recovery Work on the Stone Pit — Ferruccio Junction: kill Leaping Crocs for 10 Limestone; return for Jack Card. (Polish Initiate (3))" }
+    ]
   },
 
   // =========================
@@ -629,27 +676,101 @@ export const CHARACTERS = [
     name: "Gracielo",
     region: "The Port of Coimbra",
     portrait: "images/characters/gracielo.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",               weapon: "None",      acquisition: "-", level: "-" },
+      { name: "Bare Knuckle",               weapon: "Knuckle",   acquisition: "-", level: "-" },
+      { name: "Martial Arts — Chap. of Wind", weapon: "Legguard", acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 40,
+        "STR": 60, "AGI": 70, "HP": 60, "DEX": 50, "INT": 30, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "Violent Wind Attack - Increases physical ability like lightning. (Self-buff) Cast: 0s, Cooldown: 30s, Duration: 1.2s, SP: 300 + Mithridart ×1",
+        "Lv1":  "Duration 45s; ATK SPD & Move SPD +5.5%; Lightning ATK +16; DEF -20",
+        "Lv10": "Duration 180s; ATK SPD & Move SPD +10%; Lightning ATK +70; DEF -20",
+        "Lv11": "Duration 195s; ATK SPD & Move SPD +10.5%; Lightning ATK +76; DEF -20; A.R. +1",
+        "Lv12": "Duration 210s; ATK SPD & Move SPD +11%; Lightning ATK +82; DEF -20; A.R. +1",
+        "Lv13": "Duration 225s; ATK SPD & Move SPD +11.5%; Lightning ATK +88; DEF -20; A.R. +1",
+        "image": "/images/skills/job_chapterofwind.png"
+      },
+      equipment: { "Armor": "Leather" }
+    },
+    quests: [
+      { id: "q1", name: "Hungry Hungry Gracielo — Buy Chocolate (Lisa), Ferruccio Milk & Bread (Mary at Queen's Gate); return. (Polish Disciple (3))" },
+      { id: "q2", name: "Gracielo's Mission (Rec Lv 25) — Talk to Camille; instance duel vs Gracielo; return for Character Card. (EXP Card (3), Polish Disciple (6))" },
+      { id: "q3", name: "Coimbra Showdown (Req Lv 40) — Observation Deck F-7 instance; defeat 3 thugs, then Fritz; talk to Camille. (Health Filler (1), Polish Initiate (3))" },
+      { id: "q4", name: "A Warrior's Path to Humility Part 1 — Reboldeaux Menendez: defeat 100 soldiers; destroy Insignia. (Gaiters Lv48, EXP Card (3), Polish Initiate (3))" },
+      { id: "q5", name: "A Warrior's Path to Humility Part 2 (Req Lv 42) — Coimbra instances & tombstone; defeat Hippolite & thugs; get pointer to Porto Bello Deserted Quay. (Polish Disciple (6))" },
+      { id: "q6", name: "A Warrior's Path to Understanding (Req Lv 46) — PB Deserted Quay hut G-6 > trials vs Tortoise/Wolves/Scavenger; break stone; talk to Fritz. (EXP Card (6), Polish Disciple (9))" },
+      { id: "q7", name: "A Warrior's Path to Strength: The First Disciple — Lascasas (Coimbra) instance, Reen (Stone Pit), Seldan (Ferruccio Jct); rewards Skill Book: Chapter of Wind, Dragon Kick, Soul Filler (2), EXP Card (3)." },
+      { id: "q8", name: "A Warrior's Path to Honor: Be the Wind — PB Deserted Quay hut: stance book 'Martial Elements: Wind'. (Polish Disciple (3))" },
+      { id: "q9", name: "A Bull Amongst the Storm — Reboldeaux streets: instance vs Bison; obtain Bison Horn." },
+      { id: "q10", name: "Educate the Robot (57) — Torsche Mansion Maid's Quarters: instance vs Roseanne; talk to her. (EXP Card (3), Polish Explorer (3))" }
+    ]
   },
   {
     id: "irawan",
     name: "Irawan",
     region: "The Port of Coimbra",
     portrait: "images/characters/irawan.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",                    weapon: "None",      acquisition: "-", level: "-" },
+      { name: "Muathai",                         weapon: "Knuckle",   acquisition: "-", level: "-" },
+      { name: "Martial Arts — Chap. of Earth",   weapon: "Knuckle",   acquisition: "-", level: "-" },
+      { name: "Muathai",                         weapon: "Legguard",  acquisition: "-", level: "-" },
+      { name: "Martial Arts — Chap. of Wind",    weapon: "Legguard",  acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 80, "AGI": 60, "HP": 50, "DEX": 50, "INT": 30, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "—",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: { "Armor": "Leather" }
+    },
+    quests: [
+      { id: "q1", name: "Attacked by Gangsters — Pay 1,000 Vis to enter instance; assist vs thugs; give 10 Soul Crystals (see pioneer quest chain for 5 free). (Polish Initiate (6))" },
+      { id: "q2", name: "Gracielo's Counterattack — Instance cutscene; give 10 Triumph Filler & 10 AM Boost (5 of each available via pioneer quests). (Polish Initiate (3))" },
+      { id: "q3", name: "Meet with Fritz — Instance dialogue; receive Irawan Character Card. (Polish Initiate (3))" }
+    ]
   },
   {
     id: "jose-corthasar",
     name: "Jose Corthasar",
     region: "The Port of Coimbra",
     portrait: "images/characters/jose.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",     weapon: "None",        acquisition: "-", level: "-" },
+      { name: "Blandir Cruz",     weapon: "Polearm",     acquisition: "-", level: "-" },
+      { name: "Penetrar Cruz",    weapon: "Polearm",     acquisition: "-", level: "-" },
+      { name: "Mighty Cruz",      weapon: "Polearm",     acquisition: "-", level: "-" },
+      { name: "Siege Burst",      weapon: "Cannon",      acquisition: "-", level: "-" },
+      { name: "Gigantic Marksmanship", weapon: "Cannon", acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 48,
+        "STR": 50, "AGI": 40, "HP": 50, "DEX": 70, "INT": 50, "SEN": 40,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "Cannon Manufacture - Allows you to manufacture cannons. Use it then drag cannon recipe to Jose in Coimbra. Cast: 0s, Cooldown: 1s, Duration: 1.1s, SP: None",
+        "image": "/images/skills/job_craftguns.png"
+      },
+      equipment: { "Armor": "Leather; Metal" }
+    },
+    quests: [
+      { id: "q1", name: "Porsair's Cannon Ball (Req Lv 40) — Porto Bello: Cabin/Hold kill Porsair; return. (EXP Card (3), Polish Disciple (3))" },
+      { id: "q2", name: "Supply T.N.T (Req Lv 44) — Deserted Quay: kill Armed Tortoise for items; return. (EXP Card (3), Polish Disciple (3))" },
+      { id: "q3", name: "Return of the Cannon Trooper (Req Lv 48) — Instance: defeat Jose (Claude may appear but not required); return for Jose Card. (EXP Card (3), Polish Disciple (3))" }
+    ]
   },
   {
     id: "lisa-lynway",
@@ -754,18 +875,60 @@ export const CHARACTERS = [
     name: "Grutrude",
     region: "City of Auch",
     portrait: "images/characters/grutrude.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",                    weapon: "None",    acquisition: "-", level: "-" },
+      { name: "Martial Arts — Chap. of Earth",  weapon: "Knuckle",  acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 40,
+        "STR": 70, "AGI": 50, "HP": 70, "DEX": 50, "INT": 30, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "Earth Mental Attack - Imbues the body with the force of Earth. (Self-buff) Cast: 0s, Cooldown: 30s, Duration: 1.2s, SP: 300 + Mithridart ×1",
+        "Lv1":  "Duration 45s; DEF +11; All RES +15; Move SPD -5.5%; Mental ATK +16",
+        "Lv10": "Duration 180s; DEF +20; All RES +15; Move SPD -10%; Mental ATK +70",
+        "Lv11": "Duration 195s; DEF +21; All RES +15; Move SPD -10.5%; Mental ATK +76; D.R. +1",
+        "Lv12": "Duration 210s; DEF +22; All RES +15; Move SPD -11%; Mental ATK +82; D.R. +1",
+        "Lv13": "Duration 225s; DEF +23; All RES +15; Move SPD -11.5%; Mental ATK +88; D.R. +1",
+        "image": "/images/skills/job_chapterofearth.png"
+      },
+      equipment: { "Armor": "Leather" }
+    },
+    quests: [
+      { id: "q1", name: "Investigation of Torsche's Mansion (Req Lv 57) — Unlock Grand Library; farm Haunted Desks for items; return. (30,000 Vis, EXP Card (3), Polish Adept (3))" },
+      { id: "q2", name: "Investigation of the Joaquin Concentration Camp — Open Gulag Furnaces across Prison de Joaquin maps (multiple coords); return. (50,000 Vis, EXP Card (3), Polish Adept (3))" },
+      { id: "q3", name: "Investigating Sir Lyndon — Reboldeaux: pay Brunie 5,000 Vis; talk to Eusebio twice (give 20 Bulk of Gold); talk to Domingo; return for Detective Gertrude Character Card. (Polish Adept (3))" }
+    ]
   },
   {
     id: "karjalainen",
     name: "Karjalainen",
     region: "City of Auch",
     portrait: "images/characters/karjalainen.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",  weapon: "None",                 acquisition: "-", level: "-" },
+      { name: "Epee Garde",    weapon: "Rapier",               acquisition: "-", level: "-" },
+      { name: "Sabre Garde",   weapon: "Rapier",               acquisition: "-", level: "-" },
+      { name: "Epee Glacier",  weapon: "Rapier + Ice Bracelet",acquisition: "-", level: "-" },
+      { name: "Sabre Glacier", weapon: "Rapier + Ice Bracelet",acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 56,
+        "STR": 60, "AGI": 70, "HP": 50, "DEX": 50, "INT": 70, "SEN": 30,
+        "Total Stat Points": 330
+      },
+      personal: {
+        "Personal Skill": "Accessory Crafting - Manufacture accessories and gems. Use it then drag recipe to Karjalainen in Auch. Cast: 0s, Cooldown: 1s, Duration: 1.1s, SP: None",
+        "image": "/images/skills/job_craftmisc.png"
+      },
+      equipment: { "Armor": "Robe; Leather" }
+    },
+    quests: [
+      { id: "q1", name: "Explorers Wear Andre (Req Lv 84 gear) — Speak to Mia Karjalain (H-8) while leader wears L84 Andre armor and Andre is in team; instance duel; receive Mia Karjalain Character Card. (Polish Disciple (3))" }
+    ]
   },
   {
     id: "lorch",
@@ -1122,9 +1285,34 @@ export const CHARACTERS = [
     name: "Grandma",
     region: "Ustiur Base Camp",
     portrait: "images/characters/grandma.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",  weapon: "None",         acquisition: "-", level: "-" },
+      { name: "Plow-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Tail-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Roof-Guard",    weapon: "Great Sword",  acquisition: "-", level: "-" },
+      { name: "Sidewinder",    weapon: "Great Sword",  acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 60,
+        "STR": 70, "AGI": 60, "HP": 90, "DEX": 50, "INT": 30, "SEN": 40,
+        "Total Stat Points": 340
+      },
+      personal: {
+        "Personal Skill": "Provoke - Taunts up to 8 enemies within 8m. (Self-buff) Cast: 0s, Cooldown: 0s, Duration: 1.2s, SP: 100",
+        "Lv1":  "Duration 15s; Enemy DEF -11; Enemy ATK +10%",
+        "Lv10": "Duration 15s; Enemy DEF -20; Enemy ATK +10%",
+        "Lv11": "Duration 15s; Enemy DEF -21; Enemy ATK +10%",
+        "Lv12": "Duration 15s; Enemy DEF -22; Enemy ATK +10%",
+        "Lv13": "Duration 15s; Enemy DEF -23; Enemy ATK +10%",
+        "image": "/images/skills/job_provoke.png"
+      },
+      equipment: { "Armor": "Leather; Metal" }
+    },
+    quests: [
+      { id: "q1", name: "Discover the Esperanza Falls (Req Lv 78) — Ustiur Zona Cuatro: at G-10 near tree stump; auto-trigger while walking north side; return to Grenmah. (EXP Card (3), Polish Adept (3))" },
+      { id: "q2", name: "Grandma's Card — After Falls quest + Montoro's Skull Ring: duel Grenmah; win to receive Grandma Card." }
+    ]
   },
   {
     id: "rescue-knight",
