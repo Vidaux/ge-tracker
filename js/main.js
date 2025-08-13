@@ -241,49 +241,47 @@ function cardNode(c) {
   name.className = "name";
   name.textContent = c.name;
 
-  // Meta: Region + Starting Level + Current Level
+  // Meta: Region + Starting Level + (Level only if owned)
   const meta = document.createElement("div");
   meta.className = "meta";
 
   const startLvl = c.stats?.core?.["Starting Level"];
-  const startLine = startLvl != null ? `<span>Starting Level: ${startLvl}</span>` : "";
-
-  const currentLevel = getLevel(c.id);
-  const levelLine = currentLevel ? `<span>Level: ${currentLevel}</span>` : "";
+  const ownedState = isOwned(c.id);
+  const currentLevel = ownedState ? getLevel(c.id) : null;
 
   meta.innerHTML = `
     <span>Region: ${c.region}</span>
-    ${startLine}
-    ${levelLine}
+    ${startLvl != null ? `<span>Starting Level: ${startLvl}</span>` : ""}
+    ${ownedState && currentLevel ? `<span>Level: ${currentLevel}</span>` : ""}
   `;
 
   // Owned pill with quick toggle
   const pill = document.createElement("span");
-  const ownedState = isOwned(c.id);
   pill.className = "owned-pill " + (ownedState ? "owned" : "unowned");
   pill.textContent = ownedState ? "Owned" : "Not owned";
   pill.addEventListener("click", (e) => {
-    e.preventDefault(); e.stopPropagation();
+    e.preventDefault();
+    e.stopPropagation();
+
     const now = !isOwned(c.id);
     setOwned(c.id, now);
 
-    // Seed level to Starting Level when becoming owned (if not set yet)
+    // Seed level on first own
     if (now && !getLevel(c.id)) {
       const def = startLvl != null ? String(startLvl) : "1";
       setLevel(c.id, def);
     }
 
-    // reflect UI immediately (pill + meta lines)
+    // Refresh pill + meta (show/hide Level line)
     pill.textContent = now ? "Owned" : "Not owned";
     pill.classList.toggle("unowned", !now);
     pill.classList.toggle("owned", now);
 
-    const updatedLevel = getLevel(c.id);
-    const levelHTML = updatedLevel ? `<span>Level: ${updatedLevel}</span>` : "";
+    const updatedLevel = now ? getLevel(c.id) : null;
     meta.innerHTML = `
       <span>Region: ${c.region}</span>
       ${startLvl != null ? `<span>Starting Level: ${startLvl}</span>` : ""}
-      ${levelHTML}
+      ${now && updatedLevel ? `<span>Level: ${updatedLevel}</span>` : ""}
     `;
 
     // keep current filters persisted as-is
@@ -296,3 +294,4 @@ function cardNode(c) {
   a.appendChild(pill);
   return a;
 }
+

@@ -40,15 +40,6 @@ const personalImgEl = document.getElementById("personalSkillImage");
 // Fallback legacy grid (if split not present)
 const statsGridEl = document.getElementById("statsGrid");
 
-// Build the unified level options: 1–100, Veteran 1–10, Expert 1–10
-const LEVEL_OPTIONS = (() => {
-  const list = [];
-  for (let i = 1; i <= 100; i++) list.push(String(i));
-  for (let i = 1; i <= 10; i++) list.push(`Veteran ${i}`);
-  for (let i = 1; i <= 10; i++) list.push(`Expert ${i}`);
-  return list;
-})();
-
 if (!character) {
   document.title = "Not Found - Granado Espada";
   if (nameEl) nameEl.textContent = "Character not found";
@@ -77,76 +68,15 @@ if (!character) {
     ownedEl.checked = isOwned(character.id);
     ownedEl.addEventListener("change", () => {
       setOwned(character.id, ownedEl.checked);
-      // Seed Level to Starting Level when becoming owned (only if not set yet)
-      if (ownedEl.checked && !getLevel(character.id)) {
-        const sl = character.stats?.core?.["Starting Level"];
-        const def = sl != null ? String(sl) : "1";
-        setLevel(character.id, def);
-        syncLevelControl(def);
-      }
+      // If just owned and level is not set yet, seed it to Starting Level
+      if (ownedEl.checked) ensureLevelInitialized();
+      renderLevelRow(); // refresh right-side "Level" pill
     });
   }
-
-  // Render Level control (before stats so it shows alongside Starting Level)
-  renderLevelControl();
 
   // Render Recruitment & Stats
   renderQuests();
   renderStats();
-}
-
-/* ===================== Level control ===================== */
-function renderLevelControl() {
-  // Insert a small control under the Starting Level badge
-  const container = document.createElement("div");
-  container.id = "levelControl";
-  container.className = "level-control";
-  container.innerHTML = `
-    <label for="levelSelect" class="level-label">Level</label>
-    <select id="levelSelect" class="level-select" aria-label="Character level"></select>
-  `;
-
-  // Place it right after the Starting Level line if present, else at top of stats section
-  if (startLevelEl && startLevelEl.parentElement) {
-    startLevelEl.insertAdjacentElement("afterend", container);
-  } else {
-    // fallback: add near stats grid if needed
-    const statsSection = document.getElementById("statsSection");
-    statsSection && statsSection.prepend(container);
-  }
-
-  // Populate options
-  const sel = container.querySelector("#levelSelect");
-  sel.innerHTML = "";
-  for (const opt of LEVEL_OPTIONS) {
-    const o = document.createElement("option");
-    o.value = opt;
-    o.textContent = opt;
-    sel.appendChild(o);
-  }
-
-  // Initial value: stored => use it; if owned & none => seed to Starting Level; else leave first option
-  let current = getLevel(character.id);
-  if (!current && isOwned(character.id)) {
-    const sl = character.stats?.core?.["Starting Level"];
-    current = sl != null ? String(sl) : "1";
-    setLevel(character.id, current);
-  }
-  if (current && LEVEL_OPTIONS.includes(current)) {
-    sel.value = current;
-  }
-
-  sel.addEventListener("change", () => {
-    setLevel(character.id, sel.value);
-  });
-}
-
-// Keep UI selector synced if we programmatically set default
-function syncLevelControl(value) {
-  const sel = document.getElementById("levelSelect");
-  if (sel && LEVEL_OPTIONS.includes(value)) {
-    sel.value = value;
-  }
 }
 
 /* ===================== Recruitment (progressive steps) ===================== */
@@ -227,10 +157,12 @@ function renderQuests() {
       setOwned(character.id, false);
       if (ownedEl) ownedEl.checked = false;
       renderQuests();
+      renderLevelRow(); // reflect potential level init removal
     };
   }
 }
 
+/** Auto-ownership sync: all quests done -> owned */
 function syncOwnershipBasedOnQuests() {
   const quests = character.quests || [];
   if (!quests.length) return;
@@ -241,12 +173,9 @@ function syncOwnershipBasedOnQuests() {
   setOwned(character.id, allDone);
   if (ownedEl) ownedEl.checked = allDone;
 
-  // When recruitment completes and the char becomes owned, seed Level if needed
-  if (allDone && !getLevel(character.id)) {
-    const sl = character.stats?.core?.["Starting Level"];
-    const def = sl != null ? String(sl) : "1";
-    setLevel(character.id, def);
-    syncLevelControl(def);
+  if (allDone) {
+    ensureLevelInitialized();
+    renderLevelRow();
   }
 }
 
@@ -262,6 +191,88 @@ function showRecruitmentUI() {
   if (resetBtn) resetBtn.style.display = "";
 }
 
+/* =============================== Level helpers (character page) =============================== */
+
+function normalizeLevelInput(input) {
+  if (!input) return null;
+  const s = String(input).trim().toLowerCase();
+
+  const n = Number(s);
+  if (Number.isInteger(n) && n >= 1 && n <= 100) return String(n);
+
+  const v = s.match(/^(v(?:et|eteran)?)[\s\-]*([1-9]|10)$/i);
+  if (v) return `Veteran ${Number(v[2])}`;
+
+  const e = s.match(/^(e(?:xp|xpert)?)[\s\-]*([1-9]|10)$/i);
+  if (e) return `Expert ${Number(e[2])}`;
+
+  const full = s.match(/^(veteran|expert)\s+([1-9]|10)$/i);
+  if (full) return `${full[1][0].toUpperCase()}${full[1].slice(1)} ${Number(full[2])}`;
+
+  return null;
+}
+
+function ensureLevelInitialized() {
+  const has = getLevel(character.id);
+  const start = character.stats?.core?.["Starting Level"];
+  if (!has && start != null && isOwned(character.id)) {
+    setLevel(character.id, String(start));
+  }
+}
+
+function getOrCreateLevelRow() {
+  if (!startLevelEl) return null;
+  const block = startLevelEl.parentElement; // .stats-block
+  if (!block) return null;
+
+  let row = block.querySelector(".level-row");
+  if (!row) {
+    row = document.createElement("div");
+    row.className = "level-row";
+    // place the row where the startLevel used to be
+    block.insertBefore(row, startLevelEl);
+    row.appendChild(startLevelEl);
+    const cur = document.createElement("button");
+    cur.id = "currentLevel";
+    cur.type = "button";
+    cur.className = "current-level-badge";
+    row.appendChild(cur);
+  }
+  return row;
+}
+
+function renderLevelRow() {
+  const row = getOrCreateLevelRow();
+  if (!row || !startLevelEl) return;
+
+  // left: Starting Level
+  const start = character.stats?.core?.["Starting Level"];
+  startLevelEl.textContent =
+    start != null ? `Starting Level: ${start}` : "Starting Level: -";
+
+  // right: Current Level
+  const curBtn = row.querySelector("#currentLevel");
+  const current = getLevel(character.id);
+  curBtn.textContent = `Level: ${current ?? "—"}`;
+  curBtn.title = "Click to set current level";
+
+  curBtn.onclick = () => {
+    const def = current ?? (start != null ? String(start) : "");
+    const input = prompt(
+      `Enter current level for ${character.name}:\n- 1 to 100\n- Veteran 1..10 (V10)\n- Expert 1..10 (E10)`,
+      def
+    );
+    if (input == null) return;
+    const normalized = normalizeLevelInput(input);
+    if (!normalized) {
+      alert("Invalid level. Use 1–100, Veteran 1–10, or Expert 1–10.");
+      return;
+    }
+    setLevel(character.id, normalized);
+    renderLevelRow();
+  };
+}
+
 /* =============================== Stats =============================== */
 function renderStats() {
   const stats = character.stats || {};
@@ -272,11 +283,11 @@ function renderStats() {
   const usingSplit = !!(coreGridEl || personalGridEl || equipmentGridEl || startLevelEl || totalPointsEl);
 
   if (usingSplit) {
-    if (startLevelEl) {
-      const sl = core["Starting Level"];
-      startLevelEl.textContent = sl != null ? `Starting Level: ${sl}` : "Starting Level: -";
-    }
+    // Ensure the right-side level pill exists and is updated
+    ensureLevelInitialized();
+    renderLevelRow();
 
+    // 2×3 grid for core stats (fixed order)
     const coreOrder = ["STR", "AGI", "HP", "DEX", "INT", "SEN"];
     if (coreGridEl) {
       coreGridEl.innerHTML = "";
@@ -285,11 +296,13 @@ function renderStats() {
       });
     }
 
+    // Total Stat Points underneath
     if (totalPointsEl) {
       const tsp = core["Total Stat Points"];
       totalPointsEl.textContent = tsp != null ? `Total Stat Points: ${tsp}` : "";
     }
 
+    // Personal Skill (ordered)
     if (personalGridEl) {
       personalGridEl.innerHTML = "";
       const order = ["Personal Skill", "Lv1", "Lv10", "Lv11", "Lv12", "Lv13"];
@@ -302,6 +315,7 @@ function renderStats() {
       });
     }
 
+    // Personal skill image (optional)
     if (personalImgEl) {
       if (personal.image) {
         personalImgEl.src = `../${personal.image}`;
@@ -312,6 +326,7 @@ function renderStats() {
       }
     }
 
+    // Equipment
     if (equipmentGridEl) {
       equipmentGridEl.innerHTML = "";
       for (const [k, v] of Object.entries(equipment)) {
@@ -322,6 +337,7 @@ function renderStats() {
     return;
   }
 
+  // Fallback: legacy single grid
   if (statsGridEl) {
     statsGridEl.innerHTML = "";
     const flat = { ...core, ...personal, ...equipment };
