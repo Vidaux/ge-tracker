@@ -468,9 +468,33 @@ export const CHARACTERS = [
     name: "Soldier of Reboldoeux",
     region: "Reboldeaux",
     portrait: "images/characters/soldier.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",    weapon: "None",                 acquisition: "-", level: "-" },
+      { name: "Blandir Cruz",    weapon: "Polearm",              acquisition: "-", level: "-" },
+      { name: "Penetrar Cruz",   weapon: "Polearm",              acquisition: "-", level: "-" },
+      { name: "Mighty Cruz",     weapon: "Polearm",              acquisition: "-", level: "-" },
+      { name: "Back-Guard",      weapon: "Sword",                acquisition: "-", level: "-" },
+      { name: "Back-Guard",      weapon: "Blunt",                acquisition: "-", level: "-" },
+      { name: "Back-Guard",      weapon: "Sword + Shield",       acquisition: "-", level: "-" },
+      { name: "High-Guard",      weapon: "Sword + Shield",       acquisition: "-", level: "-" },
+      { name: "Back-Guard",      weapon: "Blunt + Shield",       acquisition: "-", level: "-" },
+      { name: "Defender",        weapon: "Blunt + Shield",       acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 60, "AGI": 50, "HP": 60, "DEX": 40, "INT": 30, "SEN": 30,
+        "Total Stat Points": 270
+      },
+      personal: {
+        "Personal Skill": "—",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: { "Armor": "Leather; Metal" }
+    },
+    quests: [
+      { id: "q1", name: "Basic Combat Education — Training instance: defeat 5 soldiers, practice modes, exit via Gate Control Officer, talk to instructor for Character Card." }
+    ]
   },
 
   // =========================
@@ -1093,9 +1117,31 @@ export const CHARACTERS = [
     name: "Tiburon",
     region: "City of Auch",
     portrait: "images/characters/tiburon.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",  weapon: "None",         acquisition: "-", level: "-" },
+      { name: "Plow-Guard",    weapon: "Sword",        acquisition: "-", level: "-" },
+      { name: "Tail-Guard",    weapon: "Sword",        acquisition: "-", level: "-" },
+      { name: "Sidewinder",    weapon: "Sword",        acquisition: "-", level: "-" },
+      { name: "Middle-Guard",  weapon: "Main Gauche",  acquisition: "-", level: "-" },
+      { name: "Back-Guard",    weapon: "Main Gauche",  acquisition: "-", level: "-" },
+      { name: "Low-Guard",     weapon: "Main Gauche",  acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 16,
+        "STR": 60, "AGI": 80, "HP": 40, "DEX": 50, "INT": 30, "SEN": 30,
+        "Total Stat Points": 290
+      },
+      personal: {
+        "Personal Skill": "Sprint - Sudden burst of speed. (Self-buff) Cast: 1.133s, Cooldown: 30s, Duration: 1.13s, SP: 100 + Mithridart ×3\nLv1: 6s +55% • Lv10: 15s +100% • Lv11: 16s +105% • Lv12: 17s +110% • Lv13: 18s +115%",
+        "image": "/images/skills/job_sprint.png"
+      },
+      equipment: { "Armor": "Leather" }
+    },
+    quests: [
+      { id: "q1", name: "Finders Keepers, Losers Weepers (Req Lv 50) — Reject 200k offer; accept 20k offer; instance vs Tiburon/Ramiro/Jonella; receive Tiburon Character Card & Pocket Watch. (20,000 Vis)" },
+      { id: "q2", name: "Veteran Upgrade — Long chain via Brunie → Jack → Andre → Claude → Emilia → Brunie; ends with +1 STR costume (shared with Ramiro)." }
+    ]
   },
 
   // =========================
@@ -1106,9 +1152,32 @@ export const CHARACTERS = [
     name: "Viki",
     region: "Mysterious Hut El Tejado Verde",
     portrait: "images/characters/viki.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "First Aid",  weapon: "None / Rosario", acquisition: "-", level: "-" },
+      { name: "Fortitudo",  weapon: "None / Rosario", acquisition: "-", level: "-" },
+      { name: "Amicus",     weapon: "Pendant",         acquisition: "-", level: "-" },
+      { name: "Testis",     weapon: "Pendant",         acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 16,
+        "STR": 40, "AGI": 50, "HP": 40, "DEX": 50, "INT": 50, "SEN": 50,
+        "Total Stat Points": 280
+      },
+      personal: {
+        "Personal Skill": "Healing - Restores HP of one appointed character. (Self-buff) Cast: 0s, Cooldown: 0s, Duration: 1.5s, SP: 25",
+        "image": "/images/skills/job_healing.png"
+      },
+      equipment: { "Armor": "Leather" }
+    },
+    quests: [
+      { id: "q1", name: "A Boy and His Golem (Wed) — Start chain via Dr. Torsche (inside hut on Wednesdays) → Paul in Reboldeaux." },
+      { id: "q2", name: "Viki, the Boy of Plateau — Complete 'Raw Taste' (300 Cabosse via Lisa) & 'Boy, Have a Dream' (various drops) for rewards." },
+      { id: "q3", name: "Picnic-hut Attack — Instance with Cherlyn & Treasure Golem; kill, talk to Aratat; reward chips. (Polish Explorer (3))" },
+      { id: "q4", name: "Aratat Repair 1–3 — Multi-zone farming + 'Torsche's Errand'; rare Violent Gecho drop; turn in to Ulrich." },
+      { id: "q5", name: "Resurrect Aratat — Instance vs Hill Giant; rewards: Summoning Stone ×10, Old Wooden Pendant, Amicus book, Viki Character Card." },
+      { id: "q6", name: "Testis Book — 'Cherlyn's Conspiracy 1–2' (Viki leader) + 'Return of the Giant 1–2' material turn-ins; receive Mustang Core & Testis book." }
+    ]
   },
 
   // =========================
@@ -1499,18 +1568,54 @@ export const CHARACTERS = [
     name: "Rescue Knight",
     region: "Ustiur Base Camp",
     portrait: "images/characters/rescue.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",    weapon: "None",   acquisition: "-", level: "-" },
+      { name: "Defending Guard", weapon: "Sword",  acquisition: "-", level: "-" },
+      { name: "Defending Shot",  weapon: "Rifle",  acquisition: "-", level: "-" },
+      { name: "Defending Shot",  weapon: "Bayonet",acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 52,
+        "STR": 60, "AGI": 50, "HP": 50, "DEX": 60, "INT": 30, "SEN": 30,
+        "Total Stat Points": 280
+      },
+      personal: {
+        "Personal Skill": "Resuscitation - Revives an incapacitated ally. (Target: ally incapable of combat) Cast: 0s, Cooldown: 0s, Duration: 1.5s, SP: 25 + Resurrect Potion ×1\nLv1: Restore 5% HP • Lv10: 50% • Lv11: 55% • Lv12: 60% • Lv13: 65%",
+        "image": "/images/skills/job_resuscitation.png"
+      },
+      equipment: { "Armor": "Leather; Metal" }
+    },
+    quests: [
+      { id: "q1", name: "Pioneering Quests (Ustiur) — Reward for 'Conflict' step: Rescue Knight Character Card." }
+    ]
   },
   {
     id: "romina",
     name: "Romina",
     region: "Ustiur Base Camp",
     portrait: "images/characters/romina.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",    weapon: "None",    acquisition: "-", level: "-" },
+      { name: "Defending Shot",  weapon: "Rifle",   acquisition: "-", level: "-" },
+      { name: "Defending Guard", weapon: "Sword",   acquisition: "-", level: "-" },
+      { name: "Defending Shot",  weapon: "Bayonet", acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 60,
+        "STR": 70, "AGI": 60, "HP": 70, "DEX": 70, "INT": 30, "SEN": 30,
+        "Total Stat Points": 330
+      },
+      personal: {
+        "Personal Skill": "Resuscitation - Revives an incapacitated ally. (Target: ally incapable of combat) Cast: 0s, Cooldown: 0s, Duration: 1.5s, SP: 25 + Resurrect Potion ×1\nLv1: Restore 5% HP • Lv10: 50% • Lv11: 55% • Lv12: 60% • Lv13: 65%",
+        "image": "/images/skills/job_resuscitation.png"
+      },
+      equipment: { "Armor": "Leather; Metal" }
+    },
+    quests: [
+      { id: "q1", name: "Battle with Romina — Unlock Zona Cuatro, complete Estevan to 'Delivery of a Lunchbox', kill Spinosaurus for skull, instance duel vs Romina (Lv100); obtain Character Card. (Polish Adept (3))" }
+    ]
   },
 
   // =========================
@@ -1617,17 +1722,52 @@ export const CHARACTERS = [
     name: "Sage Emilia",
     region: "Promo",
     portrait: "images/characters/ets.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "First Aid",      weapon: "None / Rosario", acquisition: "-", level: "-" },
+      { name: "Fortitudo",      weapon: "None / Rosario", acquisition: "-", level: "-" },
+      { name: "ESP",            weapon: "None / Rod",     acquisition: "-", level: "-" },
+      { name: "Psychokinesis",  weapon: "Rod",            acquisition: "-", level: "-" },
+      { name: "Incantation",    weapon: "Rod",            acquisition: "-", level: "-" },
+      { name: "Levitation",     weapon: "Rod",            acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 40, "AGI": 50, "HP": 40, "DEX": 50, "INT": 80, "SEN": 60,
+        "Total Stat Points": 320
+      },
+      personal: {
+        "Personal Skill": "Healing - Restores HP of one appointed character. (Self-buff) Cast: 0s, Cooldown: 0s, Duration: 1.5s, SP: 25",
+        "image": "/images/skills/job_healing.png"
+      },
+      equipment: { "Armor": "Coat; Leather" }
+    },
+    quests: [
+      { id: "q1", name: "Acquisition varies by event/premium promotions." }
+    ]
   },
   {
     id: "soho-the-wind",
     name: "Soho The Wind",
     region: "Promo",
     portrait: "images/characters/stw.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
+    stances: [
+      { name: "Fortitudo",                 weapon: "None",     acquisition: "-", level: "-" },
+      { name: "Escrima",                   weapon: "Dagger",   acquisition: "-", level: "-" },
+      { name: "Martial Arts: Chap. of Wind", weapon: "Leguard", acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 40,
+        "STR": 60, "AGI": 70, "HP": 50, "DEX": 60, "INT": 30, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "Healing - Restores HP of one appointed character. (Self-buff) Cast: 0s, Cooldown: 0s, Duration: 1.5s, SP: 25",
+        "image": "/images/skills/job_healing.png"
+      },
+      equipment: { "Armor": "Leather" }
+    },
     quests: []
   }
 
