@@ -38,22 +38,6 @@ const personalImgEl = document.getElementById("personalSkillImage");
 // Fallback legacy grid (if split not present)
 const statsGridEl = document.getElementById("statsGrid");
 
-// Back button: prefer real browser back, otherwise go to list
-const backLink = document.querySelector(".back");
-if (backLink) {
-  backLink.addEventListener("click", (e) => {
-    const hasHistory = window.history.length > 1;
-    const sameOriginReferrer =
-      document.referrer && new URL(document.referrer).origin === location.origin;
-
-    if (hasHistory && sameOriginReferrer) {
-      e.preventDefault();
-      window.history.back();
-    }
-  });
-}
-
-
 if (!character) {
   document.title = "Not Found — Granado Espada";
   if (nameEl) nameEl.textContent = "Character not found";
@@ -86,6 +70,7 @@ if (!character) {
   renderStats();
 }
 
+/* ===================== Recruitment (progressive steps) ===================== */
 function renderQuests() {
   const quests = character.quests || [];
 
@@ -98,25 +83,60 @@ function renderQuests() {
   const progress = getQuestProgress(character.id);
   if (questListEl) questListEl.innerHTML = "";
 
-  for (const q of quests) {
+  // find first incomplete step
+  const total = quests.length;
+  const nextIndex = quests.findIndex(q => !progress[q.id]);
+
+  if (nextIndex === -1) {
+    // All steps complete – show a friendly “done” state
     const li = document.createElement("li");
-    li.className = "quest-item";
+    li.className = "quest-item quest-complete";
+    li.innerHTML = `
+      <div class="quest-done-wrap">
+        <span class="quest-badge success">All steps complete</span>
+        <div class="quest-done-title">Recruitment complete for ${character.name}.</div>
+        <div class="quest-done-sub">You can reset progress if you’d like to run it again.</div>
+      </div>
+    `;
+    questListEl && questListEl.appendChild(li);
+  } else {
+    // Show only the next step
+    const q = quests[nextIndex];
+    const li = document.createElement("li");
+    li.className = "quest-item quest-active";
+
+    const header = document.createElement("div");
+    header.className = "quest-step-head";
+    header.innerHTML = `
+      <span class="quest-badge">Step ${nextIndex + 1} of ${total}</span>
+    `;
+
+    const body = document.createElement("div");
+    body.className = "quest-step-body";
 
     const cb = document.createElement("input");
     cb.type = "checkbox";
-    cb.checked = !!progress[q.id];
+    cb.id = `quest_${q.id}`;
+    cb.className = "quest-checkbox";
+
+    const label = document.createElement("label");
+    label.setAttribute("for", cb.id);
+    label.className = "quest-label";
+    label.textContent = q.name;
+
+    // when user completes a step, mark + re-render to reveal the next one
     cb.addEventListener("change", () => {
       const latest = getQuestProgress(character.id);
       latest[q.id] = cb.checked;
       setQuestProgress(character.id, latest);
       syncOwnershipBasedOnQuests();
+      renderQuests(); // reveal next step
     });
 
-    const label = document.createElement("label");
-    label.textContent = q.name;
-
-    li.appendChild(cb);
-    li.appendChild(label);
+    body.appendChild(cb);
+    body.appendChild(label);
+    li.appendChild(header);
+    li.appendChild(body);
     questListEl && questListEl.appendChild(li);
   }
 
@@ -126,11 +146,9 @@ function renderQuests() {
     resetBtn.style.display = "";
     resetBtn.onclick = () => {
       resetQuestProgress(character.id);
-      document
-        .querySelectorAll("#questList input[type=checkbox]")
-        .forEach(cb => (cb.checked = false));
       setOwned(character.id, false);
       if (ownedEl) ownedEl.checked = false;
+      renderQuests(); // refresh UI back to step 1
     };
   }
 }
@@ -159,6 +177,7 @@ function showRecruitmentUI() {
   if (resetBtn) resetBtn.style.display = "";
 }
 
+/* =============================== Stats =============================== */
 function renderStats() {
   const stats = character.stats || {};
   const core = stats.core || {};
@@ -189,14 +208,13 @@ function renderStats() {
       totalPointsEl.textContent = tsp != null ? `Total Stat Points: ${tsp}` : "";
     }
 
-    // Personal Skill (ordered: desc -> Lv1 -> Lv10 -> Lv11 -> Lv12 -> Lv13)
+    // Personal Skill (ordered)
     if (personalGridEl) {
       personalGridEl.innerHTML = "";
       const order = ["Personal Skill", "Lv1", "Lv10", "Lv11", "Lv12", "Lv13"];
       order.forEach(k => {
         if (k in personal) personalGridEl.appendChild(statCard(k, personal[k]));
       });
-      // Render any other keys that might exist (but weren’t in the preferred order)
       Object.entries(personal).forEach(([k, v]) => {
         if (k === "image" || order.includes(k)) return;
         personalGridEl.appendChild(statCard(k, v));

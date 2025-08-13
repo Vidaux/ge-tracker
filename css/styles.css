@@ -389,3 +389,166 @@ body{
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+/* ===== Quest step presentation (character page) ===== */
+.quest-item{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.quest-step-head{
+  margin: 0 0 6px 0;
+}
+
+.quest-badge{
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .3px;
+  background: rgba(59,130,246,.15);
+  border: 1px solid #35507a;
+  color: #cfe2ff;
+}
+
+.quest-badge.success{
+  background: rgba(46,125,50,.18);
+  border-color: #356a3b;
+  color: #b9f6c3;
+}
+
+.quest-step-body{
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.quest-checkbox{
+  width: 18px; height: 18px; margin-top: 2px;
+  accent-color: var(--accent);
+}
+
+.quest-label{
+  line-height: 1.4;
+}
+
+.quest-complete .quest-done-wrap{
+  padding: 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.quest-done-title{ font-weight: 800; margin: 6px 0 2px; }
+.quest-done-sub{ color: var(--muted); }
+
+/* ===== Pretty “Reset progress” button ===== */
+.btn-secondary{
+  --btn-bg: linear-gradient(180deg, rgba(31,37,48,.9), rgba(21,28,37,.9));
+  --btn-border: #344155;
+  --btn-border-hover: #486188;
+  --btn-glow: rgba(59,130,246,.35);
+
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color .15s ease, box-shadow .15s ease, transform .06s ease, background .2s ease;
+}
+
+.btn-secondary::before{
+  content: "↺";
+  font-size: 1rem;
+  line-height: 1;
+  opacity: .9;
+}
+
+.btn-secondary:hover{
+  border-color: var(--btn-border-hover);
+  box-shadow: 0 0 0 3px var(--btn-glow) inset, 0 8px 22px rgba(0,0,0,.35);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active{
+  transform: translateY(0);
+  box-shadow: 0 0 0 2px var(--btn-glow) inset, 0 4px 14px rgba(0,0,0,.35);
+}
+
+.btn-secondary:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-glow);
+}
+
+.btn-secondary:disabled{
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* Fancy checkbox for quest steps */
+.quest-checkbox{
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  background: var(--panel-2);
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  transition: transform .12s ease, border-color .15s ease, background-color .15s ease, box-shadow .2s ease;
+}
+.quest-checkbox:hover{ border-color: #486188; }
+.quest-checkbox:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.35);
+}
+
+/* Checked state: green + checkmark */
+.quest-checkbox:checked{
+  border-color: rgba(46,125,50,.85);
+  background-color: rgba(46,125,50,.95);
+  box-shadow: 0 0 0 3px rgba(46,125,50,.22);
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>\
+  <path fill='white' d='M7.5 14.5L2.5 9.5l1.7-1.7 3.3 3.3 8.3-8.3 1.7 1.7z'/>\
+</svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
+}
+
+/* Quick 'pop' feedback when completing a step */
+.quest-step-completing .quest-checkbox:checked{
+  animation: checkbox-pop .22s ease-out both;
+}
+@keyframes checkbox-pop{
+  0%{ transform: scale(1); }
+  60%{ transform: scale(1.18); }
+  100%{ transform: scale(1); }
+}
+
+/* Strike-through & tint on label during completion */
+.quest-label.completed{
+  color: #b9f6c3;
+  text-decoration: line-through;
+}
+
+/* Subtle highlight on the step container while completing */
+.quest-step-completing .quest-step-body{
+  border-color: #356a3b;
+  box-shadow: 0 0 0 3px rgba(46,125,50,.18);
+}
