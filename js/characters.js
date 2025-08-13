@@ -394,18 +394,74 @@ export const CHARACTERS = [
     name: "Najib Sharif",
     region: "Reboldeaux",
     portrait: "images/characters/najib.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",   weapon: "None",            acquisition: "-", level: "-" },
+      { name: "Standing Shot",  weapon: "Rifle",           acquisition: "-", level: "-" },
+      { name: "Kneeling Shot",  weapon: "Rifle",           acquisition: "-", level: "-" },
+      { name: "Middle-Guard",   weapon: "Sabre",           acquisition: "-", level: "-" },
+      { name: "Low-Guard",      weapon: "Sabre",           acquisition: "-", level: "-" },
+      { name: "Twin Blades",    weapon: "Sabre + Sabre",   acquisition: "-", level: "-" },
+      { name: "Standing Shot",  weapon: "Bayonet",         acquisition: "-", level: "-" },
+      { name: "Kneeling Shot",  weapon: "Bayonet",         acquisition: "-", level: "-" },
+      { name: "Encounter Shot", weapon: "Bayonet",         acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 44,
+        "STR": 60, "AGI": 70, "HP": 50, "DEX": 70, "INT": 30, "SEN": 30,
+        "Total Stat Points": 310
+      },
+      personal: {
+        "Personal Skill": "—",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: { "Armor": "Leather" }
+    },
+    quests: [
+      { id: "q1", name: "The Opolutan Tea Box — Appraise with Vera; return. (EXP Card (3), Polish Initiate (3))" },
+      { id: "q2", name: "What a Foreign Merchant Wants (Req Lv 12) — Al Quelt Moreza: 15 Vedanium from Vedanobah; reward Freestyle Shot book. (EXP Card (3), Polish Initiate (3))" },
+      { id: "q3", name: "Firearm Merchant's Hobby (Req Lv 36) — Tetra Golden Road: Rufus Reaper drops; return. (EXP Card (3), Polish Novice (3))" },
+      { id: "q4", name: "Barken Rifle (Req Lv 41) — Porto Bello Deck: Mermen drops; return for Barken Rifle. (EXP Card (3), Polish Disciple (3))" },
+      { id: "q5", name: "Swamp Monkey Pigment (Req Lv 51) — Thueringenwald gorilla/flower drops; stone at F-7 to spawn Sunflower Dandelion Gorilla; return. (EXP Card (3), Polish Disciple (3))" },
+      { id: "q6", name: "Antique Trade (Req Lv 55) — Multi-NPC chain (Vera, Greg, Thikha, Nunez) + PB Hold bosses; return. (10,000 Vis, Enchant Chip 60, EXP Card (3), Polish Disciple (3))" },
+      { id: "q7", name: "Illier's Rococo Furniture (Req Lv 60) — Torsche Mansion: Haunted Candles/Desks; return. (EXP Card (3), Polish Explorer (3))" },
+      { id: "q8", name: "Vera, the Furniture Connoisseur — Instance clear; return. (EXP Card (3), Polish Explorer (3))" },
+      { id: "q9", name: "Fix Furniture — El Tejado Verde drops; return for Najib Sharif Character Card. (Enchant Chip 60, EXP Card (3), Polish Explorer (3))" }
+    ]
   },
   {
     id: "panfilo-de-narvaez",
     name: "Panfilo de Narvaez",
     region: "Reboldeaux",
     portrait: "images/characters/panfilo.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",      weapon: "None",                         acquisition: "-", level: "-" },
+      { name: "Back-Guard",        weapon: "Sword",                        acquisition: "-", level: "-" },
+      { name: "Hack and Slash",    weapon: "Sword + Sword",                acquisition: "-", level: "-" },
+      { name: "Flame-Guard",       weapon: "Sword + Fire Bracelet",        acquisition: "-", level: "-" },
+      { name: "Middle-Guard",      weapon: "Sabre",                        acquisition: "-", level: "-" },
+      { name: "Low-Guard",         weapon: "Sabre",                        acquisition: "-", level: "-" },
+      { name: "Flame-Guard",       weapon: "Sabre + Fire Bracelet",        acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 40,
+        "STR": 60, "AGI": 50, "HP": 60, "DEX": 40, "INT": 60, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "—",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: { "Armor": "Leather" }
+    },
+    quests: [
+      { id: "q1", name: "Lunch Delivery — Deliver lunch to Queen's Gate guard (E-11); return. (EXP Card (3), Polish Initiate (3), 200 Vis)" },
+      { id: "q2", name: "Al Quelt Moreza Holy Water (Req Lv 10) — Fill vial at Holy Fountain (Narthex B-9); return. (EXP Card (3), Polish Initiate (3))" },
+      { id: "q3", name: "Pure White Food — Milk (Mary), 20 Saber Boar Pork (Cathari Falls), Pasta & Parmesan (Camille); return. (Carbonara)" },
+      { id: "q4", name: "Percha Inzella — Box Octopus drops from Porto Bello or Jezebel Glen; return. (Percha Inzella, Polish Novice)" },
+      { id: "q5", name: "Protector of the Cows (Req Lv 50) — Instance: defend bison (≤3 deaths); return for Panfilo Character Card. (Polish Disciple (3))" }
+    ]
   },
   {
     id: "soldier-of-reboldoeux",
@@ -453,9 +509,32 @@ export const CHARACTERS = [
     name: "Ramiro",
     region: "Rebouldeaux Queen's Gate",
     portrait: "images/characters/ramiro.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",  weapon: "None",           acquisition: "-", level: "-" },
+      { name: "Plow-Guard",    weapon: "Sword",          acquisition: "-", level: "-" },
+      { name: "Roof-Guard",    weapon: "Sword",          acquisition: "-", level: "-" },
+      { name: "Sidewinder",    weapon: "Sword",          acquisition: "-", level: "-" },
+      { name: "Middle-Guard",  weapon: "Main Gauche",    acquisition: "-", level: "-" },
+      { name: "Back-Guard",    weapon: "Main Gauche",    acquisition: "-", level: "-" },
+      { name: "Low-Guard",     weapon: "Main Gauche",    acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 16,
+        "STR": 50, "AGI": 80, "HP": 40, "DEX": 50, "INT": 30, "SEN": 30,
+        "Total Stat Points": 280
+      },
+      personal: {
+        "Personal Skill": "Sprint - Sudden burst of speed. (Self-buff) Cast: 1.133s, Cooldown: 30s, Duration: 1.13s, SP: 100 + Mithridart ×3\nLv1: 6s Move SPD +55%\nLv10: 15s +100% | Lv11: 16s +105% | Lv12: 17s +110% | Lv13: 18s +115%",
+        "image": "/images/skills/job_sprint.png"
+      },
+      equipment: { "Armor": "Leather" }
+    },
+    quests: [
+      { id: "q1", name: "Girl In Danger — Instance defense; protect Ramiro's girlfriend 5 minutes; return. (EXP Card (3), Polish Initiate (3))" },
+      { id: "q2", name: "Her Photo (Req Lv 8) — Duel & defeat Ramiro; receive Ramiro Character Card. (Polish Initiate (3))" },
+      { id: "q3", name: "A True Man (Veteran) — Long upgrade chain via Lisa → Jack → Andre → Claude → Emilia → Lisa; ends with +1 STR costume reward." }
+    ]
   },
 
   // =========================
@@ -777,18 +856,64 @@ export const CHARACTERS = [
     name: "Lisa Lynway",
     region: "The Port of Coimbra",
     portrait: "images/characters/lisa.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",    weapon: "None",              acquisition: "-", level: "-" },
+      { name: "Escrima",         weapon: "Dagger",            acquisition: "-", level: "-" },
+      { name: "Dobalada Corte",  weapon: "Dagger + Dagger",   acquisition: "-", level: "-" },
+      { name: "Raid Assault",    weapon: "Dagger + Dagger",   acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 24,
+        "STR": 50, "AGI": 80, "HP": 50, "DEX": 60, "INT": 30, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "—",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: { "Armor": "Leather" }
+    },
+    quests: [
+      { id: "q1", name: "Chocolate Lady (Req Lv 20 & 'Angel Fruit') — Farm 50 High Quality Cabosse (Tetra); choose Evocation (Fire/Ice/Lightning) stance book. (Polish Novice (3))" },
+      { id: "q2", name: "The Stolen Warehouse — Tetra Grand Corridor: 25 Comodo Meat; Tetra Catacombs: 20 Daemon Horns; return for Lisa Card & Dobalada Corte book. (Polish Novice (3))" }
+    ]
   },
   {
     id: "mboma",
     name: "MBoma",
     region: "The Port of Coimbra",
     portrait: "images/characters/mboma.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Illusionist",       weapon: "None",           acquisition: "-", level: "-" },
+      { name: "Possession Fire",   weapon: "None",           acquisition: "-", level: "-" },
+      { name: "Illusionist",       weapon: "Staff",          acquisition: "-", level: "-" },
+      { name: "Levitation",        weapon: "Staff",          acquisition: "-", level: "-" },
+      { name: "Anathema",          weapon: "Staff",          acquisition: "-", level: "-" },
+      { name: "Possession Fire",   weapon: "Fire Bracelet",  acquisition: "-", level: "-" },
+      { name: "Possession Fire",   weapon: "Fire Bracelet + Fire Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Fire",    weapon: "Fire Bracelet + Fire Bracelet", acquisition: "-", level: "-" },
+      { name: "Domination Fire",   weapon: "Fire Bracelet + Fire Bracelet", acquisition: "-", level: "-" },
+      { name: "Possession Fire",   weapon: "Fire Bracelet + Special Bracelet", acquisition: "-", level: "-" },
+      { name: "Evocation Fire",    weapon: "Fire Bracelet + Special Bracelet", acquisition: "-", level: "-" },
+      { name: "Domination Fire",   weapon: "Fire Bracelet + Special Bracelet", acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 44,
+        "STR": 30, "AGI": 30, "HP": 60, "DEX": 40, "INT": 70, "SEN": 70,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "Magical Weapon Crafting - Manufacture rods, staffs and bracelets. Use it then drag weapon recipe to MBoma in Coimbra. Cast: 0s, Cooldown: 1s, Duration: 1.1s, SP: None",
+        "image": "/images/skills/job_craftweapon.png"
+      },
+      equipment: { "Armor": "Coat; Robe" }
+    },
+    quests: [
+      { id: "q1", name: "Taste of the Homeland (Req Lv 44) — Speak to Panfilo & complete 'Percha Inzella'; return. (EXP Card (3), Polish Disciple (3))" },
+      { id: "q2", name: "An Absinian Warrior — Instance duel vs MBoma (Claude may intrude, ignore); return for MBoma Character Card. (Polish Disciple (3))" }
+    ]
   },
   {
     id: "soho",
@@ -935,9 +1060,33 @@ export const CHARACTERS = [
     name: "Lorch",
     region: "City of Auch",
     portrait: "images/characters/lorch.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Install Trap",      weapon: "None",     acquisition: "-", level: "-" },
+      { name: "Shotgun Blaster",   weapon: "Shotgun",  acquisition: "-", level: "-" },
+      { name: "Gigantic Blaster",  weapon: "Shotgun",  acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 52,
+        "STR": 40, "AGI": 60, "HP": 50, "DEX": 80, "INT": 50, "SEN": 30,
+        "Total Stat Points": 310
+      },
+      personal: {
+        "Personal Skill": "Shotgun Manufacture - Manufacture shotguns. Use it then drag shotgun recipe to Lorch in Auch. Cast: 0s, Cooldown: 1s, Duration: 1.1s, SP: None",
+        "image": "/images/skills/job_craftguns.png"
+      },
+      equipment: { "Armor": "Coat; Leather" }
+    },
+    quests: [
+      { id: "q1", name: "Old Memories of a Watch (Req Lv 50) — Watch chain by Meung, then Sidal & Sean; complete Tiburon's 'Finders Keepers'; return. (Enchant Chip 68×3, Polish Disciple (3))" },
+      { id: "q2", name: "Tortoise Powder — Deserted Quay: Steel Armed Tortoise drops; return. (EXP Card (3), Polish Disciple (3))" },
+      { id: "q3", name: "Road to Independence (1) — Trigger H-10 instance; defeat Reboldeaux soldiers; return. (Tiramisu, Layered Cheesecake, Sacretorte, Polish Disciple (3))" },
+      { id: "q4", name: "A Secret Admirer — Deliver/return letters with Jonella; instance duel; rewards. (1,000 Vis, Polish Disciple)" },
+      { id: "q5", name: "Road to Independence (2) — Trigger G-7 instance; defeat Auch Infantry; return. (EXP Card (3), Polish Disciple (3))" },
+      { id: "q6", name: "A Role in the Shotgun Making Process — Pick a variant (Poison/Fear/Stun) and farm listed drops; return. (Chocolate, Avocado Sandwich, EXP Card (3), Polish Explorer (3))" },
+      { id: "q7", name: "Testing a New Toy — Trigger H-11 > instance vs Lorch; return. (Polish Explorer (3))" },
+      { id: "q8", name: "Mors Sola — Trigger G-10 > instances; help Lorch defeat soldiers; talk at F-8; receive Shotgun & Lorch Character Card. (Polish Explorer (3))" }
+    ]
   },
   {
     id: "tiburon",
@@ -1247,7 +1396,7 @@ export const CHARACTERS = [
       },
       personal: {
         "Personal Skill": "Soul Reaper - Summons Soul Reaper (requires [Soul of Grim] buff). (Self-buff) Cast: 0s, Cooldown: 120s, Duration: 1.5s, SP: 300 + Magical Orb ×10",
-        "image": "/images/skills/job_none.png"
+        "image": "/images/skills/job_summon_grim2.png"
       },
       equipment: {
         "Armor": "Leather"
@@ -1272,9 +1421,40 @@ export const CHARACTERS = [
     name: "Kurt",
     region: "Los Toldos",
     portrait: "images/characters/kurt.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",              weapon: "None",                 acquisition: "-", level: "-" },
+      { name: "Advance Garde of Grim",     weapon: "Rapier + Pistol",      acquisition: "-", level: "-" },
+      { name: "Main-Gauche Garde of Grim", weapon: "Rapier + Main Gauche", acquisition: "-", level: "-" },
+      { name: "Grim Guard",                weapon: "Sabre",                acquisition: "-", level: "-" },
+      { name: "Heaven or Hell of Grim",    weapon: "Sabre + Pistol",       acquisition: "-", level: "-" },
+      { name: "Epee Garde of Grim",        weapon: "Rapier",               acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 60,
+        "STR": 70, "AGI": 70, "HP": 60, "DEX": 50, "INT": 30, "SEN": 50,
+        "Total Stat Points": 330
+      },
+      personal: {
+        "Personal Skill": "Grim Reaper - Summons Grim Reaper (requires [Soul of Grim]). (Self-buff) Cast: 0s, Cooldown: 120s, Duration: 1.5s, SP: 300 + Magical Orb ×10",
+        "image": "/images/skills/job_summon_grim1.png"
+      },
+      equipment: { "Armor": "Leather" }
+    },
+    quests: [
+      { id: "q1", name: "Wheel of Faith — Land of the Dead: hunt Cursed Undead; return. (Polish Veteran (3), EXP Card (3))" },
+      { id: "q2", name: "Power of the One with no Name — Story duel vs Kurt (unwinnable); talk again for Seal of Baron." },
+      { id: "q3", name: "The Best Baron — Speak to Eduardo via Old Stone (E-3) instance; defeat Muertos; get Eduardo's letter." },
+      { id: "q4", name: "Eduardo's Letter — Hand off/continue story. (Polish Veteran (3), EXP Card (3))" },
+      { id: "q5", name: "Defeat Muertos Chief — Land of the Dead: find & kill Muertos Chief; return. (Polish Veteran (3), EXP Card (3))" },
+      { id: "q6", name: "Land of Death Investigation — Find Burnt Memo (G-6), Torn Memo (G-7), Old Letter (F-7); return. (Polish Veteran (3), EXP Card (3))" },
+      { id: "q7", name: "Owner of Muertos — Stealth to village (B-6) instance; defeat Muertos & Montoro; return. (Polish Veteran (3), EXP Card (3), Invisible Potion ×5)" },
+      { id: "q8", name: "Counterattack — Repeat stealth route; defeat Montoro with Kurt & Eduardo; return. (Polish Veteran (3), EXP Card (3), Invisible Potion ×5)" },
+      { id: "q9", name: "Collect Pure Otites — Complete repeatable Cursed Undead Hunt for 10 Pure Otite; return. (Polish Veteran (3), Letter for Eduardo)" },
+      { id: "q10", name: "Nameless Ones' Secret Letter — Speak to Eduardo at Old Stone and report back." },
+      { id: "q11", name: "Lyndon's Stab — Instance at broken Colony Altar (G-7); choose Baron." },
+      { id: "q12", name: "Kurt's Proposal (branch) — Old Stone instance vs Eduardo; deliver 70 Mysterious Powders + Otite Bag for Kurt Lyndon Character Card. (EXP Card (3))" }
+    ]
   },
 
   // =========================
@@ -1406,9 +1586,31 @@ export const CHARACTERS = [
     name: "Pirate Adelina",
     region: "Promo",
     portrait: "images/characters/atp.png",
-    stances: [],
-    stats: { core: {}, personal: {}, equipment: {} },
-    quests: []
+    stances: [
+      { name: "Bare Knuckle",     weapon: "None",              acquisition: "-", level: "-" },
+      { name: "Middle-Guard",     weapon: "Sabre",             acquisition: "-", level: "-" },
+      { name: "Back-Guard",       weapon: "Sabre",             acquisition: "-", level: "-" },
+      { name: "Low-Guard",        weapon: "Sabre",             acquisition: "-", level: "-" },
+      { name: "Twin Blades",      weapon: "Sabre + Sabre",     acquisition: "-", level: "-" },
+      { name: "Heaven or Hell",   weapon: "Sabre + Pistol",    acquisition: "-", level: "-" },
+      { name: "Freestyle Shot",   weapon: "Pistol",            acquisition: "-", level: "-" },
+      { name: "Double-Gun Shot",  weapon: "Pistol + Pistol",   acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 70, "AGI": 90, "HP": 60, "DEX": 60, "INT": 30, "SEN": 60,
+        "Total Stat Points": 370
+      },
+      personal: {
+        "Personal Skill": "—",
+        "image": "/images/skills/job_none.png"
+      },
+      equipment: { "Armor": "Leather" }
+    },
+    quests: [
+      { id: "q1", name: "Acquisition varies by event/cash promotions; no fixed questline." }
+    ]
   },
   {
     id: "sage-emilia",
