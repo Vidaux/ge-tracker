@@ -25,6 +25,7 @@ const META_REGION_MAP = {
 
 // Optional explicit image map (use if your filenames differ)
 const BANNER_IMAGES = {
+  "Stock Characters": "images/regions/stock.png",
   "Reboldeaux": "images/regions/reboldeaux.png",
   "City of Auch": "images/regions/auch.png",
   "The Port of Coimbra": "images/regions/coimbra.png",
