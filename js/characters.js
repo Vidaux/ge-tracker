@@ -102,6 +102,7 @@ export const CHARACTERS = [
     stances: [
       { name: "First Aid", weapon: "None / Rosario", acquisition: "Default", level: 1 },
       { name: "Fortitudo", weapon: "None / Rosario", acquisition: "Master Room 2,000 Vis", level: 18 },
+      { name: "Tactical Assistance", weapon: "None / Rosario", acquisition: "", level: "Veteran" },
       { name: "Install Trap", weapon: "None", acquisition: "Master Room 2,000 Vis", level: 18 },
       { name: "Escrima", weapon: "Dagger", acquisition: "Default", level: 1 },
       { name: "Dobalada Corte", weapon: "Dagger + Dagger", acquisition: "Default", level: 1 }
