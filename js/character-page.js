@@ -277,7 +277,7 @@ function renderStats() {
     }
 
     // 2×3 grid for core stats (fixed order)
-    const coreOrder = ["STR", "AGI", "HP", "DEX", "INT", "SEN"];
+    const coreOrder = ["STR", "AGI", "HP", "DEX", "INT", "CHA"];
     if (coreGridEl) {
       coreGridEl.innerHTML = "";
       coreOrder.forEach(key => {

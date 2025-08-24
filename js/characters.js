@@ -37,7 +37,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 60, "AGI": 60, "HP": 60, "DEX": 60, "INT": 30, "SEN": 30,
+        "STR": 60, "AGI": 60, "HP": 60, "DEX": 60, "INT": 30, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -75,7 +75,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 50, "AGI": 60, "HP": 50, "DEX": 80, "INT": 30, "SEN": 30,
+        "STR": 50, "AGI": 60, "HP": 50, "DEX": 80, "INT": 30, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -110,7 +110,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 30, "AGI": 70, "HP": 50, "DEX": 70, "INT": 50, "SEN": 30,
+        "STR": 30, "AGI": 70, "HP": 50, "DEX": 70, "INT": 50, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -144,7 +144,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 30, "AGI": 30, "HP": 40, "DEX": 50, "INT": 80, "SEN": 70,
+        "STR": 30, "AGI": 30, "HP": 40, "DEX": 50, "INT": 80, "CHA": 70,
         "Total Stat Points": 300
       },
       personal: {
@@ -179,7 +179,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 30, "AGI": 50, "HP": 40, "DEX": 40, "INT": 70, "SEN": 70,
+        "STR": 30, "AGI": 50, "HP": 40, "DEX": 40, "INT": 70, "CHA": 70,
         "Total Stat Points": 300
       },
       personal: {
@@ -225,7 +225,7 @@ export const CHARACTERS = [
         "HP": 70,
         "DEX": 60,
         "INT": 40,
-        "SEN": 30,
+        "CHA": 30,
         "Total Stat Points": 330
       },
 
@@ -265,7 +265,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 40,
-        "STR": 40, "AGI": 90, "HP": 40, "DEX": 70, "INT": 30, "SEN": 30,
+        "STR": 40, "AGI": 90, "HP": 40, "DEX": 70, "INT": 30, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -305,7 +305,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 56,
-        "STR": 80, "AGI": 50, "HP": 80, "DEX": 50, "INT": 30, "SEN": 40,
+        "STR": 80, "AGI": 50, "HP": 80, "DEX": 50, "INT": 30, "CHA": 40,
         "Total Stat Points": 330
       },
       personal: {
@@ -342,7 +342,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 24,
-        "STR": 60, "AGI": 50, "HP": 50, "DEX": 70, "INT": 40, "SEN": 30,
+        "STR": 60, "AGI": 50, "HP": 50, "DEX": 70, "INT": 40, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -382,7 +382,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 40,
-        "STR": 60, "AGI": 70, "HP": 50, "DEX": 60, "INT": 30, "SEN": 30,
+        "STR": 60, "AGI": 70, "HP": 50, "DEX": 60, "INT": 30, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -420,7 +420,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 44,
-        "STR": 60, "AGI": 70, "HP": 50, "DEX": 70, "INT": 30, "SEN": 30,
+        "STR": 60, "AGI": 70, "HP": 50, "DEX": 70, "INT": 30, "CHA": 30,
         "Total Stat Points": 310
       },
       personal: {
@@ -459,7 +459,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 40,
-        "STR": 60, "AGI": 50, "HP": 60, "DEX": 40, "INT": 60, "SEN": 30,
+        "STR": 60, "AGI": 50, "HP": 60, "DEX": 40, "INT": 60, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -497,7 +497,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 60, "AGI": 50, "HP": 60, "DEX": 40, "INT": 30, "SEN": 30,
+        "STR": 60, "AGI": 50, "HP": 60, "DEX": 40, "INT": 30, "CHA": 30,
         "Total Stat Points": 270
       },
       personal: {
@@ -528,7 +528,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 20,
-        "STR": 40, "AGI": 60, "HP": 50, "DEX": 60, "INT": 50, "SEN": 40,
+        "STR": 40, "AGI": 60, "HP": 50, "DEX": 60, "INT": 50, "CHA": 40,
         "Total Stat Points": 300
       },
       personal: {
@@ -561,7 +561,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 16,
-        "STR": 50, "AGI": 80, "HP": 40, "DEX": 50, "INT": 30, "SEN": 30,
+        "STR": 50, "AGI": 80, "HP": 40, "DEX": 50, "INT": 30, "CHA": 30,
         "Total Stat Points": 280
       },
       personal: {
@@ -601,7 +601,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 16,
-        "STR": 50, "AGI": 70, "HP": 50, "DEX": 60, "INT": 40, "SEN": 30,
+        "STR": 50, "AGI": 70, "HP": 50, "DEX": 60, "INT": 40, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -638,7 +638,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 36,
-        "STR": 60, "AGI": 80, "HP": 60, "DEX": 60, "INT": 30, "SEN": 40,
+        "STR": 60, "AGI": 80, "HP": 60, "DEX": 60, "INT": 30, "CHA": 40,
         "Total Stat Points": 330
       },
       personal: {
@@ -672,7 +672,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 44,
-        "STR": 90, "AGI": 40, "HP": 70, "DEX": 40, "INT": 30, "SEN": 30,
+        "STR": 90, "AGI": 40, "HP": 70, "DEX": 40, "INT": 30, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -687,6 +687,35 @@ export const CHARACTERS = [
       { id: "q1", name: "Escudo Pecher's Attack (Req Lv 24) - Instance: defeat Escudo Pecher in marked area, return for rewards." },
       { id: "q2", name: "Escudo Pecher Hunt (Req Lv 40) - Porto Bello (Deck): defeat Escudo Pecher (rare) or farm Trinity 2 Lobby for 10 Arms, return to Alejandro." },
       { id: "q3", name: "The Daemon of the Sea - Doby Rick (Req Lv 46) - Instance with Alejandro assisting, defeat Doby Rick, return for Character Card." }
+    ]
+  },
+  {
+    id: "calypso",
+    name: "Calypso",
+    region: "The Port of Coimbra",
+    portrait: "images/characters/calypso.png",
+    largePortrait: "images/characters/calypso-large.png",
+    stances: [
+      { name: "Bare Knuckle", weapon: "None", acquisition: "-", level: "-" },
+      { name: "Arbalester",  weapon: "Crossbow", acquisition: "-", level: "-" },
+      { name: "Sagitta",     weapon: "Crossbow", acquisition: "-", level: "-" },
+      { name: "Escrima",     weapon: "Dagger", acquisition: "-", level: "-" },
+      { name: "Dobalada Corte", weapon: "Dagger", acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 50, "AGI": 70, "HP": 50, "DEX": 70, "INT": 30, "SEN": 30,
+        "Total Stat Points": 300
+      },
+      personal: {
+        "Personal Skill": "Cat's Eye - Scan and determine weaknesses. Cast: 0.7s, CD: 5s, SP: 100, Mithridart ×3. Lv1–13 scaling.",
+        "image": "/images/skills/job_catseye.png"
+      },
+      equipment: { "Armor": "Leather", "Starting Equipment": "Crecemento Leather, Crecemento Crossbow" }
+    },
+    quests: [
+    {id: "minute-mercenary", name: "Minute Mercenary - Talk to Calypso (Port of Coimbra, Pegadilla B9). Enter instance via Mercenary Soldier, defeat pirates, return with 25 Mystery Powder. Speak to Princess Gabriella in Reboldoeux, then return to Calypso."}
     ]
   },
   {
@@ -710,7 +739,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 16,
-        "STR": 50, "AGI": 50, "HP": 70, "DEX": 50, "INT": 30, "SEN": 30,
+        "STR": 50, "AGI": 50, "HP": 70, "DEX": 50, "INT": 30, "CHA": 30,
         "Total Stat Points": 280
       },
       personal: {
@@ -745,7 +774,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 24,
-        "STR": 40, "AGI": 50, "HP": 40, "DEX": 50, "INT": 60, "SEN": 60,
+        "STR": 40, "AGI": 50, "HP": 40, "DEX": 50, "INT": 60, "CHA": 60,
         "Total Stat Points": 300
       },
       personal: {
@@ -781,7 +810,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 32,
-        "STR": 40, "AGI": 70, "HP": 40, "DEX": 90, "INT": 30, "SEN": 30,
+        "STR": 40, "AGI": 70, "HP": 40, "DEX": 90, "INT": 30, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -814,7 +843,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 40,
-        "STR": 60, "AGI": 70, "HP": 60, "DEX": 50, "INT": 30, "SEN": 30,
+        "STR": 60, "AGI": 70, "HP": 60, "DEX": 50, "INT": 30, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -857,7 +886,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 80, "AGI": 60, "HP": 50, "DEX": 50, "INT": 30, "SEN": 30,
+        "STR": 80, "AGI": 60, "HP": 50, "DEX": 50, "INT": 30, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -889,7 +918,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 48,
-        "STR": 50, "AGI": 40, "HP": 50, "DEX": 70, "INT": 50, "SEN": 40,
+        "STR": 50, "AGI": 40, "HP": 50, "DEX": 70, "INT": 50, "CHA": 40,
         "Total Stat Points": 300
       },
       personal: {
@@ -919,7 +948,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 24,
-        "STR": 50, "AGI": 80, "HP": 50, "DEX": 60, "INT": 30, "SEN": 30,
+        "STR": 50, "AGI": 80, "HP": 50, "DEX": 60, "INT": 30, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -956,7 +985,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 44,
-        "STR": 30, "AGI": 30, "HP": 60, "DEX": 40, "INT": 70, "SEN": 70,
+        "STR": 30, "AGI": 30, "HP": 60, "DEX": 40, "INT": 70, "CHA": 70,
         "Total Stat Points": 300
       },
       personal: {
@@ -983,7 +1012,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 20,
-        "STR": 60, "AGI": 70, "HP": 50, "DEX": 60, "INT": 30, "SEN": 30,
+        "STR": 60, "AGI": 70, "HP": 50, "DEX": 60, "INT": 30, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -1023,7 +1052,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 60, "AGI": 80, "HP": 50, "DEX": 50, "INT": 30, "SEN": 30,
+        "STR": 60, "AGI": 80, "HP": 50, "DEX": 50, "INT": 30, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -1058,7 +1087,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 40,
-        "STR": 75, "AGI": 75, "HP": 50, "DEX": 50, "INT": 30, "SEN": 50,
+        "STR": 75, "AGI": 75, "HP": 50, "DEX": 50, "INT": 30, "CHA": 50,
         "Total Stat Points": 330
       },
       personal: {
@@ -1095,7 +1124,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 16,
-        "STR": 40, "AGI": 50, "HP": 50, "DEX": 80, "INT": 30, "SEN": 30,
+        "STR": 40, "AGI": 50, "HP": 50, "DEX": 80, "INT": 30, "CHA": 30,
         "Total Stat Points": 280
       },
       personal: {
@@ -1116,6 +1145,71 @@ export const CHARACTERS = [
     ]
   },
   {
+    id: "claire",
+    name: "Claire",
+    region: "City of Auch",
+    portrait: "images/characters/claire.png",
+    largePortrait: "images/characters/claire-large.png",
+    stances: [
+      { name: "Bare Knuckle",     weapon: "None", acquisition: "-", level: "-" },
+      { name: "Novice Guard",     weapon: "Great Sword", acquisition: "-", level: "-" },
+      { name: "Novice Marksmanship", weapon: "Cannon", acquisition: "-", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 50, "AGI": 70, "HP": 40, "DEX": 60, "INT": 30, "CHA": 50
+      },
+      personal: {
+        "Personal Skill": "Summon Bearworker - Summons a Bearworker based on skill level and stats.",
+        "image": "/images/skills/job_bear.png"
+      },
+      equipment: { "Armor": "Leather, Leather (Fighter), Metal" }
+    },
+    quests: [
+      { id: "disciple-claude", name: "I am Disciple of Claude Baudez - Talk to Claire with Claude as leader." },
+      { id: "proposal-follower", name: "Proposal of the Follower - Travel to Reboldoeux, talk to Claude, return to Claire." },
+      { id: "test-master", name: "Test of Master Claude Baudez - Pay Jose Cortasar or complete instance with Avocado Sandwich." },
+      { id: "merchant", name: "A Merchant Is… - Chain quest with Emilia and Reboldoeux Investigation Team." },
+      { id: "actual-hunting", name: "Actual Hunting - Kill Elite Lightning Cockatrice, deliver Unknown Stones." }
+    ]
+  },
+  {
+    id: "garcia",
+    name: "Garcia",
+    region: "City of Auch",
+    portrait: "images/characters/garcia.png",
+    largePortrait: "images/characters/garcia-large.png",
+    stances: [
+      { name: "Bare Knuckle",  weapon: "None", acquisition: "-", level: "-" },
+      { name: "Epee Garde",    weapon: "Rapier", acquisition: "-", level: "-" },
+      { name: "Sabre Garde",   weapon: "Rapier", acquisition: "-", level: "-" },
+      { name: "Aiming Shot",   weapon: "Pistol", acquisition: "-", level: "-" },
+      { name: "Freestyle Shot",weapon: "Pistol", acquisition: "-", level: "-" },
+      { name: "Double-Gun Shot", weapon: "Pistol+Pistol", acquisition: "-", level: "-" },
+      { name: "Advance Garde", weapon: "Rapier+Pistol", acquisition: "Veteran", level: "-" },
+      { name: "Sight Shot",    weapon: "Pistol", acquisition: "Veteran", level: "-" },
+      { name: "Outrage Shot",  weapon: "Pistol+Pistol", acquisition: "Veteran", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 60,
+        "STR": 60, "AGI": 50, "HP": 60, "DEX": 70, "INT": 30, "CHA": 30
+      },
+      personal: { "Personal Skill": "None" },
+      equipment: { "Armor": "Leather, Leather (Fighter)" }
+    },
+    quests: [
+      { id: "joaquin", name: "Assault Prison de Joaquin - Destroy colonies, return to Officer." },
+      { id: "simon-third", name: "Simon Ayende Third Request - Decide Garcia’s fate." },
+      { id: "mysterious-man", name: "Looking For a Mysterious Man - Fight Snow Storm Apparition with Garcia & Selva." },
+      { id: "ryrins-heart", name: "Ryrin's Heart - Collect 10 Cursed Crystals + items, speak to Invierno." },
+      { id: "showdown-snowfield", name: "Showdown in the Snowfield - Defeat Montoro." },
+      { id: "seal-novia", name: "Seal Novia - Kill Novia and summons in Ice Wizard Tower." },
+      { id: "save-garcia", name: "Save Garcia - Gather ingredients for Katovic soup, return to Invierno and Simon." }
+    ]
+  },
+  {
     id: "grutrude",
     name: "Grutrude",
     region: "City of Auch",
@@ -1128,7 +1222,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 40,
-        "STR": 70, "AGI": 50, "HP": 70, "DEX": 50, "INT": 30, "SEN": 30,
+        "STR": 70, "AGI": 50, "HP": 70, "DEX": 50, "INT": 30, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
@@ -1164,7 +1258,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 56,
-        "STR": 60, "AGI": 70, "HP": 50, "DEX": 50, "INT": 70, "SEN": 30,
+        "STR": 60, "AGI": 70, "HP": 50, "DEX": 50, "INT": 70, "CHA": 30,
         "Total Stat Points": 330
       },
       personal: {
@@ -1191,7 +1285,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 52,
-        "STR": 40, "AGI": 60, "HP": 50, "DEX": 80, "INT": 50, "SEN": 30,
+        "STR": 40, "AGI": 60, "HP": 50, "DEX": 80, "INT": 50, "CHA": 30,
         "Total Stat Points": 310
       },
       personal: {
@@ -1229,7 +1323,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 16,
-        "STR": 60, "AGI": 80, "HP": 40, "DEX": 50, "INT": 30, "SEN": 30,
+        "STR": 60, "AGI": 80, "HP": 40, "DEX": 50, "INT": 30, "CHA": 30,
         "Total Stat Points": 290
       },
       personal: {
@@ -1246,6 +1340,39 @@ export const CHARACTERS = [
     quests: [
       { id: "q1", name: "Finders Keepers, Losers Weepers (Req Lv 50) - Reject 200k offer, accept 20k offer, instance vs Tiburon/Ramiro/Jonella, receive Tiburon Character Card & Pocket Watch. (20,000 Vis)" },
       { id: "q2", name: "Veteran Upgrade - Long chain via Brunie → Jack → Andre → Claude → Emilia → Brunie, ends with +1 STR costume (shared with Ramiro)." }
+    ]
+  },
+  {
+    id: "vicente-rio",
+    name: "Vicente Rio",
+    region: "City of Auch",
+    portrait: "images/characters/rio.png",
+    largePortrait: "images/characters/rio-large.png",
+    stances: [
+      { name: "Bare Knuckle",         weapon: "None",                acquisition: "-", level: "-" },
+      { name: "Possession Lightning", weapon: "Lightning Bracelet",   acquisition: "Quest", level: "Any" },
+      { name: "Evocation Lightning",  weapon: "Lightning Bracelet+Lightning Bracelet", acquisition: "-", level: "-" },
+      { name: "Domination Lightning", weapon: "Lightning Bracelet+Lightning Bracelet", acquisition: "Veteran", level: "-" },
+      { name: "Minstrel",             weapon: "Lute",                acquisition: "-", level: "-" },
+      { name: "Serenade",             weapon: "Lute",                acquisition: "Veteran", level: "-" }
+    ],
+    stats: {
+      core: {
+        "Starting Level": 1,
+        "STR": 40, "AGI": 50, "HP": 40, "DEX": 40, "INT": 80, "CHA": 70
+      },
+      personal: {
+        "Personal Skill": "None"
+      },
+      equipment: {
+        "Armor": "Robe"
+      }
+    },
+    quests: [
+      { id: "minstrel-1", name: "Minstrel Vicente Rio 1 - Bring [Possession Lightning] book to Vicente Rio, then speak to Baek Ho." },
+      { id: "minstrel-2", name: "Minstrel Vicente Rio 2 - Defeat Vicente Rio in instance; bring 20 Enhancement Boosters." },
+      { id: "serenade-for-love", name: "[Serenade] For Love - With veteran Vicente in team, talk to Girl (Auch H9), bring Avocado Sandwich, repeat." },
+      { id: "past-of-rio", name: "Past of Rio - Talk to Federigo (Auch), enter code (D7), defeat mercenaries, unlock Serenade Notes." }
     ]
   },
 
@@ -1267,7 +1394,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 16,
-        "STR": 40, "AGI": 50, "HP": 40, "DEX": 50, "INT": 50, "SEN": 50,
+        "STR": 40, "AGI": 50, "HP": 40, "DEX": 50, "INT": 50, "CHA": 50,
         "Total Stat Points": 280
       },
       personal: {
@@ -1302,7 +1429,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 50, "AGI": 50, "HP": 50, "DEX": 50, "INT": 50, "SEN": 80,
+        "STR": 50, "AGI": 50, "HP": 50, "DEX": 50, "INT": 50, "CHA": 80,
         "Total Stat Points": 330
       },
       personal: {
@@ -1387,7 +1514,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 50, "AGI": 50, "HP": 50, "DEX": 80, "INT": 50, "SEN": 50,
+        "STR": 50, "AGI": 50, "HP": 50, "DEX": 80, "INT": 50, "CHA": 50,
         "Total Stat Points": 330
       },
       personal: {
@@ -1461,7 +1588,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 50, "AGI": 50, "HP": 50, "DEX": 50, "INT": 80, "SEN": 50,
+        "STR": 50, "AGI": 50, "HP": 50, "DEX": 50, "INT": 80, "CHA": 50,
         "Total Stat Points": 330
       },
       personal: {
@@ -1535,7 +1662,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 80, "AGI": 50, "HP": 50, "DEX": 50, "INT": 50, "SEN": 50,
+        "STR": 80, "AGI": 50, "HP": 50, "DEX": 50, "INT": 50, "CHA": 50,
         "Total Stat Points": 330
       },
       personal: {
@@ -1571,7 +1698,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 60,
-        "STR": 70, "AGI": 70, "HP": 60, "DEX": 50, "INT": 30, "SEN": 50,
+        "STR": 70, "AGI": 70, "HP": 60, "DEX": 50, "INT": 30, "CHA": 50,
         "Total Stat Points": 330
       },
       personal: {
@@ -1613,7 +1740,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 60,
-        "STR": 70, "AGI": 70, "HP": 60, "DEX": 50, "INT": 30, "SEN": 50,
+        "STR": 70, "AGI": 70, "HP": 60, "DEX": 50, "INT": 30, "CHA": 50,
         "Total Stat Points": 330
       },
       personal: {
@@ -1657,7 +1784,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 60,
-        "STR": 70, "AGI": 60, "HP": 90, "DEX": 50, "INT": 30, "SEN": 40,
+        "STR": 70, "AGI": 60, "HP": 90, "DEX": 50, "INT": 30, "CHA": 40,
         "Total Stat Points": 340
       },
       personal: {
@@ -1691,7 +1818,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 52,
-        "STR": 60, "AGI": 50, "HP": 50, "DEX": 60, "INT": 30, "SEN": 30,
+        "STR": 60, "AGI": 50, "HP": 50, "DEX": 60, "INT": 30, "CHA": 30,
         "Total Stat Points": 280
       },
       personal: {
@@ -1724,7 +1851,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 60,
-        "STR": 70, "AGI": 60, "HP": 70, "DEX": 70, "INT": 30, "SEN": 30,
+        "STR": 70, "AGI": 60, "HP": 70, "DEX": 70, "INT": 30, "CHA": 30,
         "Total Stat Points": 330
       },
       personal: {
@@ -1764,7 +1891,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 80, "AGI": 50, "HP": 70, "DEX": 40, "INT": 60, "SEN": 50,
+        "STR": 80, "AGI": 50, "HP": 70, "DEX": 40, "INT": 60, "CHA": 50,
         "Total Stat Points": 350
       },
       personal: {
@@ -1800,7 +1927,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 70, "AGI": 80, "HP": 60, "DEX": 60, "INT": 50, "SEN": 50,
+        "STR": 70, "AGI": 80, "HP": 60, "DEX": 60, "INT": 50, "CHA": 50,
         "Total Stat Points": 370
       },
       personal: {
@@ -1832,7 +1959,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 70, "AGI": 90, "HP": 60, "DEX": 60, "INT": 30, "SEN": 60,
+        "STR": 70, "AGI": 90, "HP": 60, "DEX": 60, "INT": 30, "CHA": 60,
         "Total Stat Points": 370
       },
       personal: {
@@ -1860,7 +1987,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 1,
-        "STR": 40, "AGI": 50, "HP": 40, "DEX": 50, "INT": 80, "SEN": 60,
+        "STR": 40, "AGI": 50, "HP": 40, "DEX": 50, "INT": 80, "CHA": 60,
         "Total Stat Points": 320
       },
       personal: {
@@ -1885,7 +2012,7 @@ export const CHARACTERS = [
     stats: {
       core: {
         "Starting Level": 40,
-        "STR": 60, "AGI": 70, "HP": 50, "DEX": 60, "INT": 30, "SEN": 30,
+        "STR": 60, "AGI": 70, "HP": 50, "DEX": 60, "INT": 30, "CHA": 30,
         "Total Stat Points": 300
       },
       personal: {
