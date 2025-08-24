@@ -709,10 +709,15 @@ export const CHARACTERS = [
         "Total Stat Points": 300
       },
       personal: {
-        "Personal Skill": "Cat's Eye - Scan and determine weaknesses. Cast: 0.7s, CD: 5s, SP: 100, Mithridart ×3. Lv1–13 scaling.",
+        "Personal Skill": "Cat's Eye - Scan and determine weaknesses. Cast: 0.7s, CD: 5s, SP: 100, Mithridart ×3.",
+        "Lv1":  "Duration 45s, Penetration +2, Accuracy +2",
+        "Lv10": "Duration 180, Penetration +20, Accuracy +20",
+        "Lv11": "Duration 195s, Penetration +22, Accuracy +22, A.R. +1",
+        "Lv12": "Duration 210s, Penetration +24, Accuracy +24, A.R. +1",
+        "Lv13": "Duration 225s, Penetration +26, Accuracy +26, A.R. +1",
         "image": "/images/skills/job_catseye.png"
       },
-      equipment: { "Armor": "Leather", "Starting Equipment": "Crecemento Leather, Crecemento Crossbow" }
+      equipment: { "Armor": "Leather" }
     },
     quests: [
     {id: "minute-mercenary", name: "Minute Mercenary - Talk to Calypso (Port of Coimbra, Pegadilla B9). Enter instance via Mercenary Soldier, defeat pirates, return with 25 Mystery Powder. Speak to Princess Gabriella in Reboldoeux, then return to Calypso."}
@@ -1196,7 +1201,10 @@ export const CHARACTERS = [
         "Starting Level": 60,
         "STR": 60, "AGI": 50, "HP": 60, "DEX": 70, "INT": 30, "CHA": 30
       },
-      personal: { "Personal Skill": "None" },
+      personal: {
+        "Personal Skill": "-",
+        "image": "/images/skills/job_none.png"
+      },
       equipment: { "Armor": "Leather, Leather (Fighter)" }
     },
     quests: [
